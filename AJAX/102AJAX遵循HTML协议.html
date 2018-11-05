@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var xhr=new XMLHttpRequest();
+		
+		xhr.open("GET","/add.php");//设置了请求行
+
+		xhr.setRequestHeader("Name", "muzili");//设置了一个请求头
+
+		xhr.send("key1=value1$key2=value2");//请求体
+
+		xhr.onload=function()
+		{
+			console.log(this. readyState);
+			console.log(this. responseText);
+		}
+
+	</script>
+</body>
+</html>

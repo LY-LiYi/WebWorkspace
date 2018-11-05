@@ -1,0 +1,38 @@
+/*这是想暴露出去的注释*/
+@color:pink;
+// 参数带默认值的混合
+.juzhong(@w:10px,@h:10px,@c:pink)
+{
+    position: absolute;
+    height: @h;
+    width: @w;
+    left: 50%;
+    top: 50%;
+    background: @c;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+#wrap {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  border: 1px solid;
+  margin: 0px auto;
+  .inner 
+  {
+    .juzhong();
+    &:hover
+    {
+      background: black;
+    }
+  }
+  .inner2
+  {
+   .juzhong(200px,200px,green);
+    &:hover
+    {
+      background: black;
+    }
+  }
+}
+

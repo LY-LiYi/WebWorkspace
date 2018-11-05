@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn">
+
+	<script src="../jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+	
+	//这个按钮----如果通过DOM获取----DOM对象
+	//这个按钮----如果通过$来获取----jquery对象
+	
+	//DOM获取的--DOM对象
+	var btnobj1=document.getElementById("btn");
+	//DOM的操作需要解决一些兼容性问题。jquery中的兼容问题差不多都解决了
+	//DOM对象-----转换成jquery对象，就可以使用jquery中的方法或属性
+	//DOM对象调用jquery对象的方法-----不能实现，必须是jquery对象
+	//如何把DOM对象转换成jquery对象---->$(DOM对象)----->jquery对象
+	// $(btnobj1).click(function(){
+	// 	console.log("哈哈");
+	// });
+
+
+
+
+	//jquery获取---jquery对象
+	var btnobj2=$("#btn");
+
+	//jQuery对象转换成DOM对象
+	//jQuery对象[0]------>DOM对象
+	btnobj2[0].onclick=function()
+	{
+		console.log("哈哈");
+	}
+
+
+	</script>
+</body>
+</html>

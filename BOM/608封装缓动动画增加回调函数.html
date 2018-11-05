@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#dv{
+			margin-top: 20px;
+			width: 200px;
+			height: 100px;
+			background-color: pink;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+		<input type="button" value="移动到400" id="btn1">
+		<input type="button" value="移动到800" id="btn2">
+		<div id="dv"></div>
+		
+		<script src="common.js"></script>
+		<script type="text/javascript">
+			//点击按钮移动div
+
+			my("btn1").onclick=function()
+			{
+				animate(my("dv"),"height",400);
+			}
+			//匀速动画
+			//element-----元素
+			//attr--------属性名字
+			//target------目标位置
+			function animate(element,attr,target)
+			{
+				//清理定时器
+				clearInterval(element.timeId);
+				element.timeId=setInterval(function()
+					{
+						//获得元素的当前位置
+						var current=parseInt(getStyle(element,attr));
+						//移动的步数 目标位置减去当前位置 除以10
+						var step=(target-current)/10;
+						//如果step是正数 就像上取整 如果是负数 就向下取整
+						step=step>0?Math.ceil(step):Math.floor(step);
+						current+=step;
+						element.style[attr]=current+"px";
+						if(current==target)
+						{
+							//到达位置清理定时器
+							clearInterval(element.timeId);
+						}
+						//测试代码
+						console.log("目标位置："+target+"，当前位置："+current+"，每次移动步数："+step+"");
+					},20);
+			}
+			//计算后的样式属性-----一个元素的任意的一个样式属性值----返回值是字符串类型
+			//获得样式属性值函数封装 获取任意一个元素的任意一个样式属性的值
+			function getStyle(element,attr)
+			{
+				// //判断浏览器是否支持这个方法
+				// if(window.getComputedStyle)
+				// {
+				// 	return window.getComputedStyle(element,null)[attr];
+				// }
+				// else
+				// {
+				// 	return elememnt.currentStyle[attr];
+				// }
+				return window.getComputedStyle?window.getComputedStyle(element,null)[attr]:element.currentStyle[attr];
+			};
+		</script>
+</body>
+</html>

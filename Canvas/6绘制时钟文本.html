@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="drawing" width="500" height="500"></canvas>
+</body>
+<script type="text/javascript">
+	
+	var drawing=document.getElementById("drawing");
+
+	if(drawing.getContext)
+	{
+		var context=drawing.getContext("2d");
+
+		// 开始路径
+		context.beginPath();
+
+		// 绘制外圆
+		context.arc(100,100,99,0,2*Math.PI,false);
+
+		// 绘制内圆
+		context.moveTo(194,100);
+		context.arc(100,100,94,0,2*Math.PI,false);
+
+		// 绘制分针
+		context.moveTo(100,100);
+		context.lineTo(100,15);
+
+		// 绘制时针
+		context.moveTo(100,100);
+		context.lineTo(35,100);
+
+
+		//设置描边颜色
+		context.strokeStyle="#ff8eb3";
+		//描边路径
+		context.stroke();
+
+		//设置文本
+		context.font="bold 14px Arial";
+		//设置文本对齐方式
+		context.textAlign = "center";
+		//设置文本基线
+		context.textBaseline="middle";
+		//绘制文本
+		context.fillText("12",100,20);
+
+		context.textAlign = "start";
+		context.fillText("12",100,40);
+
+		context.textAlign = "end";
+		context.fillText("12",100,60);
+
+	}
+</script>
+</html>

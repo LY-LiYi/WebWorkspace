@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.first:frist-child
+		{
+
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="frist"><a href="">国内新闻</a>
+			<ul>
+				<li>北京新闻</li>
+				<li>湖北新闻</li>
+			</ul>
+			
+		</li>
+		<li class="frist"><a href="">国内新闻</a></li>
+		<li id="second">国际新闻</li>
+		<li>体育新闻</li>
+		<li>娱乐新闻</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	var list=document.querySelector(".frist a");
+	list.style.color="red";
+
+	var lis=document.querySelectorAll("li li");
+	console.log(lis.length)
+	for (var i = 0; i < lis.length; i++) 
+	{
+		lis[i].style.color="green";
+	}
+</script>
+</html>

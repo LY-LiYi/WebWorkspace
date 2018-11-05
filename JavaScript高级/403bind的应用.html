@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+		//通过对象，调用方法 产生随机数
+		function ShowReadom()
+		{
+			//1到10的随机数
+			this.number=parseInt(Math.random()*10+1);
+		};
+		// 添加原型方法
+		ShowReadom.prototype.show1=function()
+		{
+			//改变了定时器的this的指向了 本来是window 现在是实例对象
+			setInterval(this.show2.bind(this),1000);
+		};
+		ShowReadom.prototype.show2=function()
+		{
+			//显示随机数---this
+			console.log(this.number);
+		};
+
+		// 实例对象
+		var sr=new ShowReadom();
+		//调用方法 输出随机数
+		sr.show1();
+		//调用这个方法一次，可以不停的产生随机数
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

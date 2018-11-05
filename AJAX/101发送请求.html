@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+//发送出去请求
+	var xhr=new XMLHttpRequest();
+	//打印当前状态值
+	console.log(xhr.readyState);
+	// ==>  0
+	//初始化 请求代理对象
+
+	xhr.open("GET","http://localhost:8080/time.php");
+	console.log(xhr.readyState);
+	// ====> 1   链接已经建立
+	//open方法已经调用，建立一个与服务器特定端口的连接
+
+	//发送请求
+	xhr.send();
+
+//接收回响应
+	//状态变化处理函数
+	xhr.onreadystatechange=function() 
+	{
+		//这个事件并不是只在相应时触发，状态改变就触发
+		switch (this.readstate) 
+		{
+			//2代表：已经拿到响应报文的响应头
+								//获取所有响应头 但是拿不到体
+			case 2: console.log(this.getAllResponseHeaders()); break;
+
+			//3代表：正在下载响应报文的响应体，可能为空，也可能不完整
+			//处理响应体不安全不可靠
+			case 3: console.log(this.requsetText); break;
+
+			//4代表：整个响应报文全部下载下来了 这次才开始后序的响应逻辑
+			case 4: console.log(this.requsetText); break;
+		};
+	};
+	</script>
+</body>
+</html>

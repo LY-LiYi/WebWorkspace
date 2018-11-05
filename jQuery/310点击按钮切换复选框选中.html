@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		$(function()
+		{
+			//点击按钮选中 再点不选中
+			$("#btn").click(function()
+				{
+					if($("#ck").prop("checked"))
+					{
+						$("#ck").prop("checked",false);
+					}
+					else
+					{
+						$("#ck").prop("checked",true);
+					};
+
+				});
+		});
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="选中/不选中" id="btn">
+	<input type="checkbox" name="" value="1" name="paly" id="ck">王者荣耀
+	
+</body>
+</html>

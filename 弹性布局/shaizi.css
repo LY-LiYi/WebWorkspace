@@ -1,0 +1,57 @@
+[class$="face"] 
+{
+  margin: 16px;
+  padding: 4px;
+  
+  background-color: #e7e7e7;
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+  
+  box-shadow:
+    inset 0 5px white, 
+    inset 0 -5px #bbb,
+    inset 5px 0 #d7d7d7, 
+    inset -5px 0 #d7d7d7;
+  
+  border-radius: 10%;
+}
+.pip 
+{
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin: 4px;
+
+  background-color: #333;
+  box-shadow: inset 0 3px #111, inset 0 -3px #555;
+}
+
+
+/*第一个筛子*/
+.first-face
+{
+  display: flex;
+  /*水平居中*/
+  justify-content: center;
+  /*水平左对齐*/
+  /*justify-content: flex-start;*/
+  /*水平右对齐*/
+  /*justify-content: flex-end;*/
+  /*垂直居中*/
+  align-items: center;
+  /*垂直上对齐*/
+  /*align-items: flex-start;*/
+  /*垂直底部对齐*/
+  /*align-items: flex-end;*/
+}
+
+.second-face
+{
+  display: flex;
+}
+.second-face .pip:nth-of-type(2)
+{
+  align-self: center;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		let arr=[1,2,3];
+		
+		function show(a,b,c)
+		{
+			alert(a);
+			alert(b);
+			alert(c);
+		}
+
+		// 等同于show(1,2,3)
+		show(...arr);
+
+
+		let arr1=[1,2,3];
+		let arr2=[4,5,6];
+
+		let arrr=[...arr1,...arr2];
+
+		alert(arrr);//输出1,2,3,4,5,6
+
+	</script>
+</body>
+</html>

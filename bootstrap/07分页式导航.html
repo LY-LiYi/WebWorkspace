@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="../bootstrap-4.1.1/css/bootstrap.css">
+	<script src="../jquery-3.3.1.js"></script>
+	<script src="../bootstrap-4.1.1/js/popper.min.js"></script>
+	<script src="../bootstrap-4.1.1/js/bootstrap.js"></script>
+	<style type="text/css">
+		.navs
+		{
+			padding: 15px 15px;
+			display: none;
+		}
+		a
+		{
+			padding: 15px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-muted">分页式导航</h1>
+		<div class="row">
+			<div class="col-md-2">
+				<nav class="nav nav-pills nav-stacked">
+					<li class="active">
+						<a href="">linux</a>
+					</li>
+					<li class="">
+						<a href="">php</a>
+					</li>
+					<li class="">
+						<a href="">java</a>
+					</li>
+					<li class="">
+						<a href="">android</a>
+					</li>
+					<li class="">
+						<a href="">yxlm</a>
+					</li>
+				</nav>
+			</div>
+			<div class="col-md-10">
+				<div class="navs">
+					<p class="">linux  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="navs">
+					<p>php  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="navs">
+					<p>java  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="navs">
+					<p>android Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="navs">
+					<p>yxlm  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</div>
+		</div>
+		
+
+		
+	</div>
+
+	<script type="text/javascript">
+		$('li').mouseenter(function() 
+		{
+			$(this).addClass('active');
+			$('li').not($(this)).removeClass('active');
+			idx=$(this).index('li');
+			$('.navs').eq(idx).show(70);
+			$('.navs').not($('.navs').eq(idx)).hide(70);
+		});
+
+		$('.navs').eq(0).show(70);
+	</script>
+</body>
+</html>

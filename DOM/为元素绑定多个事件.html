@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn">
+	<script src="common.js"></script>
+	<script type="text/javascript">
+		//为元素绑定事件(DOM):两种 有一种不兼容
+		//1.对象.addEventListener("事件类型"，事件处理函数，false) 谷歌和火狐支持 ie8不支持
+		//2.对象.attachEvent("有on的事件类型"，事件处理函数) ie8支持 谷歌和火狐不支持
+
+		//为按钮绑定点击事件
+		//参数1：事件的类型----事件的名字，没有on
+		//参数2：事件处理函数---函数（命名函数 匿名函数）
+		//参数3：布尔类型,目前就写flase
+		
+		为同一个元素绑定多个想相同事件  不会被覆盖掉
+		my("btn").addEventListener("click",function()
+			{console.log("啦啦啦");},false);
+		my("btn").addEventListener("click",function()
+			{console.log("哈哈哈");},false);
+		my("btn").addEventListener("click",function()
+			{console.log("嘻嘻嘻");},false);
+		my("btn").addEventListener("click",function()
+			{console.log("哇哇哇");},false);
+
+		//ie8
+		//参数1：事件类型---事件名字 有on
+		//参数2：事件处理函数---函数（匿名函数，命名函数）
+		my("btn").addachEvent("onclick",function()
+			{console.log("气死了")});
+	</script>
+</body>
+</html>

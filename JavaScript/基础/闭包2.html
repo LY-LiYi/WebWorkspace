@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+			function fun1(m,n)
+			{
+				function fun2(m)
+				{
+					alert(m+n);
+				}
+
+				return fun2;
+			}
+
+			var f=fun1(3,4);  //此时fun1函数记住了m=3 n=4; 然后f得到的是fun2函数 
+			f(6);//此时将6传参到fun2(m)函数里面 m=6 n=4 弹出结果10
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

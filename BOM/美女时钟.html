@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<img src="" id="im">
+	<script type="text/javascript">
+
+		function f1()
+		{
+				// 获取当前时间
+			var dt=new Date();
+			//获取小时
+			var hour=dt.getHours();
+			//获取秒 
+			var second=dt.getSeconds();
+
+			//前面加上0
+			hour=hour<10?"0"+hour:hour;
+			second=second<10?"0"+second:second;
+
+			//按照获得的时间设置图片
+			document.getElementById("im").src="meimei/"+hour+"_"+second+".jpg";
+			};
+		//先执行一下 立马有照片
+		f1();
+		//页面加载完毕后 过了一秒才执行函数代码
+		//没秒获取一次时间
+		setInterval(f1,1000);
+	</script>
+</body>
+</html>

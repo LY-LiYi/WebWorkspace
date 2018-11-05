@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.username{
+			/*取消表单边框*/
+			border: 0 none;
+			/*去掉表单轮廓线*/
+			outline-style: none;
+			background: #ccc; 
+			border: 1px dashed green;
+		}
+		/*获取光标焦点*/
+		.username:focus{
+			background-color: red;
+		}
+		.email{
+			border: 0 none;
+			outline-style: none;
+			border-bottom: 1px dotted red;
+		}
+		.search{
+			border: 0 none;
+			outline-style: none;
+			border: 1px solid #999 ;
+									/*不平铺	*/
+			background:url("1.jpg") no-repeat right;
+		}
+	</style>
+</head>
+<body>
+	<!-- lable获取光标焦点 -->
+	<label for="username">用户名:</label><input type="text" class="username" id="username"><br><br>
+	邮箱：<input type="text" class="email"><br><br>
+	搜索一下：<input type="text" class="search">
+
+</body>
+</html>

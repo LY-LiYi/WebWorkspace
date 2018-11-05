@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	
+	//借用构造函数继承
+
+	function SuperType(name)
+	{
+		this.name=name;
+	}
+
+	
+	function SubType(age)
+	{
+		//改变this指向并传参 但是函数无法复用
+		SuperType.call(this,"Nicholas");
+		this.age=age;
+	}
+
+	var instance=new SubType("15");
+	console.log(instance.name);
+	console.log(instance.age);
+
+</script>
+</html>

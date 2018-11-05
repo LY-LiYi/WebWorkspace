@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			/*脱离文档流*/
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="摇起来" id="btn1">
+	<input type="button" value="停止" id="btn2">
+	<div id="dv">
+		<img src="../DOM/images/boduo.jpg">
+		<img src="../DOM/images/lb5.jpg">
+	</div>
+	
+	<script src="common.js"></script>
+	<script type="text/javascript">
+		//点击按钮摇起来
+		my("btn1").onclick=function()
+		{
+			//定时器 
+			 timeid=setInterval(function()
+			{
+				//1-100随机数
+				var x=parseInt(Math.random()*100+1);
+				var y=parseInt(Math.random()*100+1);
+
+				my("dv").style.left=x+"px";
+				my("dv").style.top=y+"px";
+			},100)
+		}
+
+		//点击按钮停下来
+		my("btn2").onclick=function()
+		{
+
+			window.clearInterval(timeid);
+
+		}
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="drawing" width="800" height="800"></canvas>
+</body>
+<script type="text/javascript">
+	
+	var drawing=document.getElementById("drawing");
+
+	if(drawing.getContext)
+	{
+		var context=drawing.getContext("2d");
+
+
+		//其实坐标(30,30) 终坐标(70,70)
+		var gradient=context.createRadialGradient(55,55,10,55,55,30);
+
+		// 指定色标
+		gradient.addColorStop(0,"white");
+		gradient.addColorStop(1,"black");
+
+		//绘制红色矩形
+		context.fillStyle="#ff0000";
+		context.fillRect(10,10,50,50);
+
+		//绘制渐变矩形
+		context.fillStyle=gradient;
+		context.fillRect(30,30,50,50);		
+
+	}
+
+</script>
+</html>

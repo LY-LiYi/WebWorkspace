@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+		//人都有姓名 性别 年龄 吃饭 睡觉 玩
+		//学生 都有名 性别 年龄 吃饭 睡觉 玩，学习的行为
+		//人
+		function Person(name,age,sex)
+		{
+			this.age=age;
+			this.name=name;
+			this.sex=sex;
+		};
+		Person.prototype.eat=function()
+		{
+			console.log("人可以吃东西");
+		};
+		Person.prototype.sleep=function()
+		{
+			console.log("人在睡觉");
+		};
+		Person.prototype.play=function()
+		{
+			console.log("玩");
+		};
+		//学生
+		function Student(score)
+		{	
+			this.score=score;
+		};
+		//改变想学生的原型指向即可
+		Student.prototype=new Person("小明",10);
+		Student.prototype.study=function()
+		{
+			console.log("学习很累很累的");
+		};
+
+		var stu=new Student(100);
+		console.log(stu.name);
+		console.log(stu.sex);
+		console.log(stu.age);
+		stu.eat();
+		stu.play();
+		console.dir(stu);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

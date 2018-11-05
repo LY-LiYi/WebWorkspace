@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div
+		{
+			width: 600px;
+			height: 600px;
+			border: 1px solid pink;
+		}
+	</style>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		//点击按钮创建表格
+			//数组 --表格中的数据  json数据
+			var arr=[
+				{"name":"百度","href":"http://www.baidu.com"},
+				{"name":"哔哩哔哩","href":"https://www.bilibili.com"},
+				{"name":"知乎","href":"https://www.zhihu.com/"},
+				{"name":"京东","href":"https://www.jd.com"},
+				{"name":"百度","href":"http://www.baidu.com"},
+				{"name":"百度","href":"http://www.baidu.com"},
+				];
+
+		$(function()
+		{
+			
+			$("#btn").click(function()
+				{
+					//点击按钮创建表格
+					var table=$("<table border='1' cellspacing='0' cellpadding='0'></table>");
+					//把表格加入到div中
+					$("#dv").append(table);
+					//循环遍历数组 创建行
+					for (var i = 0; i < arr.length; i++)
+					 {
+					 	// 没一数组元素，都是对象
+					 	var dd=arr[i];
+						//创建行并加入到tab中
+						var tr=$("<tr></tr>");
+						table.append(tr);
+						//在列中显示内容 列在行中 
+						//创建td 并加入到tr中
+						var td1=$("<td>"+dd.name+"</td>");
+						var td2=$("<td><a href='"+dd.href+"'>"+dd.name+"</a></td>");
+						//第一列加入到 tr中
+						tr.append(td1);
+						// 第二列加入到 tr中
+						tr.append(td2);
+						//鼠标进入到每一行的时候高亮显示
+						tr.mouseenter(function()
+						{
+							$(this).css('backgroundColor', 'pink');
+						}).mouseleave(function()
+						{
+							$(this).css('backgroundColor', '');
+						});
+					};
+				});
+			//点击按钮移除表格
+			$("#btn2").click(function()
+				{
+					//当前按钮的下一个兄弟元素 清空里面的子元素
+					$(this).next().empty();
+					$("#dv").empty();
+
+				});
+
+			$("#btn3").click(function()
+				{
+					$("table").append($("<tr><td>优酷</td><td><a href='http://www.youku.com/'>优酷</a></td></tr>"));
+
+				});
+		});
+
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="创建一个表格" id="btn">
+	<input type="button" name="" value="移除表格" id="btn2">
+	<input type="button" name="" value="添加一行" id="btn3">
+	<div id="dv"></div>
+</body>
+</html>

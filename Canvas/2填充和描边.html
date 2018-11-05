@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<canvas id="drawing" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+	
+	var drawing=document.getElementById("drawing");
+
+	if(drawing.getContext)
+	{
+		//获取 2d上下文
+		var context=drawing.getContext("2d");
+
+		//设置描边颜色
+		context.strokeStyle="red";
+
+		//设置填充颜色
+		context.fillStyle="#0000ff";
+
+	}
+
+
+
+</script>
+</html>

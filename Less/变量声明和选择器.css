@@ -1,0 +1,19 @@
+/*定义变量*/
+/*定义选择器*/
+/*参数混合+arguments*/
+.father {
+  width: 200px;
+  height: 200px;
+  color: pink;
+  border: 1px solid pink;
+  /*&平级*/
+}
+.father:hover {
+  background-color: black;
+}
+.father .son {
+  width: 10px;
+  height: 10px;
+  background-color: pink;
+  border: 1px solid black;
+}

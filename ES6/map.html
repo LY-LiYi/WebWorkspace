@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var a=[12,34,454,67,78,89];
+	var b=a.map(item=>item>=60?'及格':'不及格');
+	var c=a.filter(item=>item>=60);
+	var d=a.reduce(function(tmp,item)
+	{
+		return tmp+item;
+	})
+	console.log(b);
+	console.log(c);
+	console.log(d);
+
+
+</script>
+</html>

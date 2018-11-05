@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 300px;
+			height: 400px;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="创建列表" id="btn">
+	<div id="dv"></div>
+
+<script src="common.js"></script>
+<script type="text/javascript">
+	//点击按钮创建列表 然后鼠标移动到列表列表高亮
+	var names=["杨过","杨过","杨过","杨过","杨过","杨过"];
+	my("btn").onclick=function()
+	{
+		// 将names数组的字符串拼接成完整的li标签
+		var str="<ul style='list-style-type:none;cursor:pointer'>";
+		for (var i = 0; i < names.length; i++)
+		 {
+		 	//根据循环创建对应的li
+			str+="<li>"+names[0]+"</li>";
+		}
+		str+="</ul>";
+		my("dv").innerHTML=str;
+		//代码执行到这来 li已经有了
+		//获取所有的li 遍历添加鼠标进入事件 添加鼠标离开事件
+		var list=my("dv").getElementsByTagName("li");
+		for (var i = 0; i < list.length; i++)
+		 {
+		 	//鼠标进入 设置当前li的背景颜色
+			list[i].onmouseover=function()
+			{
+				this.style.backgroundColor="pink";
+			};
+			//鼠标离开 li背景颜色恢复
+			list[i].onmouseout=function()
+			{
+				this.style.backgroundColor="";
+			}; 
+		}
+	}
+</script>
+</body>
+</html>

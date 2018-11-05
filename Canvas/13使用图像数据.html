@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<img src="../Bootstrap新闻/images/003.jpg">
+	<canvas id="drawing" width="800" height="800"></canvas>
+</body>
+<script type="text/javascript">
+	
+	var drawing=document.getElementById("drawing");
+
+	// 浏览器支持canvas元素
+	if(drawing.getContext)
+	{
+		var context=drawing.getContext("2d");
+
+		image=document.images[0];
+
+		var imageData,data,i,len,average,red,green,blud,alpha;
+
+		//绘制原始图像
+		context.drawImage(image,0,0);
+
+		// 取得图像数据
+		imageData=context.getImageData(0,0,image.width,image.height);
+
+		data=imageData.data;
+
+		for (var i = 0; len=data.length; i<len,i+=4) 
+		{
+			red=data[i];
+			green=data[i+1];
+			blue=data[i+2];
+			alpha=data[i+3];
+
+			//计算rgb平均值
+			average=Math.floor((red+green+blud)/3);
+
+			//设置颜色值 透明度不变
+
+			data[i]=average;
+			data[i+1]=average;
+			data[i+2]=average;
+		}
+
+		//回写图像数据并显示结果
+
+		image.data=data;
+
+		//将图像数据绘制到画布上
+		context.putImageData(imageData,0,0);
+	}
+
+
+</script>
+</html>

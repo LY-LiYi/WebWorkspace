@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+		//函数自调用
+		
+		//一次性函数----声明的同时，直接调用
+		
+		//页面加载后 这个自调用函数就执行完了
+		// (function (形参)
+		// 	{
+		// 		var num=10;//局部变量
+		// 		console.log(num);
+		// 	})(实参);
+		// 	console.log(num);
+
+
+			(function (win)
+			{
+				var num=10;//局部变量
+				win.number=num;
+			})(window);
+			console.log(number);//从而获取了局部变量的值
+
+			//如何把局部变量变成全局变量？
+			//把局部变量给windos就可以了
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

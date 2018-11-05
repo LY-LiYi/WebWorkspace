@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*
+		{
+			margin: 0;
+			padding: 0;
+		}
+		li
+		{
+			list-style: none;
+			cursor: pointer;
+		}
+		div
+		{
+			width: 200px;
+			height: 400px;
+			border: 2px solid pink;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="创建列表" id="btn">
+	<div id="dv"></div>
+
+	<script src="common.js"></script>
+	<script type="text/javascript">
+		var books=["道德经颜氏家训","一千零一夜","格林童话安徒生童话","佛教的见地与修道","礼记","尚书","基督山伯爵","巴黎圣母院","汤姆叔叔的小屋"];
+
+		//点击按钮动态的创建列表，并把列表添加到DIV中。
+		my("btn").onclick=function()
+		{
+			//创建ul 把ul立刻加入到父级元素
+			var ulobj=document.createElement("ul");
+			//将ul追入到父集元素中
+			my("dv").appendChild(ulobj);
+			//动态的创建li 加入到ul中
+			for (var i = 0; i < books.length; i++)
+			 {
+			 	//获得所有的li元素
+				var liobj=document.createElement("li");
+				//设置li中间的li内容
+				liobj.innerHTML=books[i];
+				//将li追加到ul中
+				ulobj.appendChild(liobj);
+				//为li添加鼠标进入事件
+				liobj.onmouseover=mouseoverHandle;
+				//为li添加鼠标离开事件
+				liobj.onmouseout=mouseoutHandle;
+			}
+		}
+		//此位置 点击按钮事件的外卖 命名函数
+		//如果是循环的方式 推荐使用命名函数 节省空间
+		//如果不是循环的方式 推荐使用匿名函数
+		function mouseoverHandle()
+		{
+			this.style.backgroundColor="pink";
+		}
+		function mouseoutHandle()
+		{
+			this.style.backgroundColor="";
+		}
+	</script>
+</body>
+</html>

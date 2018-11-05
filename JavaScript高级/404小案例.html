@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+		var num=10;
+		//获取num这个变量的数据类型
+		console.log(typeof num);
+		var obj={};//对象
+		console.log(obj instanceof Object);
+		//获取某个对象的数据类型的样子
+		Object.prototype.toString.call(对象);
+
+		//输的的是object的数据类型   [Object Object]
+		console.log(Object.prototype.toString());
+
+		//输出的数组的数据类型		[Object Array]
+		console.log(Object.prototype.toString.call([]));
+
+
+		var arr=[20,30,40];
+		console.log(Object.prototype.toString.call(arr));
+		
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn">
+
+	<script src="common.js"></script>
+	<script type="text/javascript">
+			//为按钮绑定多个点击事件
+			
+			// my("btn").addEventListener("click",function(){console.log("啦啦啦");},false);
+
+
+			my("btn").attachEvent("onclick",function(){console.log("啦啦啦");});
+
+	</script>
+</body>
+</html>

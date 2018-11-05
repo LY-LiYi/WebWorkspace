@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+		// json格式的数据：一般都是成对的 是键值对
+		//json也是一个对象 数据都是成对的。
+		var  json={
+			"name":"小明",
+			"age":"10",
+			"sex":"男",
+		}
+
+		//遍历对象是不能通过for循环遍历的
+		//key用来存放属性名
+		var key="name";
+
+		console.log(json[key]);
+
+		// 遍历对象可以通过 for in实现
+		//key是一个变量 这个变量中存储的是该对象的所有属性的名字
+
+		for(var key in json)
+		{
+			console.log(key+"------"+json[key]);
+		}
+
+
+
+
+
+		for(var key in json)
+		{
+			//console.log(key);//json对象中的属性的名字
+			//console.log(json[key]);//输出了json对象的值
+		}
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

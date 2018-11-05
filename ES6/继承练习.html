@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		class animal
+		{
+			constructor(name,age,sex)
+			{
+				this.name=name;
+				this.age=age;
+				this.sex=sex;
+			};
+
+			showName()
+			{
+				console.log(this.name);
+			};
+
+			showAge()
+			{
+				console.log(this.age);
+			};
+
+			showSex()
+			{
+				console.log(this.sex);
+			};
+
+
+		};
+
+
+		class  people extends animal
+		{
+			constructor(name,age,sex)
+			{
+				super(name,age,sex);
+			};
+			
+			showAll()
+			{
+				console.log(this.name+'---'+this.age+'---'+this.sex);
+			};
+		}
+
+		var p=new  people('李祎','18','男');
+
+			p.showName();
+			p.showAge();
+			p.showSex();
+			p.showAll();
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 分组 -->
+	<fieldset>
+		<legend>分组信息</legend>
+
+							<!-- post方法不会泄露用户密码 -->
+	<form action="1.jsp" method="post">
+											<!-- 最大长度 -->
+		用户名<input type="text" name="user"  maxlength="10" ><br>
+		密&nbsp;&nbsp;&nbsp;码<input type="password" name="passwd"><br>
+
+		<!-- 单选框   name设置为一致时实现单选效果  设置默认选择项 -->
+		男<input type="radio" name="gander" checked="checked">
+		女<input type="radio" name="gander"><br>
+
+		<!-- 下拉列表 -->
+					<!-- 将下拉列表设置为多选项 -->
+		省&nbsp;		<select >
+					<option >湖北省</option>
+					<option >湖南省</option>
+							<!-- 设置默认选中项 -->
+					<option selected="selected">北京市</option>
+					<option >上海市</option>
+					<option >广东省</option>
+					<option >浙江省</option>
+				</select>
+		区(市)		<select>
+					<option>海淀区</option>
+					<option>朝阳区</option>
+					<option>昌平区</option>
+					<option>大兴区</option>
+				</select>
+
+		<input type="submit">
+
+			<!-- 多选框         默认选中项-->
+		<input type="checkbox" checked="checked">喝酒
+		<input type="checkbox">烫头
+		<input type="checkbox">抽烟
+		<br>
+
+		<!-- 多行文本框 -->
+		<textarea name="" id="" cols="30" rows="5"></textarea><br>
+		<!-- 文件上传控件 -->
+		<input type="file" name=""><br>
+			<!-- 提交 -->
+		<input type="submit" name="">
+
+			<!-- 按钮 -->
+			<input type="button" value="按钮"><br>
+
+			<!-- 图片按钮 -->
+			<input type="image" src="按钮.jpg"><br>
+
+			<!-- 重置按钮 -->
+			<input type="reset" >
+		</fieldset>
+
+	</form>
+</body>
+</html>

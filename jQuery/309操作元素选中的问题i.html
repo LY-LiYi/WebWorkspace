@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		$(function()
+		{
+			//获取是否被选中
+			console.log($("#ck5").prop("checked"));//false
+			//选中
+			$("#ck5").prop("checked","true");
+		});
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="选中/不选中" id="btn">
+	<input type="checkbox" name="" value="1" name="paly">吃饭
+	<input type="checkbox" name="" value="2" name="paly">睡觉
+	<input type="checkbox" name="" value="3" name="paly">玩游戏
+	<input type="checkbox" name="" value="4" name="paly">嘻嘻
+	<input type="checkbox" name="" value="5" name="paly" id="ck5">哈哈
+</body>
+</html>

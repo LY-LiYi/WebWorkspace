@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function * show()
+		{
+			alert(`a`);
+
+			yield 12;
+
+			alert(`b`);
+		}
+
+
+		let gen=show();
+
+		let res1=gen.next();	
+		console.log(res1);//value： 12  done(完成)：false
+
+		let res2=gen.next();
+		console.log(res2);//value： undefind  done：true 最后一步的结果靠 return来往外给
+
+	</script>
+</body>
+</html>

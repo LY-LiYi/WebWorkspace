@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" value="" id="text">
+
+	<script src="common.js"></script>
+	<script type="text/javascript">
+		// 文本框内容长度在6-10之间为红色 否则为绿色
+		// 获取文本框
+		my("text").onblur=function()
+		{
+			//判断密码的长度
+			if(this.value.length>=6&&this.value.length<=10)
+				this.style.backgroundColor="red";
+			else
+				this.style.backgroundColor="green";
+		}
+		con
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+		function * show()
+		{
+			alert('a');
+
+			yield;
+
+			alert('b');
+		};	
+
+		let genObj=show();
+
+		console.log(genObj);
+		genObj.next();//输出a
+		genObj.next();//输出b
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div
+		{
+			width: 200px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		
+		$(function()
+			{
+				$(document).mousedown(function(e)
+					{
+						//判断用户按下鼠标的时候，有没有按下alt键
+						// console.log(e.altKey);
+						if(e.altKey)
+						{
+							//用户按下了alt键的同时也按了鼠标
+							console.log("alt+鼠标");
+						}
+						else if(e.shiftKey)
+						{
+							//用户按下了shift键的同时也按了鼠标
+							console.log("shift+鼠标");
+						}
+						else if(e.ctrlKey)
+						{
+							//用户按下了ctrl键的同时也按了鼠标
+							console.log("ctrt+鼠标");
+						}
+						else
+						{
+							//用户只按了鼠标
+							console.log("鼠标");
+						}
+					});
+			});
+	</script>
+</head>
+<body>
+	<div id="dv"></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div
+		{
+			width: 300px;
+			height: 200px;
+			background-color: pink;
+		}
+		p
+		{
+			width: 100px;
+			height: 30px;
+			background-color: red;
+			cursor: pointer;
+		}
+	</style>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		$(function()
+			{
+				//点击按钮为div绑定事件
+				$("#btn").click(function()
+					{
+						$("<p>这是一个p</p>").appendTo($("#dv"));
+						$("#dv").on('click', 'p', function(event) 
+						{
+							alert("嘻嘻");
+						});
+					});
+				$("#btn2").click(function()
+					{
+						$("<p>这是一个p</p>").appendTo($("#dv"));
+					});
+			});
+
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="绑定事件" id="btn">
+	<input type="button" name="" value="绑定事件" id="btn2">
+	<div id="dv">
+	</div>
+</body>
+</html>

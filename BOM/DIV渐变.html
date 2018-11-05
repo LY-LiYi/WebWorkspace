@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div
+		{
+			width: 300px;
+			height: 300px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="dv"></div>
+	<input type="button" value="渐变" id="btn">
+
+	<script type="text/javascript">
+		//按钮的点击事件
+		document.getElementById("btn").onclick=function()
+		{
+			//透明的的值
+			var opacity=10;
+			//定时器
+			var timeid=setInterval(function()
+			{
+					//透明化说
+				opacity--;
+				//如果opacity小于等于0 清理定时器
+				if(opacity<=0)
+				{
+					clearInterval(timeid);
+				}
+				//设置div的透明度 透明度的值是在1-0之间
+				document.getElementById("dv").style.opacity=opacity/10;
+			},100)
+		}
+	</script>
+</body>
+</html>

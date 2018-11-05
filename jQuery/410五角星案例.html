@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>五角星评分案例</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    
+    .comment {
+      font-size: 40px;
+      color: pink;
+    }
+    
+    .comment li {
+      float: left;
+    }
+
+    ul {
+      list-style: none;
+    }
+  </style>
+  <script src="../jquery-3.3.1.js"></script>
+  <script type="text/javascript">
+    $(function()
+    {
+        // 获取所有的li      鼠标点击
+        $(".comment>li").click(function()
+          {
+              //做一个记录
+              //点那个li 就为li添加自定义属性添加标记 但是其他的li的自定义属性要删除
+              $(this).attr("index","1").siblings('li').removeAttr('index');
+          }).mouseenter(function()
+          {
+            //当前的li是实心的五角星 前面所有的li都是实心的五角星
+            //后面的五角星是空心的五角星
+            $(this).text("★").prevAll("li").text("★").end().nextAll("li").text("☆");
+          }).mouseleave(function()
+          { 
+            //鼠标离开的时候，获取那个带有自定义属性的li 改变这个li中的五角星，同时前面的五角星也都是实心的，同时后面的五角星是空心的
+            //这个选择器是找到属性index值为1的li
+            $(".comment>li").text("☆");//先设置所有的li为空心的
+            $(".comment>li[index=1]").text("★").prevAll("li").text("★");
+          });
+    });
+  </script>
+</head>
+
+<body>
+<ul class="comment">
+  <li>☆</li>
+  <li>☆</li>
+  <li>☆</li>
+  <li>☆</li>
+  <li>☆</li>
+</ul>
+</body>
+
+</html>

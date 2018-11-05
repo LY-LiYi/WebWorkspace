@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div
+		{
+			width: 600px;
+			height: 600px;
+			background-color: gray;
+		}
+	</style>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		$(function()
+			{
+				//用户在页面按键可以改变div的颜色
+				$(document).keydown(function(e)
+					{
+						switch (e.keyCode) 
+						{
+							case 65: $("#dv").css('backgroundColor', 'rgb(255,0,0)');   break;
+							case 66: $("#dv").css('backgroundColor', 'rgb(255,165,0)'); break;
+							case 67: $("#dv").css('backgroundColor', 'rgb(255,255,0)'); break;
+							case 68: $("#dv").css('backgroundColor', 'rgb(0,255,0)');   break;
+							case 69: $("#dv").css('backgroundColor', 'rgb(0,127,255)'); break;
+							case 70: $("#dv").css('backgroundColor', 'rgb(0,0,255)');   break;
+							case 71: $("#dv").css('backgroundColor', 'rgb(139,0,255)'); break;
+							case 72: $("#dv").css('backgroundColor', 'rgb(255,0,0)');   break;
+							case 73: $("#dv").css('backgroundColor', 'rgb(255,165,0)'); break;
+							case 74: $("#dv").css('backgroundColor', 'rgb(255,255,0)'); break;
+							case 75: $("#dv").css('backgroundColor', 'rgb(0,255,0)');   break;
+							case 76: $("#dv").css('backgroundColor', 'rgb(0,127,255)'); break;
+							case 77: $("#dv").css('backgroundColor', 'rgb(0,0,255)');   break;
+							case 78: $("#dv").css('backgroundColor', 'rgb(139,0,255)'); break;
+							case 79: $("#dv").css('backgroundColor', 'rgb(255,0,0)');   break;
+						};
+					});
+			});
+	</script>
+</head>
+<body>
+	<div id="dv"></div>
+</body>
+</html>

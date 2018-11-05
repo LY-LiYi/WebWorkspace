@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*
+		{
+			padding: 0;
+			margin: 0;
+		}
+		body
+		{
+			height: 2000px;
+		}
+		img
+		{
+			position: absolute;
+		}
+	</style>
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body>
+	<img src="images/bird.png" id="im">
+	<script src="common.js"></script>
+	<script type="text/javascript">
+		
+		//鼠标移动事件
+		document.onmousemove=function(e)
+		{
+			// 鼠标相对于页面可视区域的横坐标
+			// my("im").style.left=e.clientX+"px";
+			// 鼠标相对于页面可视区域的纵坐标
+			// my("im").style.top=e.clientY+"px";
+			//此时windows.event和事件参数对象e是需要兼容的
+			
+			//pageX和pageY就是鼠标相对于页面的边距的坐标
+			//等同于可视区域client+卷曲出去的scroll的和
+			//ie8不支持pageX和pageY的属性
+			// my("im").style.left=e.pageX+"px";
+			// my("im").style.top=e.pageY+"px";
+			
+			//scroll兼容代码
+			function getScroll() 
+			{
+     			 return{
+       						left:window.pageXOffset||document.body.scrollLeft||document.documentElement.scrollLeft||0,
+       						top:window.pageYOffset||document.body.scrollTop||document.documentElement.scrollTop||0
+      				}
+    		}
+
+			//坐标值等于可视区域坐标加上卷曲出去的坐标
+			my("im").style.left=window.event.clientX+getScroll().left+"px";
+			my("im").style.top=window.event.clientY+getScroll().top+"px";
+		};
+	</script>
+</body>
+</html>

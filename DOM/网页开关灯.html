@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.cls{
+			background-color: black;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="关灯" id="btn">
+
+	<script src="common.js"r></script>
+	<script type="text/javascript">
+		
+		my("btn").onclick=function()
+		{
+			//获取body标签 三目表达式
+			document.body.className=document.body.className!="cls"?"cls":"";
+			//判断按钮的value值来更改属性值
+			my("btn").value=my("btn").value=="关灯"?"开灯":"关灯";
+		}
+		
+	</script>
+
+
+
+
+
+
+
+</body>
+</html>

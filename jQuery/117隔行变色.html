@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ul li
+		{
+			margin-top: 10px;
+			cursor: pointer;
+			text-align: center;
+			font-size: 20px;
+    	}
+	</style>
+	<script src="../jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		
+		$(function()
+			{
+				//点击按钮
+				$("#btn").click(function()
+				{
+					//奇数红色 偶数黄色
+					//odd-----奇数
+					//even----偶数
+					$("#uu>li:even").css('backgroundColor', 'red');
+					$("#uu>li:odd").css('backgroundColor', 'yellow');
+				});
+			});
+	</script>
+</head>
+<body>
+<input type="button" name="" value="点击变色" id="btn">
+<ul id="uu">
+  <li>我是第1个li</li>
+  <li>我是第2个li</li>
+  <li>我是第3个li</li>
+  <li>我是第4个li</li>
+  <li>我是第5个li</li>
+  <li>我是第6个li</li>
+  <li>我是第7个li</li>
+  <li>我是第8个li</li>
+  <li>我是第9个li</li>
+  <li>我是第10个li</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div
+		{
+			width: 300px;
+			height: 200px;
+			background-color: pink;
+		}
+		p
+		{
+			width: 100px;
+			height: 30px;
+			background-color: red;
+			cursor: pointer;
+		}
+	</style>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		$(function()
+			{
+				//第一个按钮
+				//点击按钮为div添加一个子元素，并且子元素有点击的事件
+				$("#btn1").click(function()
+					{
+						$("<p>这是一个p</p>").appendTo($("#dv"));
+						$("p").click(function() 
+						{
+							alert("哈哈");
+						});
+						
+					});
+
+				$("#btn2").click(function()
+					{
+						$("<p>这是一个p</p>").appendTo($("#dv"));
+						$("p").click(function() 
+						{
+							alert("哈哈");
+						});
+						
+					});
+
+			});
+
+
+
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="绑定事件" id="btn1">
+	<input type="button" name="" value="绑定事件" id="btn2">
+	<div id="dv"></div>
+</body>
+</html>

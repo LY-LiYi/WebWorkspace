@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	
+	var A=function(){}
+
+	A.prototype.n=1
+
+	var b=new A()
+
+	A.prototype={
+	n:2,
+	m:3}
+
+	var c=new A()
+
+	console.log(A.prototype);
+	console.log(b);
+	console.log(c);
+
+	console.log(b.n,b.m,c.n,c.m);
+
+
+
+	var F=function(){};
+	Object.prototype.a=function(){
+	console.log('a()')
+	};
+	Function.prototype.b=function(){
+	console.log('b()')
+	}
+	var f=new F();
+	f.a()//a()
+	// f.b()//报错找不到b这个函数
+	F.a()//a()
+	F.b()//b()
+
+	console.log(f.__proto__);//f()
+	console.log(f.__proto__.constructor);//f()
+	console.log(f.__proto__.__proto__);//a()
+	console.log(f.__proto__.__proto__.constructor);//f Object()
+	console.log(f.__proto__.__proto__.__proto__);//null
+
+</script>
+</html>

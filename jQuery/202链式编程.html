@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+
+			//链式编程：对象不停的调方法
+			//对象.方法().方法().方法()；
+			$("#btn").click(function(){
+				//此时是获取 返回的是是value的属性值
+				var a=$(this).val();
+				console.log(a);//属性值
+				var s=$("#btn").val("haha ").css("backgroundColor","red");
+				console.log(s);
+			});
+
+
+		});
+
+
+
+
+
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="显示效果" id="btn">
+</body>
+</html>

@@ -1,0 +1,34 @@
+/*定义变量*/
+@color:pink;
+@width:100px;
+@height:200px;
+@border:1px solid pink;
+/*定义选择器*/
+@fa:.father;
+@son:.son;
+
+/*参数混合+arguments*/
+.border(@1,@2,@3)
+{
+	border: @arguments;
+}
+
+@{fa}
+{
+	width:@width+100;
+	height: @height;
+	color:@color;
+	border:@border;
+	/*&平级*/
+	&:hover
+	{
+		background-color: black;
+	}
+	@{son}
+	{
+		width: 10px;
+		height: 10px;
+		background-color: pink;
+		.border(1px,solid,black);
+	}
+}

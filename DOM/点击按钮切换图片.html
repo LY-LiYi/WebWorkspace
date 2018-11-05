@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" name="" value="显示大图" id="btn">
+	<img src="images/1-small.jpg" id="im">
+
+	<script type="text/javascript">
+
+		// 总是用的东西进行封装
+		function my$(id)
+		{
+			return document.getElementById(id);
+		}
+
+
+		my$("btn").onclick=function()
+		{
+			if(my$("btn").value=="显示大图")
+			{
+				my$("im").src="images/1.jpg";
+				my$("btn").value="显示小图";
+			}
+			else
+			{
+				my$("im").src="images/1-small.jpg";
+				my$("btn").value="显示大图";
+			}
+
+		}
+	</script>
+</body>
+</html>

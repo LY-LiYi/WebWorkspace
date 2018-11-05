@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    img {
+      vertical-align: top;
+    }
+
+    .main {
+      margin: 0 auto;
+      width: 1000px;
+      margin-top: 10px;
+
+    }
+
+    .fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+  <script src="../jquery-3.3.1.js"></script>
+  <script type="text/javascript">
+    
+    $(function()
+      {
+          //浏览器的滚动条上下移动的时候，设置页面中的 nav的 div 固定在页面的顶部或者回到原来的位置
+          //为浏览器注册滚动事件
+          $(window).scroll(function() 
+          {
+               //获取页面向上卷曲的距离的值和第一个div的高度做对比
+               if($(this).scrollTop()>=$(".top").height())
+               {
+                  //如果向上卷曲出去的距离的值大于或者等于第一个div的高度就设置导航栏固定在页面的顶部
+                  $(".nav").css("position","fixed");
+                  //设置导航栏的top为0
+                  $(".nav").css("top",0);
+                  //设置main的外边距top  防止nav固定的时候main跳上去了 
+                  $(".main").css("marginTop",$(".nav").height());
+               }
+               else
+               {
+                  //恢复
+                  $(".nav").css("position","static");
+                  $(".main").css("marginTop",0);
+               }
+          });
+      });
+  </script>
+</head>
+<body>
+<div class="top" id="topPart">
+  <img src="images/top.png" alt=""/>
+</div>
+<div class="nav" id="navBar"><!-- 导航栏 -->
+  <img src="images/nav.png" alt=""/>
+</div>
+<div class="main" id="mainPart">
+  <img src="images/main.png" alt=""/>
+</div>
+</body>
+</html>

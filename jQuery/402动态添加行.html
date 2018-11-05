@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    div
+    {
+      width: 300px;
+      height: 200px;
+      background-color: pink;
+    }
+    p
+    {
+      width: 100px;
+      height: 30px;
+      background-color: red;
+      cursor: pointer;
+    }
+  </style>
+  <script src="../jquery-3.3.1.js"></script>
+  <script type="text/javascript">
+      $(function() 
+      {
+        //第一个按钮为div绑定事件 div的点击事件
+        $("#dv").bind("click",function()
+          {
+            console.log("我被点击了");
+          });
+        $("#dv").bind("click",function()
+          {
+            console.log("啦啦啦");
+          });
+        //鼠标进入事件
+         $("#dv").bind("mouseenter",function lala()
+          {
+            $(this).css('backgroundColor', 'red');
+          });
+         //鼠标离开事件
+         $("#dv").bind("mouseleave",function()
+          {
+            $(this).css('backgroundColor', 'blue');
+          });
+        //第二个按钮为div解绑事件
+        $("#btn2").click(function()
+          {
+            //解绑的是点击事件
+              $("#dv").unbind('click');
+          });
+      });
+
+
+
+
+  </script>
+</head>
+<body>
+  <input type="button" name="" value="绑定事件" id="btn">
+  <input type="button" name="" value="解绑事件" id="btn2">
+  <div id="dv">
+  </div>
+</body>
+</html>

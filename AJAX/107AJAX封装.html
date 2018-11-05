@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+	//写一个相对完善的用例	
+		// var xhr=new XMLHttpRequest();
+		// xhr.open("GET","https://api.github.com/users");
+		// xhr.send(null);
+		// xhr.onreadystatechange=function()
+		// {
+		// 	if(this.readyState!==4) 
+		// 		return;
+		// 	console.log(this.responseText);
+		// };
+
+// ----------------version1-----------
+	//写一个空函数，没有形参
+	//根据使用过程中的需求抽象参数
+
+		// function ajax(method,url,params)
+		// {
+		// 	var xhr=new XMLHttpRequest();
+		// 	xhr.open(method,url);
+		// 	if (method=="GET") 
+		// 	{
+		// 		url+="?"+params;
+		// 	};
+
+		// 	if (method=="POST") 
+		// 	{
+		// 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		// 		data=params;
+		// 	};
+			
+		// 	params=params ||null;
+		// 	xhr.send(data);
+		// 	xhr.onreadystatechange=function()
+		// 	{
+		// 		if(this.readyState!==4) 
+		// 		return;
+		// 		console.log(this.responseText);
+		// 	};
+		// };
+
+
+// -----------------version2------------------
+		// function ajax(method,url,params)
+		// {
+		// 	var xhr=new XMLHttpRequest();
+		// 	xhr.open(method,url);
+
+		// 	//将objecrt类型的参数转化为键值对的个数
+		// 	if(typeof params=="object")
+		// 	{
+		// 		var tempArr=[];
+		// 		//遍历对象
+		// 		for (var  key in params) 
+		// 		{
+		// 			var item=params[key];
+		// 			//追加到数组 拼接键值对
+		// 			tempArr.push(key+"="+item);
+		// 		}
+		// 	};
+
+		// 	if (method=="GET") 
+		// 	{
+		// 		url+="?"+params;
+		// 	};
+
+			// var data=null;
+		// 	if (method=="POST") 
+		// 	{
+		// 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		// 		data=params;
+		// 	};
+			
+		// 	params=params ||null;
+		// 	xhr.send(data);
+		// 	xhr.onreadystatechange=function()
+		// 	{
+		// 		if(this.readyState!==4) 
+		// 		return;
+		// 		console.log(this.responseText);
+		// 	};
+		// };
+		
+		// ajax("GET","https://api.github.com/users",{id:1});
+
+
+// -----------------version3------------------
+		// function ajax(method,url,params)
+		// {
+		// 	method=method.toUpperCase();//将字符串转换成大写字母并返回
+		// 	var xhr=new XMLHttpRequest();
+		// 	xhr.open(method,url);
+
+		// 	//将objecrt类型的参数转化为键值对的个数
+		// 	if(typeof params=="object")
+		// 	{
+		// 		var tempArr=[];
+		// 		//遍历对象
+		// 		for (var  key in params) 
+		// 		{
+		// 			var item=params[key];
+		// 			//追加到数组 拼接键值对
+		// 			tempArr.push(key+"="+item);
+		// 		}
+		// 	};
+
+		// 	if (method=="GET") 
+		// 	{
+		// 		url+="?"+params;
+		// 	};
+
+		// 	var data=null;
+		// 	if (method=="POST") 
+		// 	{
+		// 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		// 		data=params;
+		// 	};
+			
+		// 	params=params ||null;
+		// 	xhr.send(data);
+		// 	xhr.onreadystatechange=function()
+		// 	{
+		// 		if(this.readyState!==4) 
+		// 		return;
+		// 		console.log(this.responseText);
+		// 	};
+		// };
+		
+		// ajax("GET","https://api.github.com/users",{id:1});
+
+// / -----------------version4------------------
+		function ajax(method,url,params)
+		{
+			var res=null;
+
+			method=method.toUpperCase();//将字符串转换成大写字母并返回
+			var xhr=new XMLHttpRequest();
+			xhr.open(method,url);
+
+			//将objecrt类型的参数转化为键值对的个数
+			if(typeof params=="object")
+			{
+				var tempArr=[];
+				//遍历对象
+				for (var  key in params) 
+				{
+					var item=params[key];
+					//追加到数组 拼接键值对
+					tempArr.push(key+"="+item);
+				}
+			};
+
+			if (method=="GET") 
+			{
+				url+="?"+params;
+			};
+
+			var data=null;
+			if (method=="POST") 
+			{
+				xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				data=params;
+			};
+			
+			params=params ||null;
+
+			xhr.onreadystatechange=function()
+			{
+				//由于异步模式下 这里的代码最后执行，所有不可能再外面通过返回值的方式返回数据
+				if(this.readyState!==4) 
+				return;
+				res=this.responseText;
+			};
+
+			xhr.send(data);
+			
+
+			return res;
+		};
+		
+		ajax("GET","https://api.github.com/users",{id:1});
+
+
+
+
+	</script>
+</body>
+</html>

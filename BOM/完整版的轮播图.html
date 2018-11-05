@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style type="text/css">
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      border: 0;
+    }
+
+    .all {
+      width: 500px;
+      height: 200px;
+      padding: 7px;
+      border: 1px solid #ccc;
+      margin: 100px auto;
+      position: relative;
+    }
+
+    .screen {
+      width: 500px;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .screen li {
+      width: 500px;
+      height: 200px;
+      overflow: hidden;
+      float: left;
+    }
+
+    .screen ul {
+      position: absolute;
+      left: 0;
+      top: 0px;
+      width: 3000px;
+    }
+
+    .all ol {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    .all ol li {
+      float: left;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border: 1px solid #ccc;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .all ol li.current {
+      background: #DB192A;
+    }
+
+    #arr {
+      display: none;
+    }
+
+    #arr span {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      margin-top: -20px;
+      background: #000;
+      cursor: pointer;
+      line-height: 40px;
+      text-align: center;
+      font-weight: bold;
+      font-family: '黑体';
+      font-size: 30px;
+      color: #fff;
+      opacity: 0.3;
+      border: 1px solid #fff;
+    }
+
+    #arr #right {
+      right: 5px;
+      left: auto;
+    }
+  </style>
+</head>
+<body>
+<div class="all" id='box'>
+  <div class="screen"><!--相框-->
+    <ul>
+      <li><img src="images/41.jpg" width="500" height="200"/></li>
+      <li><img src="images/42.jpg" width="500" height="200"/></li>
+      <li><img src="images/43.jpg" width="500" height="200"/></li>
+      <li><img src="images/44.jpg" width="500" height="200"/></li>
+      <li><img src="images/45.jpg" width="500" height="200"/></li>
+    </ul>
+    <ol>
+    </ol>
+  </div>
+  <div id="arr">
+    <span id="left">&lt;</span>
+    <span id="right">&gt;</span>
+  </div>
+</div>
+<script src="common.js"></script>
+<script type="text/javascript">
+    //先获取所有需要的元素
+      //获取最外面的box
+      var box=my("box");
+      //获取相框
+      var screen=box.children[0];
+      //获取相框的宽度
+      var imgWidth=screen.offsetWidth;
+      //获取ul
+      var ulObj=screen.children[0];
+      //获取ul中的所有的li
+      var list=ulObj.children;
+      //获取ol
+      var olObj=screen.children[1];
+      //左右切换的按钮的div
+      var arr=my("arr");
+      
+      var pic=0;//全局变量 pic存放图片的索引
+    //创建小按钮 根据ul中的li的个数
+      for (var i = 0; i < list.length; i++)
+       {
+        //创建li标签 加入到ol中
+        var liObj=document.createElement("li");
+        //将li追加到ul中
+        olObj.appendChild(liObj);
+        //给li设置内容
+        liObj.innerHTML=(i+1);
+
+        //在每个ol中的li标签上面添加一个自定义属性 存储索引值
+        liObj.setAttribute("index",i);
+        //给所有的li注册鼠标进入事件
+        liObj.onmouseover=function()
+        {
+          //先干掉所有的li的背景颜色
+          for (var j = 0; j < olObj.children.length; j++)
+          {
+            olObj.children[j].removeAttribute("class");
+          }
+          //设置当前鼠标进入的li的背景颜色
+          this.className="current";
+          //获取鼠标进入的li的当前的索引值
+          pic=this.getAttribute("index");
+          //移动ul
+          animate(ulObj,-pic*imgWidth);
+          
+        }
+      }
+      //设置ol中的第一个li的背景颜色
+      olObj.children[0].className="current";
+      //克隆ul中第一个li 加入到ul中的最后面
+      ulObj.appendChild(ulObj.children[0].cloneNode(true));
+
+      //设置定时器点击右侧按钮 自动播放
+      var timeId=setInterval(rightClick,1000);
+
+
+      //鼠标进入到box的div显示左右按钮的div
+      my("box").onmouseover=function()
+      {
+         arr.style.display="block";
+         //鼠标进入停止播放
+         clearInterval(timeId);
+      }
+      //鼠标离开box的div隐藏左右按钮的div
+       my("box").onmouseout=function()
+      {
+         arr.style.display="none";
+         //鼠标出去自动播放
+         timeId=setInterval(rightClick,1000);
+      }
+
+      //右侧按钮的点击事件
+      my("right").onclick=rightClick;
+      function rightClick()
+      {
+        if(pic==list.length-1)//当到了最后一张的时候
+        {
+          pic=0;
+          ulObj.style.length=0+"px";
+        }
+          pic++;//pic=1
+          animate(ulObj,-pic*imgWidth);
+          //如果pic==5 说明此时显示第6个图片(但是内容是第一张图片)，第一个按钮有颜色
+          if(pic==list.length-1)
+          {
+            //第五个按钮的颜色干掉
+            olObj.children[olObj.children.length-1].className="";
+            //第一个按钮的颜色设置上
+            olObj.children[0].className="current";
+          }
+          else
+          {
+            //正常的排他功能
+            for (var i = 0; i < olObj.children.length; i++)
+             {
+                olObj.children[i].removeAttribute("class");
+             }
+             olObj.children[pic].className="current";
+          }
+      };
+      //左侧按钮的点击事件
+      my("left").onclick=function()
+      {
+        if(pic==0)
+        {
+          //跳到第五张图片去
+          pic=5;
+          ulObj.style.left=-pic*imgWidth+"px";
+        }
+        pic--;
+        animate(ulObj,-pic*imgWidth);
+        //设置小按钮的颜色---所有的按钮的颜色干掉
+        for (var i = 0; i < olObj.children.length; i++) 
+        {
+          olObj.children[i].removeAttribute("class");
+        }
+        //设置当前pic索引对应的按钮的颜色
+        olObj.children[pic].className="current";
+      };
+
+      
+    //动画函数 设置任意的一个元素。移动到指定的位置
+      function animate(element,target)
+    {
+      //先清理定时器----只产生一个定时器 防止多次点击按钮速度变快
+      clearInterval(element.timeid);
+      //定时器的id存放到对象的一个属性中
+      element.timeid=setInterval(function(){
+        //获取当前div的位置
+        var current=element.offsetLeft;//数字类型
+        //div每次移动多少像素---步数
+        var step=10;
+        //如果目标数大于当前位置 则走正数 否则走负数
+        step=current<target?step:-step;
+        //每次移动后的距离
+        current+=step;
+        //判断当前移动后的位置是否到达目标位置 
+        //如果目标值减去当前值大于步数 则 开始走 否则直接到达目标数 取绝对值防止负数
+        if(Math.abs(current-target)>Math.abs(step))
+        {
+          //设置div的目标位置
+          element.style.left=current+"px";
+        }
+        else
+        {
+          //清理定时器
+          clearInterval(element.timeid);
+          //直接跳到目标 防止因为目标值原因到不了位置
+          element.style.left=target+"px";
+        }
+      },10);
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+
+		function Person(age)
+		{
+			this.age=age;
+		};
+		//人的原型对象方法
+		Person.prototype.eat=function()
+		{
+			console.log("人的吃");
+		};
+
+		var per=new Person();
+
+		//Person的prototype中的__proto__的指向
+		console.log(Person.prototype.__proto__);//Object
+		console.log(Object.prototype.__proto__);//null
+
+		//per实例对象的__proto__指向------>Person的pertotype的__proto__ ----->Object
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

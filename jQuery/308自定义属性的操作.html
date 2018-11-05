@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		$(function()
+		{
+			//点击按钮为第一个li设置属性
+			$("#btn").click(function()
+				{
+					$("#uu>li:first").attr("score","100");
+					$("#a").attr("href","http://www.baidu.com");
+					$("#a").text("百度");
+				});
+		});
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="显示效果" id="btn"><br>
+	<a id="a"></a>
+	<ul id="uu">
+		<li>hhh</li>
+		<li>sssss</li>
+		<li>sdsdsax</li>
+		<li>sdasdas</li>
+		<li>sdasdawef</li>
+	</ul>
+</body>
+</html>

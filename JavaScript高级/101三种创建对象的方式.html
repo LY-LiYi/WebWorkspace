@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//对象:特质某个对象 具有属性和方法(一组无序的属性的集合)
+		//特征------属性
+		//行为-----方法
+		//小苏：-------->姓名，类别，年龄，吃，睡觉，玩   
+		
+		//创建对象的三种方式
+		
+		// 1.字面量的方式 实例对象
+		var per1={
+			name:"卡卡西",
+			age:"20",
+			eat:function()
+				{
+					console.log("吃臭豆腐");
+				},
+			readbook:function()
+				{
+					console.log("啦啦啦");
+				},
+		};	
+
+		// 2.调用系统的构造函数
+		var per2=new Object();
+		per2.name="大蛇丸";
+		per2.age="30";
+		per2.sex="男";
+		per2.eat=function()
+		{
+			console.log("吃榴莲");
+		};
+		per2.play=function()
+		{
+			console.log("真好玩");
+		};
+
+		// 3.自定义构造函数方式
+		function Person(name,age,sex)
+		{
+			this.name=name;
+			this.age=age;
+			this.sex=sex;
+			this.play=function()
+			{
+				console.log("玩");
+			}
+		};
+
+		var per=new Person("雏田",18,"女");
+		//instanceof：测试一个对象在其原型链中是否存在一个构造函数的 prototype 属性
+		console.log(per instanceof Person);
+		per.play();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

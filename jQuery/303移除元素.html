@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div
+		{
+			width: 200px;
+			height: 100px;
+			border: 1px solid pink;
+		}
+	</style>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+			
+			$(function()
+			{
+				$("#btn").click(function()
+					{
+						// //从父级元素中移除子级元素
+						// $("#dv").html("");
+						// $("#dv").empty();
+						$("#dv").remove();
+					});
+			});
+
+
+
+
+
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="移除元素" id="btn">
+	<div id="dv">
+		<p>这是一个p</p>
+		<span>这是一个span</span>
+	</div>
+</body>
+</html>

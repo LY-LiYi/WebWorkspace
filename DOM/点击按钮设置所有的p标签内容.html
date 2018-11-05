@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<button id="btn">点击吧 上天吧</button>
+		<div id="div1">
+			<p>啦啦啦</p>
+			<p>嘻嘻嘻</p>
+			<p>诶诶诶</p>
+			<p>啊啊</p>
+			<p>诶诶诶</p>
+		</div>
+		
+		
+		<div id="div2">
+			<p>我漂亮吧</p>
+			<p>我漂亮吧</p>
+			<p>我漂亮吧</p>
+		</div>
+		
+		<script type="text/javascript">
+			// 点击按钮，修改多个p标签的内容。
+
+			// document.getElementsByTagName("标签的名字")返回的是维数组 
+			//无论获取的是一个标签 还是多个标签都是在数组中存储的 所以这行代码的返回值是一个数组
+				
+			// 根据id获取按钮，注册点击事件 添加处理事件函数
+		document.getElementById("btn").onclick=function()
+		{
+			//获得整个文档里面的p标签
+			var pobjs=document.getElementsByTagName("p");
+			
+			//获取文档里面div1里面的p标签
+			  var pobjs=document.getElementById("div1").getElementsByTagName("p");
+
+			  //循环遍历这个数组
+			  for (var i = 0; i < pobjs.length; i++) {
+			  	pobjs[i].innerText="啦啦啦";
+			  }
+
+
+		}
+
+		</script>
+</body>
+</html>

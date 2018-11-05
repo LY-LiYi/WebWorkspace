@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<script src="common.js"></script>
+</head>
+<body>
+	<input type="button" value="点菜" id="btn">
+	<select id="ss">
+		<option value="1">油炸榴莲</option>
+		<option value="2">爆炒臭豆腐</option>
+		<option value="3">清蒸</option>
+		<option value="4" id="op1">凉拌班主任</option>
+		<option value="5">红烧班主任</option>
+	
+	</select>
+
+
+	<script type="text/javascript">
+		my("btn").onclick=function()
+		{
+			//点击按钮选菜
+			my("op1").selected=true;
+		}
+	</script><br>
+
+	<textarea id="tt" cols="30" rows="10">
+		某人问智者：
+		大师你觉得怎么做才是最快乐的。
+		大师说：不要和愚者辩论。
+		这个人说：我不这么认为！
+		大师说：你说得对。
+	</textarea>
+												<!-- disabled 禁用 -->
+	<input type="button" value="注册" id="btn2" >
+
+	<script type="text/javascript">
+		
+		my("btn2").onclick=function()
+		{
+			// my("tt").value="嘎嘎"; 推荐使用value 因为是看成了是表单标签
+			my("tt").innerText="哈哈";
+
+		}
+	</script>
+
+
+</body>
+</html>

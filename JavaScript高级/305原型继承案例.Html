@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+		// 动物有名字 体重 有吃东西的行为
+		// 小狗有名字 体重 毛色 有吃东西的行为 还有咬人的行为
+		// 哈士奇有名字 体重 毛色 性别 有吃东西的行为 还有咬人的行为 逗主任开心
+
+		//动物的构造函数
+		function Animal(name,weight)
+		{
+			this.name=name;
+			this.weight=weight;
+		};
+		//动物的原型方法
+		Animal.prototype.eat=function()
+		{
+			console.log("天天吃东西，就是吃");
+		};
+
+		//狗的构造函数
+		function Dog(color)
+		{
+			this.color=color
+		};
+		Dog.prototype=new Animal("哮天犬","50kg",);
+		Dog.prototype.bitePerson=function()
+		{
+			console.log("狗咬人");
+		};
+
+		//哈士奇
+		function HaShiQi(sex)
+		{
+			this.sex=sex;
+		};
+		HaShiQi.prototype=new Dog("黑白色");
+		HaShiQi.prototype.playHost=function()
+		{
+			console.log("逗住人开心");
+		};
+
+		var erha=new HaShiQi("雄性");
+
+		console.log(erha.name,erha.weight,erha.color);
+		erha.eat();
+		erha.bitePerson();
+		erha.playHost();
+		console.dir(HaShiQi.prototype);
+		console.dir(Dog.prototype);
+		// console.dir(Animal);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

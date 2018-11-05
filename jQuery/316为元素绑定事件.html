@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		$(function()
+		{
+			//为按钮绑定鼠标进入鼠标离开鼠标点击事件
+			//第一种写法
+			// $("#btn").mouseenter(function(event) 
+			// {
+			// 	$(this).css('backgroundColor', 'red');
+			// });
+			// $("#btn").mouseleave(function(event) 
+			// {
+			// 	$(this).css('backgroundColor', 'pink');
+			// });
+			// $("#btn").click(function(event) 
+			// {
+			// 	alert("嘻嘻嘻嘻");
+			// });
+
+			//第二种写法 链式编程
+			// $("#btn").mouseenter(function(event) 
+			// {
+			// 	$(this).css('backgroundColor', 'red');
+			// }).mouseleave(function(event) 
+			// {
+			// 	$(this).css('backgroundColor', 'pink');
+			// }).click(function(event) 
+			// {
+			// 	alert("嘻嘻嘻嘻");
+			// });
+
+			//第三种方式： bind方法绑定事件
+			// $("#btn").bind('click',function()
+			//  {
+			// 		alert("xixi ");
+			// });
+			// $("#btn").bind('mouseenter',function()
+			//  {
+			// 		$(this).css("backgroundColor","red");
+			// });
+			// $("#btn").bind('mouseleave',function()
+			//  {
+			// 		$(this).css("backgroundColor","pink");
+			// });
+
+			//第四中写法：绑定事件加上链式编程
+			$("#btn").bind('click',function()
+			 {
+					alert("xixi ");
+			}).bind('mouseenter',function()
+			 {
+					$(this).css("backgroundColor","red");
+			}).bind('mouseleave',function()
+			 {
+					$(this).css("backgroundColor","pink");
+			});
+
+			//第五种写法：
+			$("#btn").bind({"click":function()
+							{
+								alert("哈哈");
+							}},
+							{"mouseenter":function()
+							{
+								$(this).css("backgroundColor","red");
+							}},
+							{"mouseleave":function()
+							{
+								$(this).css("backgroundColor","pink");
+							}});
+		});
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="显示效果" id="btn">
+</body>
+</html>

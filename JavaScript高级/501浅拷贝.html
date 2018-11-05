@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+			
+			var obj1={
+				age:10,
+				sex:"男",
+				car:["奔驰","宝马"]
+			};
+
+			var obj2={};
+
+			// 写一个函数  作用：把一个对象的属性复制到另一个对象中 浅拷贝
+			//把a对象的属性复制到b中
+			function extend(a,b)
+			{
+				for(var key in a)
+				{
+					b[key]=a[key];
+				};
+			};
+
+			extend(obj1,obj2);
+			console.dir(obj2);//最开始的时候obj2是个空对象
+			console.dir(obj1);//有属性
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#dv2 div
+		{
+			width: 300px;
+			height: 200px;
+			background-color: pink;
+			float: left;
+			margin-left: 10px;
+		}
+	</style>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+
+		//如果希望jQuery能调用这个方法 就把这个方法加入到 $.fn里
+		$(function()
+			{
+				//点击按钮改变每个div的背景颜色
+
+				// 插件的基本代码
+				$.fn.changeColor=function(color)
+				{
+					//$(this)----调用方法的实例对象
+					$(this).css("backgroundColor",color);
+				};
+				$("#dv input").click(function() 
+					{
+						$("#dv2 div").changeColor($(this).val());
+					});
+			});
+	</script>
+</head>
+<body>
+	<div id="dv">
+		<input type="button" name="" value="red">
+		<input type="button" name="" value="green">
+		<input type="button" name="" value="blue">
+		<div id="dv2">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+</body>
+</html>

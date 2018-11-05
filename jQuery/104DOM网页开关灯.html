@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.cls
+		{
+			background-color: black;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="关灯" id="btn">
+	<script type="text/javascript">
+		//DOM版本
+		document.getElementById("btn").onclick=function()
+		{
+			//判断
+			var  body=document.body;
+			if(body.className=="cls")
+			{
+				body.className="";
+				this.value="关灯";
+			}
+			else
+			{
+				body.className="cls";
+				this.value="开灯";
+			};
+		};
+		
+		//jQuery版本
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

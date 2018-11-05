@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 300px;
+			height: 200px;
+			border: 2px dotted red;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="显示效果" id="btn">
+	<input type="button" value="获取" id="btn2">
+	<div id="dv">哈哈
+	<p>这是一个p</p>
+	</div>
+<script src="common.js"></script>
+<script type="text/javascript">
+	//总结 如果使用innerText主要是设置文本的，设置标签内容 是没有标签效果的
+	//		innerHTML是可以设置文本内容的
+	//		innerHTML主要的作用是在标签中设置新的html标签内容 是有标签效果的	
+		//设置
+		my("btn").onclick=function()
+		{
+			//my("dv").innerText="hah";//设置文本
+			// my("dv").innerText="<p>这是一个p</p>";//设置html标签的代码
+			// my("dv").innerHTML="哈哈";
+			 my("dv").innerHTML="<p>啦啦啦</p>";
+		}
+
+
+		// 获取
+		// interText可以获取标签中间的文本内容 如果标签中间还有标签 那么最里面的标签的内容也会被获取到 但是不会获取到标签
+		// innerHTML才是真正获取标签中间的所有内容
+		my("btn2").onclick=function()
+		{
+			//可以获取标签中的文本内容
+			// console.log(my("dv").innerText); 
+			console.log(my("dv").innerHTML);
+		}
+</script>
+
+
+</body>
+</html>

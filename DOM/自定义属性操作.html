@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ul{
+			list-style: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<ul id="uu">
+		<li score="10">助教的数学成绩</li>
+		<li score="20">班主任的成绩</li>
+		<li score="30">小苏的成绩</li>
+		<li score="40">啦啦啦</li>
+		<li score="50">嘻嘻嘻</li>
+	</ul>
+	<!-- 鼠标放在标签上显示成绩 -->
+	<script src="common.js"></script>
+	<script type="text/javascript">
+			
+		//本身html标签没有这个属性 自己可以添加的：自定义属性(为了存储一些数据)
+
+		//获取所有的li标签
+		var list=document.getElementsByTagName("li");
+			for (var i = 0; i < list.length; i++) 
+			{
+				list[i].onclick=function()
+				{
+					//alert(this.score);
+					//获取自定义属性值
+					alert(this.getAttribute("score"));
+				}
+			}
+
+	</script>
+</body>
+</html>

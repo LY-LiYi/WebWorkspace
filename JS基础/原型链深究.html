@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+		
+		function Peo(name)
+		{
+			this.name=name;
+		}
+
+		var ly=new Peo("liyi");
+
+		console.log(ly.name);
+
+		console.log(ly.__proto__);//object
+		console.log(ly.__proto__.constructor);//Peo()
+		console.log(Peo.prototype);//object
+
+</script>
+</html>

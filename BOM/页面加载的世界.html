@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//页面加载的时候 按钮还没出现 页面没有加载完毕
+		
+		//页面加载完毕了 再获取按钮
+		//只要页面加载完毕 这个事件就会触发------页面所有的内容 标签 文本 属性 外部引入的js文件
+		//很重要
+		window.onload=function()
+		{
+			document.getElementById("btn").onclick=function()
+		{
+			alert("你好");
+		};
+		};
+		
+		//扩展事件---页面关闭之后才触发事件 ---ie8
+		// window.onunload=function()
+		// {
+		// 	alert("啦啦啦");
+		// }
+
+		//扩展事件---页面关闭之前触发的---ie8
+		// window.onbeforeunload=function()
+		// {
+		// 	alert("啦啦啦");
+		// }
+
+	</script>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn">
+</html>

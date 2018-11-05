@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+		var str="小白啦啦啦";
+		//沙箱 变量互不冲突
+		(function(){
+			console.log(str);//预解析 underfind
+			var str="小红喜欢小白";
+			str=str.substring(2);
+			console.log(str);//喜欢小白
+		}());
+
+		str=str.substring(2);//截取字符串
+		console.log(str);//啦啦啦
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+
+		var xhr=new XMLHttpRequest();
+
+		xhr.open("GET","time.php");
+
+		xhr.send();
+
+		//onload事件是 HTML5中的 提供的
+		xhr.onload=function()
+			{
+				console.log(this.readyState)//4
+				console.log(this.responseText);
+			};
+
+	</script>
+	
+</body>
+</html>

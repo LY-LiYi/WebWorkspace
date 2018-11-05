@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		form
+		{
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<label>
+			姓名:<input type="text" name="name">
+		</label><br>
+		<label >
+			省份：<select name="area">
+				<option value="1">湖北省</option>
+				<option value="2">湖南省</option>
+			</select>
+		</label><br>
+		<label>
+			个人简介：<textarea></textarea>
+		</label><br>
+		<label for="">
+			课程<input type="text" list="course" name="">
+		</label><br>
+		<datalist id="course">
+			<option value="php">php</option>
+			<option value="python">python</option>
+			<option value="photoshop">photoshop</option>
+			<option value="java">java</option>
+			<option value="javascript">javascript</option>
+		</datalist><br>
+		<label>
+			加密类型：<keygen name="anqure"></keygen>
+		</label><br>
+		<label>
+			结果：<output>结果：</output>
+		</label><br>
+		<label>
+			度量器：<meter min="0" max="100" value="50" low="60" high="80"></meter><br>
+			度量器：<meter min="0" max="100" value="70" low="60" high="80"></meter><br>
+			度量器：<meter min="0" max="100" value="90" low="60" high="80"></meter><br>
+		</label><br>
+		<label>
+			<input type="submit" name="" value="保存">
+		</label><br>
+	</form>
+</body>
+</html>

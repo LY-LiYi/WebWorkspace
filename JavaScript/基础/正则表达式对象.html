@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		//匹配abc字符串
+		// var str=/abc/g;
+
+		// var reg=new RegExp('abc','g');
+
+
+		// var demo='aaaaabcbbbdabfabc';
+
+		// console.log(str.exec(demo));
+		// console.log(reg.exec(demo));
+
+		// var a=/abc/g.exec(demo);
+		// console.log(a);
+
+		// var  a=/o\s+0\s+0\s+o/g;
+
+		// var b='oooooo  0   0  oooooooooo';
+
+		// console.log(a.exec(b));
+
+		// var c=new  RegExp('o\\s+0\\s+0\\s+o');
+		// console.log(c.exec(b));
+
+
+			var arr=/hello/;
+			var str='hello  everyone';
+
+			//判断str字符串是否匹配arr的规则
+			console.log(arr.test(str));
+
+			console.log(/\s/.test('a   bc'));
+			console.log(/\s/.test('abc'));
+
+	</script>
+</body>
+</html>

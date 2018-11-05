@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="../jquery-3.3.1.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+	
+	Promise.all([
+		//ajax请求
+		$.ajax({url:'data/arr.txt',dataType:'json'}),
+		$.ajax({url:'data/json.txt',dataType:'json'})
+		]).then(results=>
+		{
+			//解构赋值
+			let [arr,json]=results;
+
+			alert('成功了');
+			console.log(arr,json);
+		},err=>
+		{
+			alert('失败了');
+		});
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+
+		// 字面量的方式创建对象 
+		var obj={};//空对象
+
+		//添加属性
+		obj.name="小白";
+		obj.age=10;
+		obj.sayhi=function(){
+			console.log("我是"+obj.name);
+		}
+
+		obj.sayhi();
+
+
+		// 优化后的写法 字面量的方式：一次性的对象
+		var obj2={name:"小明",
+				  age:20,
+				  sayhi:function()
+					{
+						console.log("我是"+this.name);
+					},
+				  eat:function()
+					{
+						 console.log("吃了");
+					}
+				};
+
+		obj2.sayhi();
+		obj2.eat();
+
+
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

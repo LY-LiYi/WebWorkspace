@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		$(function()
+		{
+			//点击按钮在div中创建一个元素
+			$("#btn").click(function() 
+			{
+				//创建一个p标签
+				var pObj=$("<p>啦啦啦啦</p>");
+				//父级元素.append(子级元素);
+				$("#dv").append(pObj);
+			});
+
+		});
+
+		//点击按钮在div中创建一个a标签
+		$(function()
+		{
+			$("#btn").click(function()
+			{
+				//创建a标签
+				$("<a href='https://www.baidu.com'>百度</a>").appendTo($("#dv"));
+			});
+		})
+
+
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="创建一个p" id="btn">
+	<div id="dv"></div>
+</body>
+</html>

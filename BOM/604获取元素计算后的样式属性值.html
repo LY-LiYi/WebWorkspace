@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 100px;
+			background-color: pink;
+			left: 100px;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="显示效果" id="btn">
+	<div id="dv"></div>
+
+	<script src="common.js"></script>
+	<script type="text/javascript">
+		my("btn").onclick=function()
+		{
+			//获取元素距离左侧位置的值
+			//谷歌和火狐支持
+			//获取元素的left的值
+			console.log(window.getComputedStyle(my("dv"),null).left);
+			console.log(window.getComputedStyle(my("dv"),null)["left"]);
+			//ie8支持
+			// console.log(my("dv").currentStyle.left);
+			
+			//获得样式属性值函数封装 获取任意一个元素的任意一个样式属性的值
+			function getStyle(element,attr)
+			{
+				// //判断浏览器是否支持这个方法
+				// if(window.getComputedStyle)
+				// {
+				// 	return window.getComputedStyle(element,null)[attr];
+				// }
+				// else
+				// {
+				// 	return elememnt.currentStyle[attr];
+				// }
+				return window.getComputedStyle?window.getComputedStyle(element,null)[attr]:element.currentStyle[attr];
+			};
+
+			console.log(getStyle(my("dv"),"left"));
+		};
+	</script>
+</body>
+</html>

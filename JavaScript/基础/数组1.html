@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+		// var arr=["星期天","星期一","星期二","星期三","星期四","星期五","星期六"]
+
+		// var a=prompt("请输入数字");
+		// console.log(a);
+		// var xinqi=(a%7+2)%7
+		// 	alert(arr[xinqi]);
+		
+		// var a1=[];
+		// for (var i = 0; i <=10000; i++) {
+		// 		a1.push(parseInt(Math.random()*1000));
+		// 	}	
+
+		// console.log(a1);
+		// console.log(typeof arr);
+
+
+
+		var a=[1,2,3,4,5];
+
+		var b=a;			//b指向了a的实际地址 a和b都是指向了同一个数组
+		b[0]=88;			//修改的是数组b下标为0的项  因为b和a都是指向同一个地址 所以也改变了
+		console.log(a);		//数组a的下标为0的项也改为了88
+
+
+		// var a=[1,2,3,4,5];
+
+		// b=[6,7,8,9];     //把b指向了数组[6,7,8,9] 所以a没变
+		// console.log(a);
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

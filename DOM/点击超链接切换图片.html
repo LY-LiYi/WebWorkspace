@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		img{
+			width: 300px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 大图的路径 -->
+	<a id="ak" href="images/1.jpg">
+				<!-- 小图的路径 -->
+		<img id="im" src="images/1-small.jpg">
+	</a>
+
+	<script type="text/javascript">
+		// 点击图片标签 设置图片标签的src路径为超链接中大图的路径
+		document.getElementById("im").onclick=function()
+		{
+			this.src=document.getElementById("ak").href;
+			// return false; 这句话就不跳转了
+		}
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		//点击按钮同时创建10个p标签，同时 鼠标进入p之后有高亮显示
+			$(function()
+			{
+				$("#btn").click(function()
+				{
+					for (var i = 0; i <= 10; i++)
+					 {
+						//创建p标签
+						$("<p>这是一个p</p>").appendTo($("#dv")).mouseenter(function(){
+							$(this).css('backgroundColor', 'pink').mouseleave(function() {
+								$(this).css('backgroundColor', '');
+							});;
+						});;
+					}
+					
+				});
+			});
+
+
+
+
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="创建元素" id="btn"> 
+	<div id="dv"></div>
+</body>
+</html>

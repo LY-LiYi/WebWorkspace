@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//原型实现继承
+		//借用构造函数实现继承
+		//组合继承：原型继承+借用构造函数继承
+
+		function Person(name,age,sex)
+		{
+			this.name=name;
+			this.age=age;
+			this.sex=sex;
+		};
+		Person.prototype.sayHi=function()
+		{
+			console.log("哈哈哈");
+		};
+
+		function Student(name,age,sex,score)
+		{
+			//借用构造函数:解决属性重复的问题
+			Person.call(this,name,age,sex);
+			this.score=score;
+		};
+		//改变原型指向---继承 没有传值 属性不能用 但方法可以用
+		Student.prototype=new Person();//不传值
+		Student.prototype.eat=function()
+		{
+			console.log("吃东西");
+		};
+
+		//属性和方法都被继承了
+		var stu=new Student("小黑",20,"男","100");
+		console.log(stu.name,stu.age,stu.sex,stu.score);
+		stu.eat();
+		stu.sayHi();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

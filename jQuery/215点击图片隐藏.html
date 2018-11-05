@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div
+		{
+			width: 100px;
+			height: 100px;
+			margin: 2px;
+			float:left;
+		}
+		img
+		{
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+	<script src="../jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+			
+			$(function()
+			{
+				$("img").click(function()
+				{
+					//隐藏图片的父级元素盒子
+					$(this).parent().hide(1000);
+				});
+			});
+	</script>
+</head>
+<body>
+		<div><img src="images/bird.png"></div>
+		<div><img src="images/bird.png"></div>
+		<div><img src="images/bird.png"></div>
+		<div><img src="images/bird.png"></div>
+		<div><img src="images/bird.png"></div>
+</body>
+</html>

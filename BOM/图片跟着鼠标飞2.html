@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*
+		{
+			margin: 0;
+			padding: 0;
+		}
+		img
+		{
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<img src="images/tianshi.gif" id="im">
+
+	<script src="common.js"></script>
+	<script type="text/javascript">
+		//文档的鼠标移动事件
+		//通过arguments.length可以得出：事件处理函数中实际是有一个参数的，这个参数和事件有关系，是一个对象---->事件参数对象
+		
+		//谷歌和火狐都有这个事件参数对象 ie8中没有
+		//事件参数对象：e----在ie8中用window.event来代替
+		// document.onmousemove=function(e)
+		// {
+		// 	my("im").style.left=e.clientX+"px";
+		// 	my("im").style.top=e.clientY+"px";
+		// };
+		// 兼容代码：
+		document.onmousemove=function(e)
+		{
+			e==window.evebt||e;
+			//e.clientX：鼠标在可视区域的x轴 e.clientY：鼠标在可视区域的y轴
+			my("im").style.left=e.clientX+"px";
+			my("im").style.top=e.clientY+"px";
+			// pageX：相对于页面顶部横坐标  pageY：相对于页面顶部纵坐标 
+			my("im").style.left=e.pagex+"px";
+			my("im").style.top=e.pageY+"px";
+		};
+	</script>
+</body>
+</html>

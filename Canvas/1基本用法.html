@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="drawing" width="200" height="200">A drawwing of something</canvas>
+</body>
+<script type="text/javascript">
+		
+		var drawing=document.getElementById("drawing");
+
+		//检测getContext方法是否存在
+		if(drawing.getContext)
+		{
+			// 传入2d 即可获取 2D上下文
+			var context=drawing.getContext("2d");
+
+			
+		}
+
+</script>
+</html>

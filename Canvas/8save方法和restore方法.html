@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="drawing" width="500" height="500"></canvas>
+</body>
+<script type="text/javascript">
+	
+	var drawing=document.getElementById("drawing");
+
+	if(drawing.getContext)
+	{
+		context=drawing.getContext("2d");
+
+		context.fillStyle="#ff0000";
+		context.save();
+
+		context.fillStyle="#00ff00";
+		context.translate(100,100);
+		context.save();
+
+		context.fillStyle="#0000ff";
+		context.fillRect(0,0,100,100);//从点(100，100)开始绘制蓝色矩形
+
+		context.restore();
+		context.fillRect(10,10,100,200);//从点(110,110)开始绘制绿色矩形
+
+		context.restore();
+		context.fillRect(0,0,100,200);//从点(0,0)开始绘制红色矩形
+	}	
+
+</script>
+</html>

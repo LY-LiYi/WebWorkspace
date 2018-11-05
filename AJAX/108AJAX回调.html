@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX返回数据问题</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+	//封装者
+		function ajax(method,url,params,done)
+		{
+		
+			method=method.toUpperCase();//将字符串转换成大写字母并返回
+			var xhr=new XMLHttpRequest();
+			xhr.open(method,url);
+
+			//将objecrt类型的参数转化为键值对的个数
+			if(typeof params=="object")
+			{
+				var tempArr=[];
+				//遍历对象
+				for (var  key in params) 
+				{
+					var item=params[key];
+					//追加到数组 拼接键值对
+					tempArr.push(key+"="+item);
+				}
+			};
+
+			if (method=="GET") 
+			{
+				url+="?"+params;
+			};
+
+			var data=null;
+			if (method=="POST") 
+			{
+				xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				data=params;
+			};
+			
+			params=params ||null;
+
+			xhr.onreadystatechange=function()
+			{
+				
+				if(this.readyState!==4) 
+				return;
+				//你告诉我做什么
+				done(this.responseText);
+
+
+			};
+
+			xhr.send(data);
+			
+		};
+
+		//调用者
+
+		var onDone=function(res)
+		{
+			console.log("哈哈哈哈");
+			console.log('嘿嘿嘿嘿嘿嘿');
+			console.log(res);
+			console.log("做完了");
+		};
+
+		ajax("GET","https://api.github.com/users",{},onDone);
+
+	</script>
+</body>
+</html>

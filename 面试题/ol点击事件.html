@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ol>
+		<li id="1"></li>
+		<li id="2"></li>
+		<li id="3"></li>
+	</ol>
+</body>
+<script type="text/javascript">
+		
+		var nodes=document.getElementsByTagName("li");
+		for (var i = 0; i < nodes.length; i++) 
+		{
+			nodes[i].addEventListener("click",function()
+				{
+					console.log(i);
+				});
+		}
+	
+	
+
+</script>
+</html>

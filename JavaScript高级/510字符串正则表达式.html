@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+		//g 全局匹配
+	 var str="中国移动:10086,中国联通:10010,中国电信:10000";
+       //把里面所有的数字全部显示出来
+       var array=str.match(/\d{5}/g);
+       console.log(array);
+
+
+       //提取这里面的日 先用（）分组 然后拿到对应的组
+       var str="2017-11-12";
+       var array=str.match(/(\d{4})[-](\d{2})[-](\d{2})/g);
+       //console.log(array);
+       //正则表达式对象.$3
+       console.log(RegExp.$3);
+
+
+       //所有的 h都替换成S
+       var str="HhapphH";
+       str=str.replace(/[h]/gi,"S");//i忽略大小写 g全局
+       console.log(str);
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

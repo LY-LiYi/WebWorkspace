@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//求数组中所有数的和的平均值
+		var arr=[10,20,30];
+		var sum=0;
+		for(var i=0;i<=arr.length;i++)
+		{
+			sum=sum+arr[i];
+		}
+
+		console.log(typeof(sum));
+		console.log(sum);
+		var avg=sum/arr.length;
+		console.log(typeof(avg));
+		console.log(avg);
+
+		console.log("---------------");
+		// 求数组的最大值和最小值 并输出其位置
+		var array=[10,20,30,0,-20]
+		var max=array[0];
+		var min=array[0];
+		var maxindex=0;
+		var minindex=0;
+
+		for(var i=0;i<array.length;i++)
+		{
+			//遍历数组判断数组的大小
+			if(array[i]>max)
+			{
+				max=array[i];
+				maxindex=i;
+			}
+			if(array[i]<min)
+			{
+				min=array[i];
+				minindex=i;
+			}
+
+		}
+
+		console.log(min);
+		console.log(max);
+		console.log(minindex);
+		console.log(maxindex);
+		console.log("---------------");
+
+		// 将字符串数组用|或其他符号分割
+		var  array1=["吕布","赵云","典韦","关羽","马超"];
+		var str=array1[0];
+		for(var i=1;i<array1.length;i++)
+			str+="|"+array1[i];
+
+		console.log(str);
+		console.log("---------------");
+
+		// 反转数组
+		var  arrayy=["吕布","赵云","典韦","关羽","马超"];
+		var newArray=[];
+
+		for(var i=arrayy.length-1;i>=0;--i)
+		{
+			newArray[newArray.length]=arrayy[i];
+		}
+
+		console.log(newArray);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		//DOM作用：操作页面的元素
+		//根据id获取元素
+		document.getElementById("id属性的值");
+		//根据标名获取元素
+		document.getElementsByTagName("标签名");
+		//根据name属性获取元素-----表单常用
+		document.getElementsByName("name属性的值");
+		//根据类样式名字获取元素
+		document.getElementsByClassName("类样式的名字");
+		//根据选择器获取元素------id选择器，类选择器，标签选择器
+		document.querySelector("选择器");
+		document.querySelectorAll("选择器");//-----多个的
+
+		// jQuery中获取元素的方式：
+		// $("选择器")------jQuery对象
+
+		//页面加载事件
+		$(function()
+		{
+			//根据id选择器获取按钮，添加点击事件，修改按钮的value属性值
+
+			$("#btn").click(function()
+				{
+					// this.value="哈哈哈";//DOM的写法
+					$(this).val("哈哈哈哈 打不赢我吧");
+					console.log($(this).val());
+				});
+		});
+	</script>
+</head>
+<body>
+	<input type="button" value="显示效果" id="btn">
+</body>
+</html>

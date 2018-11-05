@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+		
+		<button id="btn">修改文本框的值</button><br>
+
+		<input type="button" name="" value="lalal"><br/>
+		<input type="text" name=""><br/>
+		<input type="text" name=""><br/>
+		<input type="text" name=""><br/>
+		<input type="text" name=""><br/>
+		<input type="text" name=""><br/>
+		<input type="text" name=""><br/>
+		<input type="text" name=""><br/>
+		<input type="text" name=""><br/>
+		<input type="text" name=""><br/>
+
+
+<script type="text/javascript">
+		
+		document.getElementById("btn").onclick=function()
+		{
+
+			var inputs=document.getElementsByTagName('input');
+
+			for (var i = 0; i < inputs.length; i++)
+			 {
+			 	//进行判断
+			 	if(inputs[i].type!="button")
+				inputs[i].value="哈哈哈"
+			}
+
+
+
+
+		}
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

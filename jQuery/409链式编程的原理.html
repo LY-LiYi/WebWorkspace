@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	
+	function Person(age) 
+	{
+		this.age=age;
+		this.shuijiao=function(txt)
+		{
+			if(txt)
+			{
+				console.log("睡觉"+txt);
+				return this;//返回当前对象
+			}
+			else
+			{
+				console.log("睡觉了");
+				
+			}
+			
+		};
+		this.qichuang=function(txt)
+		{
+			if(txt)
+			{
+				console.log("起床了"+txt);
+				return this;
+			}
+			else
+			{
+				console.log("起床了");
+			}
+		};
+
+	};
+
+	var one=new Person(10);
+	//因为方法里面返回了当前对象 所以可以继续调用方法
+	one.shuijiao("嘻嘻").qichuang("哈哈");
+</script>
+</html>

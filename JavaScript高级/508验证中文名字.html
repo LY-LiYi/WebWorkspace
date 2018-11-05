@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	请输入你的名字 <input type="text" name="" id="username">*<br>
+	<script type="text/javascript">
+		//如果输入的是中文名字 背景色为绿色 否则为红色
+		document.getElementById("username").onblur=function()
+		{
+			var reg=/[\u4e00-\u9fa5]{2,6}/;
+			if(reg.test(this.value))
+			{
+				this.style.backgroundColor="green";
+			}
+			else
+			{
+				this.style.backgroundColor="pink";
+			}	
+		}
+	</script>
+</body>
+</html>

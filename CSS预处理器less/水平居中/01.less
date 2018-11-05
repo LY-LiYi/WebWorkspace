@@ -1,0 +1,25 @@
+*
+{
+	margin: 0px;
+	padding: 0px;
+}
+@import "mixin/juzhong.less";
+#wrap
+{
+	position: relative;
+	width: 300px;
+	height: 300px;
+	border: 1px solid;
+	margin: 0 auto;
+	.inner
+	{
+		&:nth-child(1)
+		{
+			.juzhong(100px,100px,pink);
+		}
+		&:nth-child(2)
+		{
+			.juzhong(50px,50px,green);
+		}
+	}
+}

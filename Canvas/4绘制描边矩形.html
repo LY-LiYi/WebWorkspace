@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<canvas id="drawing" width="300" height="300"></canvas>
+</body>
+<script type="text/javascript">
+	
+	var drawing=document.getElementById("drawing");
+
+	if(drawing.getContext)
+	{
+		
+		var context=drawing.getContext("2d");
+
+		//绘制红色矩形
+
+		//设置填充颜色
+		context.strokeStyle="#ff0000";
+		//从0,0开始绘制 50,50终止
+		context.strokeRect(10,10,50,50);
+
+		context.strokeStyle="rgba(0,0,255,0.5)";
+		context.strokeRect(30,30,100,100);
+
+		
+	}
+
+</script>
+</html>

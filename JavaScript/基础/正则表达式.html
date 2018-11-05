@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+			
+		// var a="bbbaacaaaaddddaaaaeeeeeeee";
+		// var a=a.split(/a+/);//删除字符串里面的a
+		// console.log(a);
+
+		// var str="abcde";
+
+		// console.log(str.indexOf('cd'));
+		// //indexOf方法是查找第一次出现的位置
+		// console.log(str.search('cd'));
+		// //search是用来寻找字符会字符串在父字符中的位置
+		// console.log(str.search(/cd/));
+
+		// var a="aaaa   o  o  bbb  aaa " //查找o  o在父字符串的位置
+		// console.log(a.search(/o  o/));
+
+
+		// var a="abbcccbbbbbbdddbbbdabbb";
+		// var b=a.match(/b+/g);//g代表全局搜索
+		// console.log(b);
+		// console.log(a.match('bb'));
+
+
+
+		// var c="aaaa  o  o  bbb  o        o  aaao    osssss";
+		// console.log(c.match(/o\s+o/g));//  /s匹配所有的空白符
+		// var d='www.baidu.cn';
+		// console.log(d.replace(/baidu\.cn/,'163.com'));
+		// console.log(d.replace(/baidu\.cn/,function(){return '163.com';}));
+		//去空格
+		var str=prompt("请输入")
+		// console.log(str.replace(/\s+/g,''));
+
+		//函数的方式  封装
+		function zhengze(str){
+			function lalala(){
+			return /\s+/g;
+		}
+
+		function hahaha(){
+			return '';
+		}
+		console.log(str.replace(lalala(),hahaha()));
+		}
+		
+		zhengze(str);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

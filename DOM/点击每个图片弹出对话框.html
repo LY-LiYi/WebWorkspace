@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		img{
+			width: 200px;
+			height: 150px;
+		}
+	</style>
+</head>
+<body>
+	<img src="images/1.jpg" id="im1">
+	<img src="images/2.jpg" id="im2">
+	<img src="images/3.jpg" id="im3">
+	<img src="images/4.jpg" id="im4">
+
+
+	<script type="text/javascript">
+		
+		// 根据标签的名字获取图片标签，分别注册点击事件
+
+		var imgobj=document.getElementsByTagName("img");
+
+		//循环遍历数组，获取每个图片的标签，注册点击事件
+		for (var i = 0; i < imgobj.length; i++) {
+			imgobj[i].onclick=function()
+			{
+				alert("被点击了");
+			}
+		}
+
+	</script>
+</body>
+</html>

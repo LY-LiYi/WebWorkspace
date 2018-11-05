@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		
+	$(function(){
+		$("#btn").click(function()
+			{
+				//设置div的样式
+
+				//第一种写法
+				$("#dv").css('width','300px');
+				$("#dv").css('height','300px');
+				$("#dv").css('backgroundColor','pink');
+				$("#dv").css('border','2px solid blue');
+				//第二种写法：链式编程
+				$("#dv").css('width','300px').css('height','300px').css('backgroundColor','pink').css('border','2px solid blue');
+				//第三种写法 键值对的方法
+				var json={"width":"200px","height":"100px","backgroundColor":"pink","border":"1px solid blue"};
+				$("#dv").css(json);
+
+			});
+	});
+
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="显示效果" id="btn">
+	<div id="dv"></div>
+</body>
+</html>

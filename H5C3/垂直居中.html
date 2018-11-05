@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.father
+		{
+			width: 300px;
+			height: 300px;
+			border: 1px solid red;
+			position: relative;
+		}
+		.son
+		{
+			width: 150px;
+			height: 150px;
+			background-color: black;
+			position: absolute;
+			/*top: 50%;
+			left: 50%;
+			margin-top: -75px;
+			margin-left: -75px;*/
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		div
+		{
+			width: 20px;
+			height: 20px;
+		}
+		.blue
+		{	
+			color: blue;
+		}
+		.red
+		{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son">
+			
+		</div>
+	</div>
+
+	<div class="blue red" style="margin-bottom: 30px">
+		123
+	</div>
+	<div class="red blue">
+		 123
+	</div>
+</body>
+</html>

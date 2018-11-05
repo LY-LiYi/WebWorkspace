@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+
+	// 作用域链
+		
+		var color="blue";
+
+		function changecolor()
+		{
+			console.log(color);
+			if(color=="blue")
+			{
+				color="red";
+			}
+			else
+			{
+				color="blue";
+			}
+		}
+
+		changecolor();
+
+		console.log("Color is now----"+color);	
+
+		//闭包
+
+		var name = "The Window";
+
+	　　var object = {
+	　　　　name : "My Object",
+
+	　　　　getNameFunc : function()
+			{
+				//当前 function的this指向是window
+		　　　　　　return function()
+					{
+		　　　　　　　　return this.name;//输出 The Window
+		　　　　　　};
+		　　}
+	　　};
+
+	　　alert(object.getNameFunc()());
+
+		var name = "The Window";
+
+	　　var object = {
+	　　　　name : "My Object",
+
+	　　　　getNameFunc : function()
+			{
+	　　　　　　var that = this;
+	　　　　　　return function()
+					{
+						//当前 function的that指向是objece对象
+	　　　　　　　　		return that.name;//输出 My Object
+	　　　　　　　　};
+	　　　　　}
+	　　};
+
+	　　alert(object.getNameFunc()());
+
+
+		// 变量和函数提升
+
+		var a = 100;
+		function test(){
+		    console.log(a);
+		    
+		    console.log(a);
+		    console.log(this.a);
+		    var a;
+		}
+		test();
+
+</script>
+</html>

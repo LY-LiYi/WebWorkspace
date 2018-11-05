@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div
+		{
+			width: 200px;
+			height: 100px;
+			background-color: indianred;
+			margin-top: 30px;
+			position:  absolute;
+			left: 100px;
+			top: 200px;
+		}
+	</style>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		//点击按钮设置div的left和top的值是原来的2倍
+		$(function()
+		{
+			$("#btn").click(function()
+				{
+					// //获取left和top 获取的仍然是字符串类型
+					var l=$("#dv").css("left");
+					var t=$("#dv").css("top");
+					var left1=parseInt(l)*2;
+					var top1=parseInt(t)*2;
+					$("#dv").css("left",left1+"px");
+					$("#dv").css("top",top1+"px");
+
+					// 该方法得到的是一个对象，改对象中有left和top属性 left和top包含left和margin-left和top和margin-top的值
+					console.log($("#dv").offset());
+
+					$("#dv").css('left', $("#dv").offset().left*2);
+					$("#dv").css('top', $("#dv").offset().top*2);
+
+					$("#dv").offset({"left":500},{"top":250});
+				});
+		});
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="显示效果" id="btn">
+	<div id="dv"></div>
+</body>
+</html>

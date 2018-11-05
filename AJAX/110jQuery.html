@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		
+		// $(function()
+		// 	{
+		// 		$.ajax("https://api.github.com/users",
+		// 			{
+		// 				type: "GET",//请求方法
+		// 				success：function(res)
+		// 				{
+		// 					//拿到响应体
+		// 					console.log(res);
+		// 				},
+		// 			});
+		// 	});
+
+		$(function()
+			{
+				$.ajax({
+					url: 'https://api.github.com/users',
+					type: 'GET',
+					//用于提交到服务器的参数 如果是get请求就通过url传递
+					// post请求就通过请求体传递
+					data: {'id': 1,"login": "mojombo"},
+					//设置响应体的类型
+					datatype: "json",
+					success: function(res)
+					{
+						console.log(res);
+					}
+				});
+
+			});
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

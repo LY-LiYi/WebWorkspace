@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		// 验证手机号
+		//	11位{11}
+		//	第一位是1  ^1
+		//	都是数字   [0-9] \d
+		//	
+
+
+		//var  tel=prompt('请输入手机号');
+
+
+		// var panduan=/^1[34578]\d{9}$/;
+
+		// if(panduan.test(tel))
+		// {
+		// 	alert(tel);
+		// }
+		// else
+		// {
+		// 	alert("失败");
+		// }
+
+		//验证邮箱
+		// 要有@ @不需要转义
+		//  .在@后面
+		// @前面字符串最少一位
+		//@前面不能有特殊符号
+		//只能有1个@
+		// 不能有空格
+		//以字母开头 以字母结尾
+		// @与.之间有字符
+
+		// var reg=/^\w+@\w+\.[a-z]{2,3}$/;
+		// var  email=prompt('请输入邮箱');
+
+		// console.log(reg.test(email));
+
+
+		console.log(/^[\u4e00-\u9fa5]+$/.test('嘻嘻嘻'));
+		console.log(/^[\u4e00-\u9fa5]+$/.test('xixixi'));
+
+		function repeat(char,n)
+		{
+				var str="";
+				while(true)
+				{
+					if(n%2==1)
+					{
+						str+=char;
+					}
+					if(n==0)
+					{
+						break;
+					}
+					char=char+char;
+					n=parseInt(n/2);
+				}
+				return str;
+		}
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

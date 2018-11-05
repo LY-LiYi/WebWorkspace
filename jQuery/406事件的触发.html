@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		//文本框获取焦点的事件
+		$(function(){
+			$("#txt").focus(function()
+			{
+				console.log('我的获取焦点的事件触发了');
+				//设置当前元素的下一个兄弟显示提示信息
+				$(this).next("span").text("文本框获取焦点了");
+			});
+
+			//按钮的点击事件
+			$("#btn").click(function() 
+			{
+				//调用文本框获取焦点的事件
+				//对象.事件名字
+				// $("#txt").focus();
+				$("#txt").trigger("foucus");
+			});
+		});	
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="我要触发文本框的获取焦点的事件" id="btn">
+	<input type="text" name="" value="" id="txt">
+	<span id="sp"></span>
+
+</body>
+</html>

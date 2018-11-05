@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<textarea name="textda" id="" cols="30" rows="10">
+		这个世界就是这么疯狂，你不同意，我就让你注册。
+	</textarea>
+	<input type="button" value="请你仔细阅读协议(5s)" id="btn" disabled="disabled">
+	
+	<script type="text/javascript">
+		//设置一个时间变量用来倒计时
+		var  time=5;
+		var timeid=setInterval(function(){
+			
+			time--;
+			document.getElementById("btn").value="请你仔细阅读协议("+time+"s)";
+			if(time<=0)
+			{
+				//停止定时器
+				clearInterval(timeid);
+				//按钮可以被点击了
+				document.getElementById("btn").disabled=false;
+				document.getElementById("btn").value="同意";
+			};
+		},1000);
+	</script>
+</body>
+</html>

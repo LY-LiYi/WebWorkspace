@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+	<script type="text/javascript">
+	
+	var a = 10;
+
+	function test(){
+	    a = 100;
+	    console.log(a);//100
+	    console.log(this.a);//10
+	    var a;
+	    console.log(a);//100
+	}
+
+	test();
+
+
+	//任意数字求和
+	function sum()
+	{
+		var total=null;
+		for (var i = 0; i <arguments.length; i++) 
+		{
+			item=arguments[i];
+			item=parseFloat(item);
+
+			!isNaN(item)?total+=item:null;
+
+		}
+
+			return total;
+	}
+
+	console.log(sum(1,2,3));
+
+
+
+
+	console.log(f);//=> 报错 f is not defined
+	console.log(window.f);//-> underfind
+	console.log('f' in window);//=>flase
+	f=12;
+	console.log(f);//=>12
+	console.log(window.f);//=>12
+
+
+	console.log(a,b);// underdind underfind
+	var a=12;
+		b=12;
+
+	function fn()
+	{
+		console.log(a,b);// underfind 12
+		//此时的 b不带 var为全局变量  函数内部没有声明 作用域链的问题 全局变量 b变成了13
+		var a=b=13;
+		console.log(a,b);// 13 13
+	}
+
+	fn();
+
+
+
+
+
+</script>
+</html>

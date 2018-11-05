@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+
+		let stt='https://www.baidu.com';
+
+		if(stt.startsWith('http://'))
+		{
+			alert('普通网址');
+		}
+		else if(stt.startsWith('https://'))
+		{
+			alert('加密网址');
+		}
+		else if(stt.startsWith('git://'))
+		{
+			alert('github地址');
+		}
+		else if(stt.startsWith('svn://'))
+		{
+			alert('svn地址');
+		}
+		else
+		{
+			alert('其他地址');
+		}
+
+	</script>
+</body>
+</html>

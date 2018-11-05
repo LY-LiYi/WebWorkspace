@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.user
+		{
+			display: flex;
+			background-color: #f4f4f4;
+			padding: 10px;
+			margin-bottom: 10px;
+		}
+		.user li
+		{
+			list-style: none;
+		}
+		img
+		{
+			width: 70px;
+			height: 70px;
+		}
+	</style>
+</head>
+<body>
+	<button id="button">请求Github接口</button>
+	<br>
+	<h1>所有Github的用户信息</h1>
+	<div id="users"></div>
+
+
+	<script type="text/javascript">
+		document.getElementById("button").onclick=function()
+		{
+			
+			var xhr=new XMLHttpRequest();
+			xhr.open("GET","https://api.github.com/users");
+			xhr.send();
+
+
+			xhr.onreadystatechange=function()
+			{
+				if(this.readyState===4&this.status===200)
+				{
+					var users=JSON.parse(this.responseText);
+					var data="";
+					for (key in users)
+					{
+						data+="<div class='user'><img src='"+users[key].avatar_url+"'><ul><li>ID:"+users[key].id+"</li><li>Login:"+users[key].login+"</li></ul></div>";
+					}
+					document.getElementById("users").innerHTML=data;
+					}
+			};
+		};
+	</script>
+</body>
+</html>

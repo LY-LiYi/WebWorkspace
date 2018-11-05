@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 300px;
+			height: 200px;
+			background-color: pink;
+		}
+	</style>
+	<script type="text/javascript">
+		// 随机产生一个16进制的颜色值
+
+		function getColor(){
+
+			var str="#";
+			var arr=["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","f"];
+
+			for(var i=0;i<6;i++)
+			{
+				//产生的每个随机数都是一个索引 根据索引找到数组对应的值 然后拼接
+				var num=parseInt(Math.random()*16);
+				 str+=arr[num];
+			}
+			return str;
+		}	
+
+		window.onload=function(){
+			document.getElementById("id").style.background=getColor();
+		}
+	</script>
+</head>
+<body>
+	<div id="id"></div>
+</body>
+</html>

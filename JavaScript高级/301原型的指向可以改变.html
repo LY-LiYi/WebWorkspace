@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		// //构造函数中的this就是实例对象
+		// function Person(age)
+		// {	
+		// 	this.age=age;
+		// 	console.log(this);
+		// };
+		// //原型对象中方法中的this就是实例对象
+		// Person.prototype.eat=function()
+		// {
+		// 	console.log(this);
+		// 	console.log("你吃了没");
+		// };
+
+
+		// function Student()
+		// {
+
+		// };
+		// Student.prototype.study=function()
+		// {
+		// 	console.log("天天学习");
+		// };
+
+		// Student.prototype={
+		// 	eat:function()
+		// 	{
+		// 		console.log("xiix");
+		// 	}
+		// };
+		// var stu=new Student();
+		// stu.eat();
+		// stu.study();
+
+		//人的构造函数
+		function Person(age)
+		{
+			this.age=age;
+		};
+		//人的原型对象方法
+		Person.prototype.eat=function()
+		{
+			console.log("人的吃");
+		};
+		//学生的构造函数
+		function Student()
+		{
+
+		};
+		Student.prototype.sayhai=function()
+		{
+			console.log("嗨");
+		};
+		//学生的原型对象，指向了一个人的实例对象  原型对象改变了指向
+		Student.prototype=new Person(10);
+
+		var stu=new Student();
+		stu.eat();
+
+
+
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

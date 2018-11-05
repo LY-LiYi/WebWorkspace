@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.cls
+		{
+			width: 300px;
+			height: 100px;
+			background-color: pink;
+		}
+		.cls2
+		{
+			border: 2px solid red;
+		}
+	</style>
+	<script src="../jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+		$(function()
+		{
+			$("#btn").click(function()
+			{
+				// 为div设置类样式 同时应用多个类样式
+				// $("#dv").addClass('cls').addClass('cls2');
+				// $("#dv").addClass('cls cls2');
+
+				$("#dv").removeClass('cls cls2');
+
+			});
+		});
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="显示效果" id="btn">
+	<div id="dv" class="cls cls2"></div>
+</body>
+</html>

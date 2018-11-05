@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div
+		{
+			width: 300px;
+			height: 600px;
+			border: 2px solid pink;
+		}
+	</style>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+			
+			//根据数组 动态创建一个列表，并且列表有高亮显示，点击按钮实现该功能，在div中
+
+			var names=["哈哈","嘻嘻","啦啦啦","哈哈","哦哦哦","恩恩","嘻嘻","为什么","为什么","我也不晓得啊"];
+			
+			$(function()
+			{
+				$("#btn").click(function()
+					{
+						//创建列表ul加入到div中同时保存这个ul标签对象
+						var ulObj=$("<ul></ul>").appendTo($("#dv"));
+						//遍历数组，动态的创建列表
+						for (var i = 0; i < names.length; i++)
+						 {
+						 	//创建li 并且加入到li中
+							$("<li>"+names[i]+"</li>").appendTo(ulObj).mouseenter(function() 
+							{
+								$(this).css('backgroundColor', 'pink');
+							}).mouseleave(function() 
+							{
+								$(this).css('backgroundColor', '');
+							});
+						};
+
+					});
+			});
+
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="啦啦啦" id="btn">
+	<div id="dv"></div>
+</body>
+</html>

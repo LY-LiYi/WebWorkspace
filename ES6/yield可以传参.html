@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function * show(num1,num2)
+		{
+			alert(`${num1},${num2}`);
+			alert('a');
+
+			let a=yield;
+
+			alert('b');
+			alert(a);//弹出 5
+		}
+
+		let gen=show(99,88);
+
+		gen.next(12);//没法给 yield 传参 可以通过函数来传参
+		gen.next(5); 
+		
+	</script>
+</body>
+</html>

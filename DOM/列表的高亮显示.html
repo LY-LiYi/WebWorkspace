@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ul{
+			list-style: none;
+			/*鼠标小手*/
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>大广高速 事故</li>
+		<li>朝鲜停止核试验</li>
+		<li>漫威 道歉</li>
+		<li>周杰伦晒儿子全名</li>
+		<li>911嫌犯在叙被捕</li>
+		<li>四川茂县 地震</li>
+		<li>比特币大盗 越狱</li>
+	</ul>
+
+	<script src="common.js"></script>
+	<script type="text/javascript">
+			// 鼠标进入和鼠标离开的两个事件
+			//获取所有的li标签
+		var list=document.getElementsByTagName("li");
+
+		for (var i = 0; i < list.length; i++) 
+		{
+			//为li注册鼠标进入事件
+			list[i].onmouseover=function()
+			{
+				this.style.backgroundColor="pink";
+			}
+			//为li注册鼠标离开事件
+			list[i].onmouseout=function()
+			{
+				//恢复到标签默认颜色
+				this.style.backgroundColor="";
+			}
+		}
+
+	</script>
+</body>
+</html>

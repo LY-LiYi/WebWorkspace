@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		//创建正则表达式对象
+		//两种
+		//通过构造函数创建对象
+
+		var reg=new RegExp(/\d{5}/);//对象创建完毕---没有正则表达式的对象
+		var str="我的电话是10086";
+		//调用方法验证字符串是否匹配
+		var flag=reg.test(str)
+		console.log(flag);
+
+		//字面量的方式创建正则表达式对象
+		var reg=/\d{1,5}/;
+		var flag=reg.test("我的幸运数字:66");
+		console.log(flag);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

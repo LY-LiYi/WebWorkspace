@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<style type="text/css">
+  #dv{
+    width: 300px;
+    height:200px;
+    position: absolute;
+    left:300px;
+    top:100px;
+  }
+  .strengthLv0 {
+    height: 6px;
+    width: 120px;
+    border: 1px solid #ccc;
+    padding: 2px;
+  }
+
+  .strengthLv1{
+    background: red;
+    height: 6px;
+    width: 40px;
+    border: 1px solid #ccc;
+    padding: 2px;
+  }
+
+  .strengthLv2{
+    background: orange;
+    height: 6px;
+    width: 80px;
+    border: 1px solid #ccc;
+    padding: 2px;
+  }
+
+  .strengthLv3{
+    background: green;
+    height: 6px;
+    width: 120px;
+    border: 1px solid #ccc;
+    padding: 2px;
+  }
+</style>
+<body>
+<div id="dv">
+  <label for="pwd">密码</label>
+  <input type="text" id="pwd" maxlength="16"><!--课外话题-->
+  <div>
+    <em>密码强度：</em>
+    <em id="strength"></em>
+    <div id="strengthLevel" class="strengthLv0"></div>
+  </div>
+</div>
+<script src="common.js"></script>
+<script type="text/javascript">
+		//密码有数字，字母，特殊符号
+		// 只有数字或者字母或者特殊符号----1级
+		// 数字+字母 字母+特殊符号，数字+特殊符号---2级
+		// 三者都有---3级
+
+		//获取文本框注册文本框抬起事件
+		my("pwd").onkeyup=function()
+		{
+			//获取文本框中的内容进行验证，得到一个级别然后显示对应的颜色
+			//如果密码长度是小于6位是不判断的
+			// if(this.value.length>=6)
+			// {
+			// 	var lvl=getLVL(this.value);
+				
+			// 		document.getElementById("strengthLevel").className="strengthLv"+lvl;
+			// }
+			// else
+			// {
+			// 		document.getElementById("strengthLevel").className="strengthLv0";
+			// };
+			document.getElementById("strengthLevel").className="strengthLv"+(this.value>=6?getLVL(this.value):0);
+		};
+
+		//给我密码返回相应的级别
+			function getLVL(pwd)
+			{
+				var lvl=0;//默认为0级
+				//密码中是否有数字，字母或者特殊符号
+				if(/[0-9]/.test(pwd))
+				{
+					lvl++;
+				};
+				//判断密码中有没有字母
+				if(/[a-zA-Z]/.test(pwd))
+				{
+					lvl++;
+				};
+				if(/[^0-9a-zA-Z_]/.test(pwd))
+				{
+					lvl++;
+				};
+				return lvl;//1  3
+			};
+
+		// my("pwd").onkeyup=function()
+		// {
+		// 	//获取文本框中的内容进行验证，得到一个级别然后显示对应的颜色
+		// 	//如果密码长度是小于6位是不判断的
+		// 	if(this.value.length>=6)
+		// 	{
+		// 		var lvl=getLVL(this.value);
+		// 		if(lvl==1)
+		// 		{
+		// 			//弱
+		// 			document.getElementById("strengthLevel").className="strengthLv1";
+		// 		}
+		// 		else if(lvl==2)
+		// 		{
+		// 			document.getElementById("strengthLevel").className="strengthLv2";
+		// 		}
+		// 		else if(lvl==3)
+		// 		{
+		// 			document.getElementById("strengthLevel").className="strengthLv3";
+		// 		}
+		// 		else
+		// 		{
+		// 			document.getElementById("strengthLevel").className="strengthLv0";
+		// 		}
+		// 	};
+
+			
+				
+
+		// };
+
+		// //给我密码返回相应的级别
+		// 	function getLVL(pwd)
+		// 	{
+		// 		var lvl=0;//默认为0级
+		// 		//密码中是否有数字，字母或者特殊符号
+		// 		if(/[0-9]/.test(pwd))
+		// 		{
+		// 			lvl++;
+		// 		};
+		// 		//判断密码中有没有字母
+		// 		if(/[a-zA-Z]/.test(pwd))
+		// 		{
+		// 			lvl++;
+		// 		};
+		// 		if(/[^0-9a-zA-Z_]/.test(pwd))
+		// 		{
+		// 			lvl++;
+		// 		};
+		// 		return lvl;//1  3
+		// 	};
+
+
+
+</script>
+
+
+
+</body>
+</html>

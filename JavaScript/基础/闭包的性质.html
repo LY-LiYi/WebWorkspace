@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+		function outer()
+		{
+			var count=0;
+			function inner()
+			{
+				count ++;
+				console.log(count);
+
+			}
+			return inner;
+		}
+
+		var inn1=outer();
+		var inn2=outer();
+
+		inn1();
+		inn1();
+		inn1();
+		inn1();
+		inn2();
+		inn2();
+		inn1();
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

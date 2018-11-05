@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	/*css初始化*/
+		body,div,ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dd,input{
+			margin: 0;
+			padding: 0;
+			font: 12px simsun;
+		}
+		img{
+			border: 0 none;
+		}
+		li{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		input{
+			border: 0 none;
+			/*轮廓线*/
+			outline-style: none;
+		}
+		.fl{
+			float: left;
+		}
+		.fr{
+			float: right;
+		}
+		/*清除浮动*/
+		.clearfix:after{
+			content: "";
+			display: block;
+			height: 0;
+			line-height: 0;
+			visibility: hidden;
+			clear:both;
+		}
+		/*兼容ie浏览器*/
+		.clearfix{
+			zoom: 1;
+		}
+		/*头部开始*/
+		.head{
+			width: 980px;
+			height: 39px;
+			margin: 20px auto 0px;
+		}
+		.logo{
+			width: 179px;
+			height: 39px;
+		}
+		.search{
+			width: 195px;
+			height: 30px;
+			border: 1px solid #ececec;
+		}
+		.search input[type="text"]{
+			width: 165px;
+			height: 30px;
+			/*顶部对齐*/
+			vertical-align: top;
+		}
+		.search input[type="botton"]{
+			width: 30px;
+			height: 30px;
+			vertical-align: top;
+			background: url("images/上合/search2.jpg");
+		}
+		.nav{
+			height: 55px;
+			background: url("images/上合/nav_bg.png");
+			border-top: 1px solid #bbb;
+		}
+		.nav-con{
+			width: 980px;
+			height: 55px;
+			margin: 0 auto;
+		}
+		.nav-con li{
+			float: left;
+		}
+		.nav-con li a{
+			display: inline-block;
+			height: 55px;
+			font: 700 12px/55px 宋体;
+			color: #000;
+			padding: 0  30px;
+			background: url("images/上合/nav_bg-line.png") no-repeat right;
+		}
+		.nav-con li a:hover{
+			color: #7cb609;
+		}
+		/*头部结束*/
+		/*banner部分开始*/
+		.banner{
+			width: 980px;
+			height: 597px;
+			margin: 0 auto;
+		}
+		/*banner部分结束*/
+		/*信息部分开始 */
+		.mes{
+			height: 32px;
+			background: #fbfbfb;
+			border-top: 1px solid #EFEFEF; 
+			border-right: : 1px solid #EFEFEF; 
+			margin-bottom: 15px;
+		}
+		.mes-con{
+			width: 980px;
+			height: 32px;
+			margin: 0 auto;
+		}
+		.mes-con-left{
+			height: 32px;
+			line-height: 32px;
+		}
+		.mes-con-right{
+			height: 16px;
+			margin-top: 8px;
+		}
+		/*信息部分结束 */
+		/*新闻部分开始*/
+		.news{
+			width: 980px;
+			margin: 15px  auto;
+		}
+		.news-left,.news-cen,.news-right{
+			border: 1px solid #e4e4e4;
+			height: 224px;
+		}
+		.news-left{
+			width: 310px;
+			position: relative;	
+		}
+		.news-cen{
+			width: 373px;
+			margin-left: 10px;
+		}
+		.news-right{
+			width: 268px;
+		}
+		/*新闻左盒子开始*/
+		.pro{
+			margin: 14px 0px 0px 6px;
+			color: #7AB800;
+		}
+		.pro img{
+			vertical-align: middle;
+		}
+		.pro-pic{
+			position: absolute;
+			left: 52px;
+			top: 50px;
+		}
+		.sj-left{
+			position: absolute;
+			left: 23px;
+			bottom: 90px
+		}
+		.sj-right{
+			position: absolute;
+			left: 280px;
+			bottom: 90px;
+		}
+		/*新闻左盒子结束*/
+		/*新闻中间盒子开始*/
+		.news-cen ul {
+			margin: 10px 17px 0px;
+		}
+		.news-cen ul li{
+			height: 27px;
+			line-height: 27px;
+			border-bottom: 1px dashed #DCDCDC;
+		}
+		.news-cen ul li a{
+			color: #000
+		}
+		.news-cen ul li a.first{
+			color: #ff0000;
+			/*加粗*/
+			font-weight: 700;
+		}
+		/*新闻中间结束*/
+		/*新闻右侧开始*/
+		.news-right .tec{
+			margin: 10px 0px 30px 28px; 
+		}
+		.news-right .tec  li{
+			height: 12px;
+			margin-top: 10px;
+			border-left: 3px solid #7AB800;
+			line-height: 12px;
+			padding-left: 5px;
+		}
+		.news-right p{
+			margin-left: 28px;
+			/*1.5倍行高*/
+			line-height: 18px;
+		}
+		/*新闻右侧结束*/
+		/*底栏开始*/
+		.footer{
+			height: 280px;
+			background: #2D2D2D;
+			border-bottom: 1px dashed #414141;
+		}
+		.footer-con{
+			width: 980px;
+			margin: 0 auto;
+		}
+		.footer-con dl{
+			float: left;
+			margin-top: 15px;
+			margin-right: 40px;
+		}
+		.footer-con dl dt{
+			color: #c0c0c0;
+		}
+		.footer-con dl dd{
+			color: #707070;
+			margin-top: 20px;
+		}
+		/*底栏结束*/
+		/*底部开始*/
+		.bot{
+			height: 84px;
+			background: #2D2D2D;
+			text-align: center;
+			padding-top: 30px;
+		}
+		/*底部结束*/
+	</style>
+</head>
+<body>
+	<!-- .head>.logo>image[src="images/shanghe/logo.png"]+^.search>input[type="text"]+input[type="botton"] -->
+	<!-- 头部部分-->
+	<div class="head">
+		<div class="logo fl">
+			<image src="images/上合/logo.jpg"></image>
+		</div>
+		<div class="search fr"><input type="text" value="请输入..."><input type="botton"></div>
+	</div>
+	<div class="nav">
+		<div class="nav-con">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">智能手机</a></li>
+				<li><a href="#">平板电脑</a></li>
+				<li><a href="#">配镜</a></li>
+				<li><a href="#">服务支持</a></li>
+				<li><a href="#">关于上合</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 头部部分结束 -->
+	<!-- banner部分开始 -->
+	<div class="banner">
+		<img src="images/上合/banner.jpg" alt="">
+	</div>
+	<!-- banner部分结束 -->
+	<!-- 信息部分开始 -->
+	<div class="mes">
+		<div class="mes-con">
+			<div class="mes-con-left fl">中国一家专注于智能硬件、智能家居以及软件开发的企业</div>
+			<div class="mes-con-right fr">
+				<img src="images/上合/zone.png" alt="">
+				<img src="images/上合/weibo.png" alt="">
+				<img src="images/上合/xinlang.png" alt="">
+				<img src="images/上合/renren.png" alt="">
+			</div>
+		</div>
+	</div>
+	<!-- 信息部分结束 -->
+	<!-- 新闻部分开始 -->
+	<div class="news clearfix">
+		<!-- 新闻左盒子开始 -->
+		<div class="news-left fl">
+			<div class="pro">
+				<img src="images/上合/o.jpg">
+				新品发布
+			</div>
+			<div class="pro-pic"><img src="images/上合/home_hot_01.png">
+			</div>
+			<div class="sj-left"><img src="images/上合/left.png"></div>
+			<div class="sj-right"><img src="images/上合/right.png"></div>
+		</div>
+		<!-- 新闻左盒子结束 -->
+		<!-- 新闻中间盒子开始 -->
+		<div class="news-cen fl">
+			<div class="pro">
+				<img src="images/上合/o.jpg">
+				新品中心
+			</div>
+			<ul>
+				<li><a href="#" class="first">骁龙845 + 8GB + 256GB</a></li>
+				<li><a href="#">AI 超感光双摄，百分相机</a></li>
+				<li><a href="#">手机中的艺术品</a></li>
+				<li><a href="#">AI 相机</a></li>
+				<li><a href="#">“小爱同学”语音助理</a></li>
+				<li><a href="#">AI 人脸解锁</a></li>
+			</ul>
+		</div>
+		<!-- 新闻中间盒子结束 -->
+		<!-- 新闻右盒子开始 -->
+		<div class="news-right fr">
+			<div class="pro">
+				<img src="images/上合/o.jpg">
+				技术与支持
+			</div>
+			<div class="tec">
+				<ul>
+					<li>售后服务</li>
+					<li>投诉与建议</li>
+					<li>联系网点</li>
+					<li>常见问题FAQ</li>
+				</ul>
+			</div>
+			<p>京ICP证110507号 京ICP备10046444号<br>  京公网安备11010802020134号<br>京网文[2014]0059-0009号</p>
+		</div>
+		<!-- 新闻右盒子结束 -->
+		<!-- 新闻部分结束 -->
+	</div>
+	<!-- 新闻部分结束 -->
+	<!-- 底栏开始 -->
+	<div class="footer">
+			<div class="footer-con">
+				<dl>
+					<dt>上合首页</dt>
+					<dd>返回首页</dd>
+				</dl>
+				<dl>
+					<dt>上合首页</dt>
+					<dd>返回首页</dd>
+				</dl>
+				<dl>
+					<dt>上合首页</dt>
+					<dd>返回首页</dd>
+				</dl>
+				<dl>
+					<dt>上合首页</dt>
+					<dd>返回首页</dd>
+				</dl>
+			</div>
+	</div>
+		<!-- 底栏结束 -->
+		<!-- 底部开始 -->
+	<div class="bot">
+		©mi.com 京ICP证110507号 京ICP备10046444号<br>
+		京公网安备11010802020134号 京网文[2014]0059-0009号<br>
+		违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试
+	</div>
+</html>

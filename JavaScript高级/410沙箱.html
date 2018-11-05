@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		
+		var num=30;//全局变量
+
+		// 自调用函数 ----沙箱
+		(function(){
+			var num=10;//局部变量
+			console.log(num);//num=10;
+		}());
+
+		console.log(num);//num=30
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

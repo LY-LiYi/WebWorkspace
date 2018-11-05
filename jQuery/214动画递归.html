@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-1.12.1.js"></script>
+	<script type="text/javascript">
+			
+			$(function()
+			{
+				$("#btn1").click(function()
+				{
+					$("div>img:last-child").hide(1000,function f1()
+					{
+						$(this).prev().hide(1000,f1);
+					});
+				});
+				$("#btn2").click(function()
+				{
+						$("div>img:first-child").show(1000,function f2()
+						{
+							$(this).next().show(1000,f2);
+						});
+				});
+			});
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="隐藏动画" id="btn1">
+	<input type="button" name="" value="显示动画" id="btn2">
+	<div>
+		<img src="images/bird.png">
+		<img src="images/bird.png">
+		<img src="images/bird.png">
+		<img src="images/bird.png">
+		<img src="images/bird.png">
+	</div>
+</body>
+</html>

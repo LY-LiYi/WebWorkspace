@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var xhr=new XMLHttpRequest();
+
+		xhr.open("GET","http://api.douban.com/v2/movie/top250");
+
+		xhr.send();
+
+		xhr.onreadystatechange=function()
+		{
+				console.log(this.readyState);
+				if(this.readyState!=4) return 
+				console.log(this.responseText);
+				
+		};
+	</script>
+</body>
+</html>

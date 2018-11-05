@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="修改性别" id="btn1">
+	<input type="radio" value="1" name="sex">男
+	<input type="radio" value="2" name="sex" id="rad1">女
+	<input type="radio" value="3" name="sex">保密
+
+	<script type="text/javascript">
+		
+	// 规律：在表单标签中 如果属性和值只有一个 并且值是这个属性本身 那么在写js代码 dom操作的时候 这个属性值是布尔类型就可以了
+
+		function my$(id)
+		{
+			return document.getElementById(id);
+		}
+		my$("btn1").onclick=function() 
+		{
+							// 因为checked判断的方法为：是否为非空字符串
+				my$("rad1").checked=true;
+		}
+
+	</script>
+	<br>
+
+	<input type="button" value="选择兴趣" id="btn2">
+	<input type="checkbox" value="1" name="xingqu">啦啦啦
+	<input type="checkbox" value="2" name="xingqu" id="ck1">嘻嘻嘻
+	<input type="checkbox" value="3" name="xingqu">哈哈哈
+	<input type="checkbox" value="4" name="xingqu">啊啊啊
+	<input type="checkbox" value="5" name="xingqu" id="ck2">呜呜呜 
+	<input type="checkbox" value="6" name="xingqu">嘤嘤嘤
+	<input type="checkbox" value="7" name="xingqu">喵喵喵
+
+	<script type="text/javascript">
+		function my$(id)
+		{
+			return document.getElementById(id);
+		}
+
+		my$("btn2").onclick=function()
+		{
+			my$("ck1").checked=true;
+			my$("ck2").checked=true;
+		}
+
+	</script>
+</body>
+</html>

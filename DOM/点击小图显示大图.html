@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a href="images/1.jpg" id="ak"><img src="images/1-small.jpg"></a>
+	<img src="" id="big">
+	
+	<script src="common.js"></script>
+	<script type="text/javascript">
+		//上面点击小图下面显示大图
+		//点击超链接
+
+		my("ak").onclick=function()
+		{
+			my("big").src=this.href;
+			return false;
+		}
+
+	</script>
+</body>
+</html>

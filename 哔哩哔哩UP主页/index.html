@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="CSS/index.css">
+</head>
+<body>
+	<nav>
+		<div class="nav-mask">
+			<div class="bili-wrapper">
+				<div class="nav-left">
+				<ul >
+					<li class="nav-left-home">
+						<a href="https://www.bilibili.com/" title="主站">
+						<i class="bili-icon"></i>
+							主站
+						</a>
+					</li>
+					<li class="nav-left-huayou">
+						<a href="https://h.bilibili.com/" title="画友" target="_Blank">画友</a></li>
+					<li class="nav-left-game">
+						<a href="https://game.bilibili.com/" title="游戏中心" target="_Blank">游戏中心</a>
+					</li>
+					<li class="nav-left-live">
+						<a href="https://live.bilibili.com/" title="直播" target="_Blank">直播</a>
+						<div class="live-box" >
+							<!-- 左侧 -->
+							<div class="live-box-left">
+								<p class="title">热门直播:</p>
+								<div class="live-box-left-b"></div>
+							</div>
+							<div class="live-box-right">
+								<p class="title title2">热门活动：</p>
+								<div class="live-box-right-b">
+									<a href="https://www.bilibili.com/blackboard/activity-summer1.html" target="_Blank">
+										<img src="images/4510194e068400e7048571dccb0d27bd767a5611.jpg">
+									</a>
+									<a href="https://www.bilibili.com/blackboard/activity-ryVfipjJX.html" target="_Blank">
+										<img src="images/8af37b3550575e5c4715a1de621acdf077753d0b.jpg">
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="nav-left-buy">
+						<a href="https://show.bilibili.com/platform/home.html?msource=pc_web" title="会员购" target="_Blank">会员购</a>
+					</li>
+					<li class="nav-left-bml">
+						<a href="https://bml.bilibili.com/2018/index.html#/" title="BML" target="_Blank">BML</a>
+					</li>
+					<li class="nav-left-bworld">
+						<a href="https://bw.bilibili.com/2018/index.html#/" title="BWORLD" target="_Blank">BW</a>
+					</li>
+					<li class="nav-left-dowload">
+						<i></i>
+						<a href="https://app.bilibili.com/" title="下载APP" target="_Blank">下载APP</a>
+						<div class="app-orcode-box" style="display: none">
+							<div class="app-orcode-box-Benefit">
+							</div>
+						</div>
+				</li>
+				</ul>
+				</div>
+				<div class="nav-right">
+					<div class="nav-search">
+							<input type="text" name="">
+							<button class="nav-search-button" type="submit"></button>
+					</div>
+					<ul class="nav-right-ul">
+						<li class="nav-right-item">
+							<a href="" class="nac-right-item-img">
+								<img src="images/a9d689e5e8021c5a6b367639edad5bc16ceeb5c6.jpg@72w_72h.png">
+								<i class="big-vip"></i>
+							</a>
+							<div class="nav-right-item-list" style="display: none;">
+								<div class="item-list-s">
+								</div>
+								<div class="item-list-u">
+									<div class="item-list-u-name">
+										<p>夜雨声烦QAAQ</p>
+										<a href="https://account.bilibili.com/account/big">大会员</a>
+									</div>
+									<div class="item-list-u-gold"></div>
+									<div class="item-list-u-grade">
+									</div>
+								</div>
+								<div class="item-list-menu">
+									<ul>
+										<li>
+											<a href="" class="item-list-per">
+												<i></i>
+												<span>个人中心</span>
+											</a>
+										</li>
+										<li>
+											<a href="" class="item-list-con">
+												<i></i>
+												<span>投稿管理</span>
+											</a>
+										</li>
+										<li>
+											<a href="" class="item-list-wal">
+												<i></i>
+												<span>B币钱包</span>
+											</a>
+										</li>
+										<li>
+											<a href="" class="item-list-live">
+												<i></i>
+												<span>直播中心</span>
+											</a>
+										</li>
+										<li>
+											<a href="" class="item-list-ord">
+												<i></i>
+												<span>订单中心</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="item-list-buttom">
+									<a href="">退出</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-right-vip"><a href="" >大会员</a></li>
+						<li class="nav-right-message">
+							<a href="" >消息</a>
+							<div class="nav-right-message-list" style="display: none">
+								<a href="https://message.bilibili.com/#/reply" target="_Blank">回复我的</a>
+								<a href="https://message.bilibili.com/#/at" target="_Blank">@我的</a>
+								<a href="https://message.bilibili.com/#/love" target="_Blank">收到的赞</a>
+								<a href="https://message.bilibili.com/#/system" target="_Blank">系统通知</a>
+								<a href="https://message.bilibili.com/#/whisper" target="_Blank">我的消息</a>
+							</div>
+						</li>
+						<li class="nav-right-state"><a href="" >动态</a></li>
+						<li class="nav-right-after"><a href="">稍后再看</a></li>
+						<li class="nav-right-collection"><a href="">收藏夹</a></li>
+						<li class="nav-right-hisetory"><a href="">历史</a></li>
+					</ul>
+				</div>
+				<div class="up">
+					<a href="https://member.bilibili.com/v2#/upload/video" target="_Blank" class="up-bg">投稿</a>
+					<ul class="up-nav" style="display: none">
+						<li>
+							<a href="https://member.bilibili.com/v2#/upload/text/edit" target="_Blank">
+								<i class="up-nav-i-columns" ></i>
+								<span>专栏投稿</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.bilibili.com/audio/submit/" target="_Blank">
+								<i class="up-nav-i-music"></i>
+								<span>音栏投稿</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://member.bilibili.com/v2#/upload/video/frame?inner_comp=b1cu9" target="_Blank">
+								<i class="up-nav-i-video"></i>
+								<span>视频投稿</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://member.bilibili.com/v2#/upload-manager/article" target="_Blank">
+								<i class="up-nav-i-management"></i>
+								<span>投稿管理</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://member.bilibili.com/v2#/home" target="_Blank">
+								<i class="up-nav-i-center"></i>
+								<span>创作中心</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+	</nav>
+	<div id="app">
+		<div class="h">	
+			<div class="wrapper">
+				<div class="h-user">
+					<div class="h-user-left">
+						<div class="h-user-left-avatar">
+							<img src="images/34ccaf9461c67482e3164675c0036e94df18b7a7.jpg@100Q.webp@128w_128h_100Q_1c.jpg">
+							<span class="h-user-icon">
+							</span>
+						</div>
+						<div class="h-user-left-bisic">
+							<div class="ttop">
+								<span class="h-user-name">TESTV官方频道</span>
+								<a href="https://www.bilibili.com/blackboard/help.html#k"  class="ttop-lv"></a>
+								<a href="https://www.bilibili.com/blackboard/help.html#k" target="_Blank" class="ttop-vip"></a>
+								<a href="https://account.bilibili.com/account/big" class="ttop-fans">
+									<span>粉</span>
+								</a>
+							</div>
+							<div class="bbottom">
+								<span class="h-uesr-massage">寻宝：http://t.cn/R6ZCohA，微博： TESTV值不值得买，注意：我们不是评测，是体验！愉快的体验！</span>
+							</div>
+						</div>
+					</div>
+					<div class="h-user-right">
+						<span class="h-user-button">关注</span>
+						<a href="https://message.bilibili.com/#/whisper/mid11336264" target="_Blank" class="seed">发消息</a>
+						<i class="h-user-li" title="更多操作"></i>
+							<div class="h-user-more-list" style="display: none">
+								<a href="" class="black">加入黑名单</a>
+								<a href="">敲敲关注</a>
+								<a href="">个人信息举报</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="navigator">
+			<div class="navigator-inner">
+				<div class="navigator-left">
+					<a href="" class="navigator-left-home navigator-over">
+						<span class="nv-icon-ic hm"></span>
+						<span class="nv-icon">主页</span>
+					</a>
+					<a href="" class="navigator-left-dynamic navigator-over">
+						<span class="nv-icon-ic over"></span>
+						<span class="nv-icon">动态</span>
+					</a>
+					<a href="" class="navigator-left-video">
+						<span class="nv-icon-ic video"></span>
+						<span class="nv-icon">投稿</span>
+						<span class="nv-icon-num">430</span>
+					</a>
+					<a href="" class="navigator-left-channels navigator-over">
+						<span class="nv-icon-ic chan"></span>
+						<span class="nv-icon">频道</span>
+						<span class="nv-icon-num">7</span>
+					</a>
+					<a href="" class="navigator-left-favorites navigator-over">
+						<span class="nv-icon-ic favo"></span>
+						<span class="nv-icon">收藏夹</span>
+						<span class="nv-icon-num">9</span>
+					</a>
+					<a href="" class="navigator-left-subscription navigator-over">
+						<span class="nv-icon-ic sub"></span>
+						<span class="nv-icon">订阅</span>
+					</a>
+				</div>
+				<div class="navigator-search">
+					<input type="text" name="" placeholder="搜索视频">
+					<button class="nav-search-button" type="submit"></button>
+				</div>
+				<div class="navigator-right">
+					<a href="" class="navigator-right-a">
+						<p class="n-p">关注数</p>
+						<p class="n-gz">57</p>
+					</a>
+					<a href="" class="navigator-right-a">
+						<p class="n-p">粉丝数</p>
+						<p class="n-fs">39.7万</p>
+					</a>
+					<a>
+						<p class="n-p">播放数</p>
+						<p class="n-bf">3378.2万</p>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="nav-ff">
+			<div class="navigator">
+			<div class="navigator-inner">
+				<div class="navigator-left">
+					<a href="javascript:" class="navigator-left-home navigator-over">
+						<i class="nv-icon-ic nav-icon-ico"><img src="images/34ccaf9461c67482e3164675c0036e94df18b7a7.jpg@100Q.webp@128w_128h_100Q_1c.jpg"></i>
+						<span class="nv-icon nav-icon-ic">TESTV官方频道</span>
+					</a>
+					<a href="" class="navigator-left-dynamic navigator-over">
+						<span class="nv-icon-ic over"></span>
+						<span class="nv-icon">动态</span>
+					</a>
+					<a href="" class="navigator-left-video">
+						<span class="nv-icon-ic video"></span>
+						<span class="nv-icon">投稿</span>
+						<span class="nv-icon-num">430</span>
+					</a>
+					<a href="" class="navigator-left-channels navigator-over">
+						<span class="nv-icon-ic chan"></span>
+						<span class="nv-icon">频道</span>
+						<span class="nv-icon-num">7</span>
+					</a>
+					<a href="" class="navigator-left-favorites navigator-over">
+						<span class="nv-icon-ic favo"></span>
+						<span class="nv-icon">收藏夹</span>
+						<span class="nv-icon-num">9</span>
+					</a>
+					<a href="" class="navigator-left-subscription navigator-over">
+						<span class="nv-icon-ic sub"></span>
+						<span class="nv-icon">订阅</span>
+					</a>
+				</div>
+				<div class="navigator-search">
+					<input type="text" name="" placeholder="搜索视频">
+					<button class="nav-search-button" type="submit"></button>
+				</div>
+				<div class="navigator-right">
+					<a href="" class="navigator-right-a">
+						<p class="n-p">关注数</p>
+						<p class="n-gz">57</p>
+					</a>
+					<a href="" class="navigator-right-a">
+						<p class="n-p">粉丝数</p>
+						<p class="n-fs">39.7万</p>
+					</a>
+					<a>
+						<p class="n-p">播放数</p>
+						<p class="n-bf">3378.2万</p>
+					</a>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="s-space">
+		 	<div class="page-index">
+				<div class="page-index-l">
+					<div class="section i-pin-v">
+						<a href="" class="img"><img src="images/TIM20180629112524.png"></a>
+						<div class="left">
+							<a href="https://www.bilibili.com/video/av25776484" target="_Blank" title="《值不值得买》第246期：电影迷的最终幻想_嗨镜H2">《值不值得买》第246期：电影迷的最终幻想_嗨镜H2</a>
+							<div class="meta">
+								<span class="pep"><i></i>2.1w</span>
+								<span class="num"><i></i>703</span>
+								<span class="time"><i></i>1小时前</span>
+							</div>
+							<p>这一期你以为只有一期，其实这一期有两期</p>
+						</div>
+					</div>
+					<div class="section video">
+						<div>
+							<h3 class="section-title">
+								<a href="">TA的视频</a>
+								<span>433</span>
+								<i class="bg"></i>
+								<a href="https://space.bilibili.com/11336264/#/video" class="more">更多</a>
+							</h3>
+							<div class="content">
+								<div class="fakeDanmu-item">
+									<a href="https://www.bilibili.com/video/av25663229" target="_Blank" class="img">
+											<img src="images/TIM20180629104836.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av25776484" class="text" title="《值不值得买》第246期：电影迷的最终幻想_嗨镜H2" target="_Blank">《值不值得买》第246期：电影迷的最终幻想_嗨镜H2</a>
+										<div class="times">
+											<span class="pel"><i></i>256</span>
+											<span class="data"><i></i>37分钟前</span>
+										</div>
+								</div>
+								<div class="fakeDanmu-item">
+									<a href="https://www.bilibili.com/video/av25663229" target="_Blank" class="img">
+											<img src="images/TIM20180629104935.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av25663229" class="text" title="BB Time第136期：天津之行" target="_Blank">BB Time第136期：天津之行</a>
+										<div class="times">
+											<span class="pel"><i></i>5.6万</span>
+											<span class="data"><i></i>6-27</span>
+										</div>
+								</div>
+								<div class="fakeDanmu-item">
+									<a href="https://www.bilibili.com/video/av25329892" target="_Blank" class="img">
+											<img src="images/TIM20180629105003.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av25329892" class="text" title="BB Time第135期：HiFi耳塞入坑指南_下">BB Time第135期：HiFi耳塞入坑指南_下</a>
+										<div class="times">
+											<span class="pel"><i></i>7.5万</span>
+											<span class="data"><i></i>6-22</span>
+										</div>
+								</div>
+								<div class="fakeDanmu-item">
+									<a href="https://www.bilibili.com/video/av25352494" target="_Blank" class="img">
+											<img src="images/TIM20180629105029.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av25352494" class="text" title="《值不值得买》第245期：刷牙也能刷出新境界_飞利浦电动牙刷" target="_Blank">《值不值得买》第245期：刷牙也能刷出新境界_飞利浦电动牙刷</a>
+										<div class="times">
+											<span class="pel"><i></i>13.3万</span>
+											<span class="data"><i></i>6-22</span>
+										</div>
+								</div>
+								<div class="fakeDanmu-item">
+									<a href="https://www.bilibili.com/video/av25292220" target="_Blank" class="img">
+											<img src="images/TIM20180629105053.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av25292220" class="text" title="BB Time第134期：HiFi耳塞入坑指南_上" target="_Blank">BB Time第134期：HiFi耳塞入坑指南_上</a>
+										<div class="times">
+											<span class="pel"><i></i>10.6万</span>
+											<span class="data"><i></i>6-21</span>
+										</div>
+								</div>
+								<div class="fakeDanmu-item">
+									<a href="https://www.bilibili.com/video/av25168978" target="_Blank" class="img">
+											<img src="images/TIM20180629105110.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av25168978" class="text" title="《值不值得买》第244期：你为什么还没换小米手机_小米MIX2S" target="_Blank">《值不值得买》第244期：你为什么还没换小米手机_小米MIX2S</a>
+										<div class="times">
+											<span class="pel"><i></i>23.3万</span>
+											<span class="data"><i></i>6-19</span>
+										</div>
+								</div>
+								<div class="fakeDanmu-item">
+									<a href="https://www.bilibili.com/video/av24866156" target="_Blank" class="img">
+											<img src="images/TIM20180629105325.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av24866156" class="text" title="《值不值得买》第243期：硬盒游戏_任天堂LABO" target="_Blank">《值不值得买》第243期：硬盒游戏_任天堂LABO</a>
+										<div class="times">
+											<span class="pel"><i></i>15.4万</span>
+											<span class="data"><i></i>6-15</span>
+										</div>
+								</div>
+								<div class="fakeDanmu-item">
+									<a href="https://www.bilibili.com/video/av24720750" target="_Blank" class="img">
+											<img src="images/TIM20180629105132.png">
+										</a> 
+										<a href="https://www.bilibili.com/video/av24720750" class="text" title="BB Time第133期：小米手机8开箱以及公关君的小姐姐们" target="_Blank">BB Time第133期：小米手机8开箱以及公关君的小姐姐们</a>
+										<div class="times">
+											<span class="pel"><i></i>14.4万</span>
+											<span class="data"><i></i>6-12</span>
+										</div>
+								</div>
+							</div>
+						</div>
+					</div >
+					<div class="section chanel">
+						<div class="chanel-one">
+							<div class="lists">
+								<h3 class="section-title buy-one list-title">
+									<a href="">值不值得买2016</a>
+									<span>72</span>
+									<i class="section-bg"></i>
+									<a href="" class="later">稍后再看</a>
+									<a href="" class="more">更多</a>
+								</h3>
+								<div class="section-content">
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av7760156" target="_Blank" class="img">
+											<img src="images/TIM20180629110057.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av7760156" class="text" title="《值不值得买》第118当瑜伽遇上书——YOGA BOOK" target="_Blank">《值不值得买》第118当瑜伽遇上书——YOGA BOOK </a>
+										<div class="times">
+											<span class="pel"><i></i>10.2万</span>
+											<span class="data"><i></i>2016-12-30</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av7734870" target="_Blank" class="img">
+											<img src="images/TIM20180629110228.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av7734870" class="text" target="_Blank" title="《值不值得买》第117期：好衣架不如吹风机——卡蛙干衣机与Fixate神奇胶垫（已修正）">《值不值得买》第117期：好衣架不如吹风机——卡蛙干衣机与Fixate神奇胶垫（已修正）</a>
+										<div class="times">
+											<span class="pel"><i></i>5.3万</span>
+											<span class="data"><i></i>2016-12-28</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av7652905" target="_Blank" class="img">
+											<img src="images/TIM20180629110246.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av7652905" class="text" title="《值不值得买》第116期：圣诞“劫”的礼物来了——蒙马特防盗双肩包" target="_Blank">《值不值得买》第116期：圣诞“劫”的礼物来了——蒙马特防盗双肩包</a>
+										<div class="times">
+											<span class="pel"><i></i>11.1万</span>
+											<span class="data"><i></i>2016-12-23</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av7610250" target="_Blank" class="img">
+											<img src="images/TIM20180629110252.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av7610250" class="text" title="《值不值得买》第115期：要啥自行车啊——小米电助力折叠自行车" target="_Blank">《值不值得买》第115期：要啥自行车啊——小米电助力折叠自行车</a>
+										<div class="times">
+											<span class="pel"><i></i>5.6万</span>
+											<span class="data"><i></i>6-27</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="lists">
+								<h3 class="section-title bbt-one list-title">
+									<a href="">BBT？ 2015</a>
+									<span>14</span>
+									<i class="section-bg"></i>
+									<a href="" class="later">稍后再看</a>
+									<a href="" class="more">更多</a>
+								</h3>
+								<div class="section-content">
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av3310699" target="_Blank" class="img">
+											<img src="images/TIM20180629110318.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av3310699" class="text" title="《值不值得买》番外篇三：装了原装键盘的iPad Pro到底有多厉害" target="_Blank">《值不值得买》番外篇三：装了原装键盘的iPad Pro到底有多厉害</a>
+										<div class="times">
+											<span class="pel"><i></i>3.6万</span>
+											<span class="data"><i></i>2015-12-1</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av3287369" target="_Blank" class="img">
+											<img src="images/TIM20180629110335.png">
+										</a> 
+										<a href="https://www.bilibili.com/video/av3287369" class="text" title="【爆笑】一个重庆人与听书宝的语音对话（未和谐版）" target="_Blank">【爆笑】一个重庆人与听书宝的语音对话（未和谐版）</a>
+										<div class="times">
+											<span class="pel"><i></i>1.9万</span>
+											<span class="data"><i></i>2015-11-27</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av3264917" target="_Blank" class="img">
+											<img src="images/TIM20180629110344.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av3264917" class="text" title="《值不值得买》娱乐开箱第六期 Applepencil" target="_Blank">《值不值得买》娱乐开箱第六期 Applepencil</a>
+										<div class="times">
+											<span class="pel"><i></i>3.7万</span>
+											<span class="data"><i></i>2015-11-22</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av3230261" target="_Blank" class="img">
+											<img src="images/TIM20180629110352.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av3230261" class="text" title="《值不值的买》娱乐开箱第五期：配合iPad Pro的键盘Smart Keyboard" target="_Blank">《值不值的买》娱乐开箱第五期：配合iPad Pro的键盘Smart Keyboard</a>
+										<div class="times">
+											<span class="pel"><i></i>2.1万</span>
+											<span class="data"><i></i>2015-11-16</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="lists">
+								<h3 class="section-title list-title">
+									<a href="">LIVE录播</a>
+									<span>13</span>
+									<i class="section-bg"></i>
+									<a href="" class="later">稍后再看</a>
+									<a href="" class="more">更多</a>
+								</h3>
+								<div class="section-content">
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av9123295" target="_Blank" class="img">
+											<img src="images/TIM20180629110502.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av9123295" class="text" title="TESTV｜直播（录播版）第13期：TESTV全体挑战喝黄连水" target="_Blank">TESTV｜直播（录播版）第13期：TESTV全体挑战喝黄连水</a>
+										<div class="times">
+											<span class="pel"><i></i>1.9万</span>
+											<span class="data"><i></i>2017-3-12</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av8980806" target="_Blank" class="img">
+											<img src="images/TIM20180629110519.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av8980806" class="text" title="TESTV｜直播（录播版）第12期：TESTV全体挑战吃芥末面" target="_Blank">TESTV｜直播（录播版）第12期：TESTV全体挑战吃芥末面</a>
+										<div class="times">
+											<span class="pel"><i></i>3.4万</span>
+											<span class="data"><i></i>2017-3-5</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av8823787" target="_Blank" class="img">
+											<img src="images/TIM20180629110528.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av8823787" class="text" title="TESTV｜直播（录播版）第11期：老板搞美食——TESTV全体吃'翔'" target="_Blank">TESTV｜直播（录播版）第11期：老板搞美食——TESTV全体吃"翔"</a>
+										<div class="times">
+											<span class="pel"><i></i>2万</span>
+											<span class="data"><i></i>2017-2-25</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av8696945" target="_Blank" class="img">
+											<img src="images/TIM20180629110539.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av8696945" class="text" title="TESTV｜直播（录播版）第10期：老板搞美食——醉虾" target="_Blank">TESTV｜直播（录播版）第10期：老板搞美食——醉虾</a>
+										<div class="times">
+											<span class="pel"><i></i>4.9万</span>
+											<span class="data"><i></i>2017-2-19</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="lists">
+								<h3 class="section-title bbt-two list-title">
+									<a href="">BBT 2016</a>
+									<span>10</span>
+									<i class="section-bg"></i>
+									<a href="" class="later">稍后再看</a>
+									<a href="" class="more">更多</a>
+								</h3>
+								<div class="section-content">
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av7537161" target="_Blank" class="img">
+											<img src="images/TIM20180629105603.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av7537161" class="text" title="BB Time第五十二期 ：外星人和女后妻唱歌独家花絮" target="_Blank">BB Time第五十二期 ：外星人和女后妻唱歌独家花絮</a>
+										<div class="times">
+											<span class="pel"><i></i>4.4万</span>
+											<span class="data"><i></i>2016-12-15</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av7374404" target="_Blank" class="img">
+											<img src="images/TIM20180629105615.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av7374404" class="text" title="BB Time第五十一期 ：今后接电话可以这样装B了——小米MIX开箱" target="_Blank">BB Time第五十一期 ：今后接电话可以这样装B了——小米MIX开箱</a>
+										<div class="times">
+											<span class="pel"><i></i>8.3万</span>
+											<span class="data"><i></i>2016-12-4</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av7292372" target="_Blank" class="img">
+											<img src="images/TIM20180629105705.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av7292372" class="text" title="BB Time第五十期 ：TESTV都是大傻B——被困仙女山的一天" target="_Blank">BB Time第五十期 ：TESTV都是大傻B——被困仙女山的一天</a>
+										<div class="times">
+											<span class="pel"><i></i>5.2万</span>
+											<span class="data"><i></i>2016-11-28</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av7247526" target="_Blank" class="img">
+											<img src="images/TIM20180629105715.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av7247526" class="text" title="BB Time第四十九期 ：男后妻的屁股和女后妻的胸" target="_Blank">BB Time第四十九期 ：男后妻的屁股和女后妻的胸</a>
+										<div class="times">
+											<span class="pel"><i></i>5.7万</span>
+											<span class="data"><i></i>2016-11-25</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="lists">
+								<h3 class="section-title bbt-two list-title">
+									<a href="">BBT 2017</a>
+									<span>10</span>
+									<i class="section-bg"></i>
+									<a href="" class="later">稍后再看</a>
+									<a href="" class="more">更多</a>
+								</h3>
+								<div class="section-content">
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av10068386" target="_Blank" class="img">
+											<img src="images/TIM20180629110710.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av10068386" class="text" title="BB Time第六十一期 ：TESTV重庆铁丝见面会" target="_Blank">BB Time第六十一期 ：TESTV重庆铁丝见面会</a>
+										<div class="times">
+											<span class="pel"><i></i>3.3万</span>
+											<span class="data"><i></i>2017-7-24</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av9813064" target="_Blank" class="img">
+											<img src="images/TIM20180629110723.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av9813064" class="text" title=" BB Time第六十期 ：PY君DIY无线充电桌" target="_Blank">BB Time第六十期 ：PY君DIY无线充电桌</a>
+										<div class="times">
+											<span class="pel"><i></i>6.3万</span>
+											<span class="data"><i></i>2017-4-13</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av9784603" target="_Blank" class="img">
+											<img src="images/TIM20180629110731.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av9784603" class="text" title="BB Time第五十九期 ：想不到大疆也能这么便宜——精灵3SE开箱" target="_Blank">BB Time第五十九期 ：想不到大疆也能这么便宜——精灵3SE开箱</a>
+										<div class="times">
+											<span class="pel"><i></i>6.1万</span>
+											<span class="data"><i></i>2017-4-12</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av9336837" target="_Blank" class="img">
+											<img src="images/TIM20180629110742.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av9336837" class="text" title="BB Time第五十八期 ：我在任天堂买了块表——索尼相机和Switch开箱" target="_Blank">BB Time第五十八期 ：我在任天堂买了块表——索尼相机和Switch开箱</a>
+										<div class="times">
+											<span class="pel"><i></i>8.6万</span>
+											<span class="data"><i></i>2017-7-23</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="lists">
+								<h3 class="section-title buy-two list-title">
+									<a href="">值不值得买2017</a>
+									<span>5</span>
+									<i class="section-bg"></i>
+									<a href="" class="later">稍后再看</a>
+									<a href="" class="more">更多</a>
+								</h3>
+								<div class="section-content">
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av10937925" target="_Blank" class="img">
+											<img src="images/TIM20180629110921.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av10937925" class="text" title="《值不值得买》第157期：我才不会拿来削苹果呢(～o￣3￣)～——坚果Pro" target="_Blank">《值不值得买》第157期：我才不会拿来削苹果呢(～o￣3￣)～——坚果Pro</a>
+										<div class="times">
+											<span class="pel"><i></i>15.9万</span>
+											<span class="data"><i></i>2017-5-30</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av10764787" target="_Blank" class="img">
+											<img src="images/TIM20180629110929.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av10764787" class="text" title="《值不值得买》第156期：具有“划时代”意义的相机——Sony香水相机与徕卡Sofort" target="_Blank">《值不值得买》第156期：具有“划时代”意义的相机——Sony香水相机与徕卡Sofort</a>
+										<div class="times">
+											<span class="pel"><i></i>13万</span>
+											<span class="data"><i></i>2017-5-23</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av10598648" target="_Blank" class="img">
+											<img src="images/TIM20180629110937.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av10598648" class="text" title="《值不值得买》第155期：第二好看的智能手表——Withings Steel HR" target="_Blank">《值不值得买》第155期：第二好看的智能手表——Withings Steel HR</a>
+										<div class="times">
+											<span class="pel"><i></i>13.5万</span>
+											<span class="data"><i></i>2017-5-16</span>
+										</div>
+									</div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av10495380" target="_Blank" class="img">
+											<img src="images/TIM20180629110944.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av10495380" class="text" title="《值不值得买》第154期： 可以送给女朋友的打印机——hp与富士打印机" target="_Blank">《值不值得买》第154期： 可以送给女朋友的打印机——hp与富士打印机</a>
+										<div class="times">
+											<span class="pel"><i></i>8.4万</span>
+											<span class="data"><i></i>2017-5-12</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="lists">
+								<h3 class="section-title buy-two list-title">
+									<a href="">值不值得买2015</a>
+									<span>5</span>
+									<i class="section-bg"></i>
+									<a href="" class="later">稍后再看</a>
+									<a href="" class="more">更多</a>
+								</h3>
+								<div class="section-content">
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av3483912" target="_Blank" class="img">
+											<img src="images/TIM20180629105407.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av3483912" class="text" title="《值不值得买》第四十五期：一手天球，一眼世界——理光天球数码照相机" target="_Blank">《值不值得买》第四十五期：一手天球，一眼世界——理光天球数码照相机</a>
+										<div class="times">
+											<span class="pel"><i></i>2.1万</span>
+											<span class="data"><i></i>2015-12-31</span>
+										</div></div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av3472333" target="_Blank" class="img">
+											<img src="images/TIM20180629105428.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av3472333" class="text" title="《值不值得买》第四十四期：一个主动降噪耳机的不正经的体验" target="_Blank">《值不值得买》第四十四期：一个主动降噪耳机的不正经的体验</a>
+										<div class="times">
+											<span class="pel"><i></i>3.6万</span>
+											<span class="data"><i></i>2015-12-29</span>
+										</div></div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av3443342" target="_Blank" class="img">
+											<img src="images/TIM20180629105451.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av3443342" class="text" title="《值不值得买》圣诞特别篇：娱乐开箱超大的苹果礼物与冬日暖心55度杯" target="_Blank">《值不值得买》圣诞特别篇：娱乐开箱超大的苹果礼物与冬日暖心55度杯</a>
+										<div class="times">
+											<span class="pel"><i></i>1.9万</span>
+											<span class="data"><i></i>2015-12-24</span>
+										</div></div>
+									<div class="fakeDanmu-item">
+										<a href="https://www.bilibili.com/video/av3429107" target="_Blank" class="img">
+											<img src="images/TIM20180629105539.png">
+										</a>
+										<a href="https://www.bilibili.com/video/av3429107" class="text" title="《值不值得买》第四十二期：绝不会淋湿肩膀的RealBrella雨伞" target="_Blank">《值不值得买》第四十二期：绝不会淋湿肩膀的RealBrella雨伞</a>
+										<div class="times">
+											<span class="pel"><i></i>3.5万</span>
+											<span class="data"><i></i>2015-12-22</span>
+										</div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="section fav">
+						
+					</div>
+				</div>
+				<div class="page-index-r">
+					<div class="index-r-name">
+						<div class="index-r-name-c">
+							<div class="user-auth">
+								<span><a href="https://account.bilibili.com/account/official/home" target="_Blank"></a>bilibili个人认证：bilibili 知名科技UP主</span>
+							</div>
+							<div class="user-detail">「值不值得买」官方频道</div>
+						</div>
+					</div>
+					<div class="index-r-charging"></div>
+					<div class="index-r-placard">
+						<h3>公告</h3>
+						<div>淘宝店 87076677！ 淘宝店 87076677！ 淘宝店 87076677！</div>
+					</div>
+					<div class="index-r-studio">
+						<h3>直播间</h3>
+						<div class="content">
+							<a href="https://live.bilibili.com/545189" target="_Blank" class="live">
+								<img src="images/TIM20180630084018.png">
+								<div class="live-box">
+									<span class="left">TESTV官方频道的投稿视频</span>
+									<span class="right"><i></i>1.4万</span>
+								</div>	
+							</a>
+						</div>
+					</div>
+					<div class="index-r-logintime">
+						<div class="info">
+							<div class="content">
+								<div class="up">
+									<div class="uid">
+										<span><i class="icon"></i>11336264</span>
+									</div>
+									<div class="regtime">
+										<span><i class="icon"></i>注册于 2015-6-25</span>
+									</div>
+								</div>
+								<div class="down">
+									<div class="birthday">
+										<span><i class="icon"></i>01-01</span>
+									</div>
+								</div>
+							</div>
+							<div class="tags">
+								<a href=""><span class="icon"></span>创意小玩意</a>
+								<a href=""><span class="icon"></span>搞笑</a>
+								<a href=""><span class="icon"></span>体验</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</body>
+	<script src="JS/jquery-3.3.1.js"></script>
+	<script src="JS/index.js">
+</script>
+</html>

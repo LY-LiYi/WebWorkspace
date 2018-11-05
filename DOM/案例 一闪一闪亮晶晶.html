@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div
+		{
+			width: 600px;
+			height: 600px;
+			border: 2px solid pink;	
+			background-color: black;
+			position: relative;
+		}
+		span{
+			font-size: 30px;
+			color: pink;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="star" id="btn">
+	<div id="dv">
+		
+	</div>
+	
+	<script src="common.js"></script>
+	<script type="text/javascript">
+		
+		my("btn").onclick=function()
+		{
+			//定时器
+			setInterval(function(){
+				//创建元素
+				my("dv").innerHTML="<span>☆</span>";
+				//创建随机数
+				var x=parseInt(Math.random()*600);
+				var y=parseInt(Math.random()*600);
+				//位置随机 找到span标签
+				my("dv").firstElementChild.style.left=x+"px";
+				my("dv").firstElementChild.style.top=y+"px";
+			},100)
+				
+		}
+
+
+	</script>
+</body>
+</html>

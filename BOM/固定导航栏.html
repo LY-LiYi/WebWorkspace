@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    img {
+      vertical-align: top;
+    }
+
+    .main {
+      margin: 0 auto;
+      width: 1000px;
+      margin-top: 10px;
+
+    }
+
+    .fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="top" id="topPart">
+  <img src="images/top.png" alt=""/>
+</div>
+<div class="nav" id="navBar">//导航栏
+  <img src="images/nav.png" alt=""/>
+</div>
+<div class="main" id="mainPart">
+  <img src="images/main.png" alt=""/>
+</div>
+<script src="common.js"></script>
+<script type="text/javascript">
+    //浏览器的滚动事件
+    window.onscroll=function()
+    {
+      //向上卷曲出去的距离和最上面的div的高度对比
+        if(getScroll().top>=my("topPart").offsetHeight)
+        {
+            // //导航栏固定    设置为固定定位
+            // my("navBar").style.position="fixed";
+            // my("navBar").style.top=0;
+            my("navBar").className="nav fixed";
+            //防止mainpart突然跳上去 设置上边距
+            my("mainPart").style.marginTop=my("navBar").offsetHeight+"px";
+        }
+        else
+        {
+          //恢复
+            my("navBar").className="nav";
+            //防止mainpart突然跳上去 设置上边距
+            my("mainPart").style.marginTop=10+"px";
+        }
+    }
+
+ //封装函数 获取浏览器向上卷曲的距离的值
+    function getScroll()
+    {
+      var obj=
+      {
+        top: window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0,
+        left: window.pageXOffset||document.documentElement.scrollLeft||document.body.scrollLeft||0
+      };
+      return obj;
+    }
+</script>
+
+</body>
+</html>

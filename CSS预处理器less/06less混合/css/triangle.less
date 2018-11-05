@@ -1,0 +1,34 @@
+//@_代表始终带上这部分
+.triangle(@_)
+{
+	width: 0px;
+	height: 0px;
+	overflow: hidden;
+}
+.triangle(L,@c,@w)
+{
+	border-width: @w;
+	border-style: dashed solid dashed dashed;
+	border-color: transparent @c transparent  transparent;
+	
+}
+.triangle(R,@c,@w)
+{
+	border-width: @w;
+	border-style: dashed  dashed dashed solid;
+	border-color: transparent transparent @c transparent;
+	
+}
+.triangle(T,@c,@w)
+{
+	border-width: @w; 
+	border-style: dashed  dashed solid dashed;
+	border-color: transparent transparent  transparent @c;
+	
+}
+.triangle(B,@c,@w)
+{
+	border-width: @w;
+	border-style: dashed solid dashed dashed;
+	border-color: @c transparent  transparent transparent;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">啦啦啦</button>
+	<a href="" id="a">百度</a>
+	<!-- 点击按钮修改a标签的链接和热点文字 -->
+	<script type="text/javascript">
+		// 根据id获取按钮 注册点击时间 添加事件处理函数
+		document.getElementById("btn").onclick=function()
+		{
+			// 根据id获取按钮获取超链接 
+			var aobj=document.getElementById("a");
+			// 设置href属性
+			aobj.href="###";
+			// 设置文字内容
+			aobj.innerText="张炸毁";
+		}
+	</script>
+</body>
+</html>

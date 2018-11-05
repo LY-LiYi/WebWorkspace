@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">显示效果</button>
+										<!--alt 图片挂掉了的显示 title 鼠标经过图片的提示  -->
+	<img src="images/cangjingkong.jpg" alt="哈哈" title="嘎嘎">
+
+	<script type="text/javascript">
+		document.getElementById("btn").onclick=function()
+		{
+			//返回的是一个伪数组
+			var imgob=document.getElementsByTagName("img");
+
+			imgob[0].alt="改了";
+			imgob[0].title="飞吧飞吧";
+
+		};
+	</script>
+</body>
+</html>

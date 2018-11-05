@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+
+    }
+
+    img {
+      vertical-align: top;
+    }
+
+    /*取消图片底部3像素距离*/
+    .box {
+      width: 300px;
+      height: 200px;
+      margin: 100px auto;
+      background-color: pink;
+      border: 1px solid red;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box ul li {
+      float: left;
+    }
+
+    .box ul {
+      width: 1500px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="box" id="screen">
+  <ul>
+    <li><img src="images/21.jpg" alt=""/></li>
+    <li><img src="images/22.jpg" alt=""/></li>
+    <li><img src="images/23.jpg" alt=""/></li>
+    <li><img src="images/24.jpg" alt=""/></li>
+    <li><img src="images/21.jpg" alt=""/></li>
+  </ul>
+</div>
+<script src="common.js"></script>
+<script type="text/javascript">
+	var current=0;//只声明了一次
+	//动起来的函数
+	function f1()
+	{
+		ulObj=my("screen").children[0];
+		current-=10;
+		//判断
+		if(current<-1200)
+		{
+			ulObj.style.left=0+"px";
+			current=0;
+		}
+		else
+		{
+			ulObj.style.left=current+"px";
+		}
+	};
+
+	var timeid=setInterval(f1,20);
+
+	my("screen").onmouseover=function()
+	{
+		//停止
+		clearInterval(timeid);
+	};
+
+	my("screen").onmouseout=function()
+	{
+		//继续 重新开一个定制器
+		timeid=setInterval(f1,20);
+	};
+</script>
+</body>
+</html>

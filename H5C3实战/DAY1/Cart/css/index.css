@@ -1,0 +1,57 @@
+/*公用的样式*/
+.go
+{
+	width: 100px;
+	height: 100px;
+	/*边框弧度*/
+	border-radius: 50%;
+	/*固定定位*/
+	position: fixed;
+	right: 30px;
+	top: 30px;
+	z-index: 1001;
+}
+.more
+{
+	position: fixed;
+	right: 60px;
+	bottom: 80px;
+	z-index: 1001;
+
+}
+/*第一屏*/
+.screen01
+{
+											/*左右居中 底部对齐*/
+	background: url("../images/01-bg.png") no-repeat center bottom;
+}
+/*第一屏内容容器*/
+.content
+{
+	width: 900px;
+	height: 600px;
+	background: rgba(0,0,0,0.1);
+	position: absolute;
+	bottom: 0px;
+	/*始终居中*/
+	left: 50%;
+	margin-left: -450px;
+}
+.screen01 .goods
+{
+	text-align: center; 
+	margin-top: 230px;
+
+}
+.screen01 .sofa
+{
+	position: absolute;
+	left: 180px;
+	top:180px;
+}
+.screen01 .fly
+{
+	position: absolute;
+	right: 0;
+	top: 0;
+}

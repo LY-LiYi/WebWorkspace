@@ -1,0 +1,338 @@
+h1
+{
+	padding: 12px;
+	border-top: 2px solid #fff;
+	border-bottom: 2px solid #fff;
+}
+h2
+{
+	display: inline-block;
+	font-size: 30px;
+}
+h3
+{
+	font-size: 24px;  
+}
+.clearfix:after
+{
+	content: "";
+	display: block;
+	clear: both;
+}
+p
+{
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+ul
+{
+	margin: 0;
+}
+/*页头*/
+nav
+{
+	/*背景颜色设置为透明*/
+	background: transparent;
+	height: 50px;
+}
+nav ul
+{
+	list-style: none;
+	margin: 0;
+	float: right;
+}
+nav ul li
+{
+	display: inline-block;
+	line-height: 50px;
+	float: right;
+	margin-right: 20px;
+}
+a
+{
+	text-decoration: none;
+}
+nav ul li a
+{
+	line-height: 50px;
+	text-decoration: none;
+	display: inline-block;
+	/*继承父元素的高度*/
+	height: inherit;
+	color: #fff;
+}
+nav .logo
+{
+	float: left;
+	margin-left: 20px;
+}
+.logo{
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+nav .logo a
+{
+	line-height: 50px;
+	text-decoration: none;
+	display: inline-block;
+	height: 50px;
+	color: #fff;
+	/*字间距*/
+	letter-spacing: 2px;
+}
+header
+{
+	/*最后一位数是透明度*/
+	background:rgba(0,0,0,0.4);
+}
+.box-right
+{
+	float: right;
+	height: 50px;
+}
+.box-right li{
+	float: right;
+}
+#banner
+{
+	height: 700px;
+	background: transparent;
+}
+
+#banner .inner
+{
+	/*最大宽度*/
+	max-width: 300px;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	top: 160px;
+}
+#banner .inner h1
+{
+	margin: 0;
+
+}
+button{
+	border: none;
+	background: #333;
+	color: #eee;
+	padding: 10px;
+}
+#banner button
+{
+	padding: 14px 40px;
+}
+#banner .inner h1
+{
+	line-height: 60px;
+}
+
+#banner .inner .more
+{
+	margin-top: 180px;
+}
+/*内容*/
+.sub-heading
+{
+	line-height: 30px;
+	margin: 30px;
+}
+.green-section
+{
+	text-align: center;
+	background: #0d628d;
+	color: #fff;
+	padding: 100px 0;
+}
+.hr
+{
+	width: 100%;
+	height: 2px;
+	margin: 20px auto;
+}
+.green-section .hr
+{
+	background: #1bb0c2;
+	width: 60%;
+}
+
+.sub-heading
+{
+	font-size: 18px;
+	margin: 30px 0px;
+}
+.wrapper
+{
+	max-width: 1080px;
+	margin: 0 auto;
+}
+.green-section .icon-group .icon
+{
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	border: 1px solid #039bc2;
+	/*旋转45度*/
+	transform: rotate(45deg);
+	margin: 20px;
+}
+.icon-group
+{
+	margin-top: 60px;
+}
+.gary-section
+{
+	background: #252F34;
+	color: #fff;
+}
+/*img盒子占父元素的45%*/
+.gary-section .img-section
+{
+	width: 45%;
+}
+/*图片占img盒子的百分百 向父元素看齐 缩小图片*/
+.img-section img
+{
+	width: 100%;
+}
+.text-section
+{
+	width: 55%;
+}
+/*重置字体为0*/
+.article-preview
+{
+	font-size: 0px;
+}
+/*.article-preview下的一级div浮动*/
+.article-preview >div
+{
+	float: left;
+}
+/*清除浮动 不设高度从而让盒子的高度用照片撑起来*/
+.article-preview:after
+{
+	content: "";
+	display: block;
+	clear: both;
+}
+/*基偶选择器*/
+.article-preview:nth-child(odd)
+{
+	background: rgba(255,255,255,0.05);
+}
+.text-section
+{
+	position:relative;
+	left: 68px;
+	top: 50px;
+
+}
+/*text-section下的所有元素宽度*/
+.text-section >*
+{
+	width: 90%;
+}
+.text-section h2
+{	
+	margin-bottom: 20px;
+
+}
+.text-section .sub-heading
+{
+	font-size: 22px;
+	margin-top: 0;
+}
+.text-section p
+{	
+	font-size: 18px;
+	/*字间距*/
+	letter-spacing: 1px;
+
+}
+.purple-section
+{
+	padding: 80px;
+	background: #2b246a;
+	color: #fff;
+}
+.purple-section .heading-wrapper
+{
+	text-align: center;
+}
+.purple-section .hr
+{
+	background: #373259;
+	width: 60%;
+}
+.card
+{
+	float: left;
+	width: 50%;
+	min-height: 300px;
+	padding: 50px;
+	/*假如您需要并排放置两个带边框的框，
+	可通过将 box-sizing 设置为 "border-box"。
+	这可令浏览器呈现出带有指定宽度和高度的框，并把边框和内边距放入框中。*/
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	/*border: 1px solid #fff;*/
+}
+/*card下的每个盒子的背景颜色*/
+.card:first-child
+{
+	background: rgba(0,0,0,0.04);
+}
+.card:nth-child(2)
+{
+	background: rgba(0,0,0,0.08);
+}
+.card:nth-child(3)
+{
+	background: rgba(0,0,0,0.12);
+}
+.card:nth-child(4)
+{
+	background: rgba(0,0,0,0.16);
+}
+/*页脚*/
+footer
+{
+	background: #333;
+	color: #fff;
+	min-height: 200px;
+	text-align: center;
+}
+ul.share-group
+{
+	display: block;
+	width: 1080px;
+	margin:0 auto;
+	padding: 50px;
+}
+ul .share-group li
+{
+	display: block;
+
+}
+.share-group li
+{
+	display: inline-block;
+	padding: 10px;
+}
+.copy
+{
+	padding-bottom: 20px;
+}
+.main-wrapper
+{
+	background: #444 url("../img/banner.jpg");
+	/*设置为固定 图片不随网页移动*/
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	/*背景图片居中*/
+	background-position: center;
+}

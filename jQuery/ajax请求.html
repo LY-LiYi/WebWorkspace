@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.3.1.js"></script>
+</head>
+<body>
+	<div class="div"></div>
+	<script type="text/javascript">
+			
+	$.ajax({
+        url: 'https://apis.map.qq.com/ws/district/v1/list',
+        type: 'GET',
+        dataType: 'jsonp',
+        jsonp: "callback",
+        jsonpCallback:"success_jsonpCallback",
+        success:function (json){
+            console.log(json);
+        },
+        error:function() {
+            console.log('error');
+        }
+    });
+	
+	</script>
+</body>
+</html>

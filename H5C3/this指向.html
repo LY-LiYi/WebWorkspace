@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	var myObj={
+		foo:'bar',
+		func:function()
+		{
+			var self=this;
+			console.log(this);
+			console.log(this.foo);
+			console.log(self.foo);
+			(function()
+				{
+					//立即执行函数 指向的是windows
+					console.log(this);
+					console.log(this.foo);
+					console.log(self.foo);
+				})();
+		}n
+	}
+
+	myObj.func();
+
+	
+</script>
+</html>

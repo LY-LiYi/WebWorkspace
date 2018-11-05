@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- //引入css文件 -->
+	<link rel="stylesheet" type="text/css" href="css/jQueryChangeColor.css">
+	<!-- //引入jquery文件 -->
+	<script type="js/jquery-3.3.1.js"></script>
+	<!-- 引入jQuery插件文件 -->
+	<script type="js/jQueryChangeColor.js"></script>
+	<script type="text/javascript">
+		$(function()
+			{
+				//点击按钮改变每个div的背景颜色
+				$("#dv input").click(function() 
+					{
+
+						$("#dv2 div").changeColor($(this).val());
+					});
+			});
+</script>
+</head>
+<body>
+	<div id="dv">
+		<input type="button" name="" value="red">
+		<input type="button" name="" value="green">
+		<input type="button" name="" value="blue">
+		<div id="dv2">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+</body>
+
+</html>

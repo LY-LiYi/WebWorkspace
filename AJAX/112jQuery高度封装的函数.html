@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		
+	$(function()
+		{
+			//get请求 id在url里面
+			$.get('https://api.github.com/users', {id:1},function(res) 
+			{
+				console.log(res);
+			});
+
+
+			//post请求   id在请求头
+			$.post('https://api.github.com/users', {id:1},function(res) 
+			{
+				console.log(res);
+			});
+
+			//打印json对象
+			$.getJSON('https://api.github.com/users', {id:1},function(res) 
+			{
+				console.log(res);
+			});
+
+		});
+
+
+
+
+
+	</script>
+</body>
+</html>

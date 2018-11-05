@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		// apply和call的使用
+		// 作用：可以改变this的指向
+	// 	function f1(x,y)
+	// 	{
+	// 								//当前的age就是obj的age
+	// 		console.log("结果是:"+(x+y)+this.age);
+	// 	};
+
+
+	// var obj={
+	// 	age:10,
+	// 	sex:"男",
+	// };
+	// //f1的this的指向就是obj了
+	// f1.apply(obj,[10,20]);
+	// f1.call(obj,10,20);
+
+	function Pseson(age,sex)
+	{
+		this.age=age;
+		this.sex=sex;
+	};
+	Pseson.prototype.saihi=function(x,y)
+	{
+			//当前saihi的this指向就是stu实例对象
+		console.log("你好"+this.sex);
+		return 1000;
+	};
+
+	var per=new Pseson(10,"男");
+	per.saihi();
+	console.log("------------");
+	function Student(name,sex)
+	{
+		this.name=name;
+		this.sex=sex;
+	};
+
+	var stu=new Student("小明","人妖");
+	//改变per实例对象中saihi方法的this指向
+	per.saihi.apply(stu,[10,20]);//你好人妖
+	per.saihi.call(stu,[10,20]);//你好人妖
+	</script>
+	
+</head>
+<body>
+	
+</body>
+</html>

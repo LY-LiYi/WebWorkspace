@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="变色" id="btn">
+	<ul id="uu">
+		<li>爆炒冰溜子</li>
+		<li>油炸班主任</li>
+		<li>清蒸小苏</li>
+		<li>红烧</li>
+		<li>啦啦啦</li>
+		<li>红烧肉</li>
+		<li>糖醋排骨</li>
+		<li>嘻嘻嘻</li>
+	</ul>
+	<script src="common.js"></script>
+	<script type="text/javascript">
+		//点击按钮li隔行变色
+		my("btn").onclick=function()
+		{
+			var count=0;//记录有多少个li
+			//获取ul中所有的子节点
+			var ulnodes=my("uu").childNodes;
+			for (var i = 0; i < ulnodes.length; i++) 
+			{
+				//判断这个节点是不是i标签
+				if(ulnodes[i].nodeType==1&&ulnodes[i].nodeName=="LI")
+				{
+					count++;//满足标签为li count+1
+					ulnodes[i].style.backgroundColor=count%2==0?"red":"yellow";
+				}
+			}
+		}
+	}
+	</script>
+</body>
+</html>

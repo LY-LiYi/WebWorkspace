@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<input type="button" value="列表隔行变色" id="btn" >
+	<ul id="uu">
+		<li>奔驰</li>
+		<li>宝马</li>
+		<li>兰博基尼</li>
+		<li>五菱宏光</li>
+		<li>保时捷</li>
+		<li>雷克萨斯</li>
+		<li>马自达</li>
+		<li>悍马</li>
+	</ul>
+	<script src="common.js"></script>
+	<script type="text/javascript">
+		
+		//点击按钮 奇红偶黄
+		my("btn").onclick=function()
+		{
+			// 获取所有的li标签
+			var list=my("uu").getElementsByTagName("li");
+			for (var i = 0; i < list.length; i++)
+			 {
+				list[i].style.backgroundColor=i%2==0?"red":"orange";
+			}
+		}
+
+	</script>
+</body>
+</html>

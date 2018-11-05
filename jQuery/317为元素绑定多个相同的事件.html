@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../jquery-3.3.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// $("#btn").click(function()
+			//  {
+			// 	console.log("哈哈");
+			// }).click(function() 
+			// {
+			// 	console.log("lala");
+			// });
+
+			//bind链式编程
+			$("#btn").bind("click",function()
+			{	
+				console.log("嘻嘻");
+			}).bind("click",function()
+			{
+				console.log("哈哈");
+			});
+			//bind 键值对 只执行最后一个
+			$("#btn").bind({"click":function(){
+				console.log("haha");
+			}},{"click":function(){
+				consloe.log("xixi ");
+			}});
+		});
+
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="显示效果" id="btn">
+</body>
+</html>
