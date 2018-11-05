@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.min.js"></script>
+	<script src="../../vue-resource-v1.5.1.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<input type="text" name="" v-model="ti"  @keyup.enter="get">
+		<ul>
+			<li v-for="item in mydata">{{item}}</li>
+		</ul>
+		<p v-show="mydata.length==0">暂无数据</p>
+	</div>
+</body>
+<script type="text/javascript">
+	
+		var  vm=new Vue(
+			{
+				el:".box",
+				data:
+				{
+					ti:"",
+					mydata:[],
+				},
+				methods:
+				{
+					get:function()
+					{
+						this.$http.jsonp("http://api.douban.com/v2/movie/top250").then(function(res)
+							{
+								
+								this.mydata=res.data;
+							});
+					},
+				},
+
+			});
+
+</script>
+</html>

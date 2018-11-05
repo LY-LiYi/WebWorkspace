@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.js"></script>
+</head>
+<body>
+	<div id="app">
+		<mycom3></mycom3>
+	</div>
+
+	<!-- 在被控制的#app外面使用remplate元素，定义组件的模板结果 -->
+		<template id="tmp1">
+			<div>
+				<h1>这是通过template元素在外部定义的组件结构，这个方式有代码的智能提示和高亮</h1>
+				<h4>好用 不错</h4>
+			</div>
+		</template>
+	<script type="text/javascript">
+			Vue.component("mycom3",
+			{
+				template:"#tmp1",
+			});
+
+
+		var vm=new Vue(
+			{
+				el:'#app',
+				data:{},
+				methods:{},
+			});
+
+
+
+
+	</script>
+</body>
+</html>

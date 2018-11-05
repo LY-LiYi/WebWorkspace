@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<button @click="show($event,12)">按钮</button>
+	</div>
+</body>
+<script type="text/javascript">
+	var vm=new Vue(
+		{
+			el:".box",
+			data:{},
+			methods:
+			{
+				show:function(ev,b)
+				{
+					alert(ev.clientX);
+					alert(b);
+				},
+			}
+		});
+</script>
+</html>

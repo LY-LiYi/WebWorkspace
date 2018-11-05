@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<input type="text" name="" v-model="msg">
+		<p>{{msg}}</p>
+		<!-- msg不会改变 -->
+		<p v-once>{{msg}}</p>
+	</div>
+</body>
+<script type="text/javascript">
+	var vm=new Vue(
+		{
+			el:".box",
+			data:
+			{
+				msg:"a",
+			},
+		});
+
+</script>
+</html>

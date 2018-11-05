@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="../../vue-v2.5.17.js"></script>
+</head>
+<body>
+	<div class="app">
+		<input type="text" name="" v-model='n1'>
+
+		<select v-model="opt">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+		</select >
+
+		<input type="text" name="" v-model='n2'>
+
+		<input type="button" name="" value="=" @click="calc">
+
+		<input type="text" name="" v-model='n3'>
+	</div>
+</body>
+<script type="text/javascript">
+	var vm=new Vue(
+		{
+			el:'.app',
+			data:
+			{
+				n1:0,
+				n2:0,
+				n3:0,
+				opt:'+',
+			},
+			methods:
+			{
+				calc:function()
+				{
+					// switch (this.opt) 
+					// {
+					// 	case '+':
+					// 		this.n3=parseInt(this.n1)+parseInt(this.n2);
+					// 		break;
+					// 	case '-':
+					// 		this.n3=parseInt(this.n1)-parseInt(this.n2);
+					// 		break;
+					// 	case '*':
+					// 		this.n3=parseInt(this.n1)*parseInt(this.n2);
+					// 		break;
+					// 	case '/':
+					// 		this.n3=parseInt(this.n1)/parseInt(this.n2);
+					// 		break;
+						
+					// }
+
+					//投机取巧的方式
+					var  codeStr='parseInt(this.n1)'+this.opt+'parseInt(this.n2)';
+					this.n3=eval(codeStr);
+
+				}
+			},
+		});
+
+
+
+</script>
+</html>

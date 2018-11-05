@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.min.js"></script>
+</head>
+<body>
+		<input type="text" class="text" @keydown.down="show">
+</body>
+<script type="text/javascript">
+	var vm=new Vue(
+		{
+			el:".text",
+			data:{},
+			methods:
+			{
+				show:function()
+				{
+					alert("你按下了向下键");
+				},
+			},
+		});
+</script>
+</html>

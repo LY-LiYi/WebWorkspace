@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.min.js"></script>
+	<script src="../../vue-resource-v1.5.1.min.js"></script>
+</head>
+<body>
+	<button @click="get" class="btn">按钮</button>
+</body>
+<script type="text/javascript">
+	var vm=new Vue(
+	{
+		el:".btn",
+		data:{},
+		methods:
+		{
+			get:function()
+			{
+				this.$http.jsonp("https://www.baidu.com/home/other/data/weatherInfo?city=%E6%AD%A6%E6%B1%89&indextype=manht&_req_seqid=0xb538cc870002e399&asyn=1&t=1531646288310&sid=1420_26432_21095_18560_20929").then(
+					//请求成功执行的方法
+						function(result)
+						{
+							console.log(result);
+							console.log(result.body);
+						},
+					//请求失败执行的方法
+						function(result)
+						{
+							console.log(result.status);
+						}
+					);
+			},
+		},
+	});
+	
+</script>
+</html>

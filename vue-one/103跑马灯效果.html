@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../vue-v2.5.17.js"></script>
+</head>
+<body>
+	<!-- 创建一个要控制的区域 -->
+	<div class="app">
+		<input type="button" name="" value="浪起来" @click="lang">
+		<input type="button" name="" value="稳住" @click="stop">
+		<h4>{{msg}}</h4>
+	</div>
+</body>
+<script type="text/javascript">
+	// 在vue实例对象中 如果要获取data上的数据，或者想要调用methods中的方法，必须通过this.属性名或者this.方法名来进行访问，这里的this就是当前new出来的vue实例对象
+	var vm=new Vue(
+		{
+			el:".app",
+			data:
+			{
+				msg: '猥琐发育别浪~~~',
+				//在data定时器上面定义定时器 防止hiden方法获取不到定时器对象
+				intervalId:null,
+			},
+			methods:
+			{
+				lang:function()
+				{
+					// 开启定时器前进行判断定时器是否关闭 没有关闭就不开启新的定时器
+					if(this.intervalId!=null)
+						return;
+					
+						//this指向问题
+					var _this=this;
+					this.intervalId=setInterval(function()
+					{
+						//拿到msg
+					// console.log(this.msg);
+					//进行字符串截取操作
+					//拿到第一个字符
+					var start=_this.msg.substring(0,1);
+					// 拿到从第一个除去头的剩下的字符
+					var end=_this.msg.substring(1);
+					//重新拼接得到新的字符串赋值给 this.msg
+					_this.msg=end+start;
+
+					//注意： vm实例对监听自己身上的data中所有的数据的改变，只要数据一发生改变 就会自动把最新的数据从data同步到页面中去 【好处：只需要关心数据 不需要考虑如何重新渲染到页面】
+					},400);
+					
+				},
+
+				stop:function()
+				{
+					clearInterval(this.intervalId);
+					// 每次清楚了定时器之后需要重新给intervalId赋值
+					this.intervalId=null;
+				}
+			},
+		})
+		//分析：
+		// 1 给浪起来按钮绑定点击事件  v-on
+		// 2 在按钮处理事件函数中写相关的业务逻辑的代码：拿到msg字符串 然后调用字符串的substring方法来进行字符串的截取操作 把第一个字符截取出来放到最后一个位置
+		// 3 为了实现点击一下自动截取的功能 需要把2放到一个定时器中
+</script>
+</html>

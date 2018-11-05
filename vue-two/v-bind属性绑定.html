@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<img src="../../哔哩哔哩UP主页/images/1527421826.png" >
+	<img :src="url" :width="w">
+	</div>
+</body>
+<script type="text/javascript">
+	var vm=new Vue(
+		{
+			el:".box",
+			data:
+			{
+				url:"../../哔哩哔哩UP主页/images/1527421826.png",
+				w:'50px',
+			},
+		});
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.js"></script>
+</head>
+<body>
+	<div id="app">
+		<comp></comp>
+		<hr>
+		<comp></comp>
+		<hr>
+		<comp></comp>
+	</div>
+	<template id="temp">
+		<div>
+			<button @click="add">+1</button>
+			<h3>{{count}}</h3>
+		</div>
+	</template>
+	<script type="text/javascript">
+	
+		// 这是一个计数器组件 身上有个按钮 每当点击按钮让data中的cont值加一
+		Vue.component("comp",
+			{
+				template:'#temp',
+				data:function()
+				{
+					return {count:0};
+				},
+				methods:
+				{
+					add:function()
+					{
+						this.count++;
+					}
+				},
+			});
+
+		var vm=new Vue(
+		{
+			el:'#app',
+			data:{},
+			methods:{},
+		});
+
+	</script>
+</body>
+</html>

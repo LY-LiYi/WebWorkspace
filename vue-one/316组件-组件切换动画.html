@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.js"></script>
+	<style type="text/css">
+		.v-enter,.v-leave-to
+		{
+			opacity: 0;
+			transform: translateX(150px);
+		}
+		.v-enter-active,.v-leave-active
+		{
+
+			transition: all 0.5s ease;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<a href="" @click.prevent="loginin">登录</a>
+		<a href="" @click.prevent="register">注册</a>
+		<!-- Vue提供的component 来展示对应名称的组件 -->
+		<!-- component是一个占位符  ：is属性是指定要展示组件的名称-->
+		<!-- 通过mode属性设置组件切换时候的方式 -->
+		<transition mode="out-in">
+			<component :is="comName"><component>
+		</transition>
+	</div>
+	<script type="text/javascript">
+		//创建组件
+		Vue.component('loginin',
+			{
+				template:'<h3>登录组件</h3>',
+			});
+
+		Vue.component('register',
+			{
+				template:'<h3>注册组件</h3>',
+			});
+
+		var vm=new Vue(
+			{
+				el:'#app',
+				data:
+				{
+					comName:'loginin',
+				},
+				methods:
+				{
+					loginin:function()
+					{
+						this.comName="loginin";
+					},
+					register:function()
+					{
+						this.comName="register";
+					},
+				},
+			});
+	</script>
+</body>
+</html>

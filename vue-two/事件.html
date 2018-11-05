@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<button v-on:click="add">点击输出</button>
+		<br>
+		<ul>
+			<li v-for="item in arr">{{item}}</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		var vm=new Vue(
+			{
+				el:'.box',
+				data:
+				{
+					arr:['apple','banana','orange'],
+					json:{a:'apple',b:'banana',c:'color'},
+				},
+				methods:
+				{
+					add:function()
+					{
+						this.arr.push("tomato");
+					},
+				}
+			});
+	</script>
+</body>
+</html>

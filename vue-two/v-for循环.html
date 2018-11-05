@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<ul >
+			<li v-for="(key,index) in arr">{{key}}  {{index}}</li>
+		</ul>
+		<hr>
+		<ul>
+			<li v-for="(item,key,index) in json">{{key}}  {{item}}  {{index}}</li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		var vm=new Vue(
+			{
+				el:'.box',
+				data:
+				{
+					arr:['apple','banana','orange'],
+					json:{a:'apple',b:'banana',c:'color'},
+				}
+			});
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.js"></script>
+</head>
+
+<body>
+	<h1>Template三种写法</h1>
+	<hr>
+	<div id="app">
+		{{database}}
+	</div>
+
+	<template id="dd2">
+		<h3>我是模板</h3>
+	</template>
+	<script type="x-template" id="dd3">
+		<h3>我是script标签模板</h3>
+	</script>
+	<script type="text/javascript">
+
+		var vm = new Vue(
+			{
+				el: "#app",
+				data: {
+					database: "123",
+				},
+				msthods: {},
+				template: "#dd3",
+			});
+
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.js"></script>
+</head>
+<body>
+	<h1>Template三种写法</h1>
+	<hr>
+	<div id="app">
+		<tel></tel>
+	</div>
+	<hr>
+	<div class="pp">
+		<tel></tel>
+	</div>
+	
+	<script type="text/javascript">
+		
+				Vue.component('tel',
+					{
+						template:'<div style="color:red">我是全局的组件</div>',
+					});
+
+		var vm=new Vue(
+			{
+				el:"#app",
+			});
+		var pp=new Vue({
+				el:".pp",
+			});
+	</script>
+</body>
+</html>

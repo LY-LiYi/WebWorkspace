@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.js"></script>
+	<style type="text/css">
+		.ball
+		{
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background-color: red;
+		}	
+	</style>
+</head>
+<body>
+	<div id="app">
+		<input type="button" name="" value="快到碗里来" @click="flag=!flag">
+		<!-- 使用transition元素把小球包裹起来 -->
+		<transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter">
+		<div class="ball" v-show="flag"></div>
+		</transition>
+	</div>
+	<script type="text/javascript">
+			var vm=new Vue(
+				{
+					el:'#app',
+					data:
+					{
+						flag:false,
+					},
+					methods:
+					{
+						//动画钩子函数第一个参数表示要执行动画的元素 是个原生jsDOM对象
+						beforeEnter:function(el)
+						{
+							//beforeEnter表示动画入场之前 此时 动画尚未开始 可以设置元素在动画开始之前的起始样式
+							// 这是设置小球开始动画之前的起始位置
+							el.style.transform = 'translate(0,0)';
+						},
+						enter:function(el,done)
+						{
+							// 这句话在这里没有什么实质性的作用 但是不写 动画出不来
+							//可以认为el.offsetwidth会强制动画刷新
+							el.offsetWidth
+							//enter表示动画开始之后的样式 这里可以设置小球完成动画之后的结束状态
+							el.style.transform = 'translate(150px,450px)';
+							// transition  css3属性 平滑的改变CSS的值 即动画
+							el.style.transition="all 1s ease";
+
+							//立即隐藏 这里的done其实就是afterEnter函数 也就是说：done是afterEnter函数 的引用
+							done();
+						},
+						afterEnter:function(el)
+						{
+							// 动画完成之后会调用这个方法 
+							// 隐藏小球
+							this.flag=false;
+						},
+					},
+				});		
+	</script>
+</body>
+</html>

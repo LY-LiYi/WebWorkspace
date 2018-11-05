@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.js"></script>
+	<link rel="stylesheet" type="text/css" href="../BootStrap/bootstrap-4.1.1-dist/css/bootstrap.css">
+</head>
+<body>
+
+	<div id="app">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">添加品牌</h3>
+			</div>
+			<div class="panel-body form-inline">
+				<label>
+					Id:
+					<input type="text" name="" class="form-control" v-model="id">
+				</label>
+				<label>
+					Name:
+					<input type="text" name="" class="form-control" v-model="name" @keyup.f2="add">
+				</label>
+
+				<input type="button" name="" value="添加" class="btn btn-primary" @click="add">
+
+				<label>
+					搜索名称关键字：
+					<input type="text" name="" class="form-control" v-model="keywords" id="search" v-focus v-color="'blue'">
+				</label>
+			</div>
+		</div>
+
+
+
+		<table class="table table-bordered table-hover table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Ctime</th>
+					<th>Operation</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- 之前v-for中的数据都是直接从data上的list中直接渲染过来的 现在我们自定义了一个search方法，同时 把所有关键字 通过传参的方式 传给了search方法 -->
+				<!-- 在search内部 通过指向for循环 把所有符合数据存到一个新数组中，并返回 -->
+				<tr v-for="item in search(keywords)" :key="item.id">
+					<td>{{item.id}}</td>
+					<td v-text="item.name"></td>
+					<td>{{item.ctime |dataFormat('')}}</td>
+					<td><a href="#" @click.prevent="del(item.id)">删除</a></td>
+				</tr>
+			</tbody>	
+		</table>
+	</div>
+	
+	<div id="app2">
+		<p  v-color="'pink'" v-fontweight="'800'"  v-fintsize="'30px'">{{ dt | dataFormat }}</p>
+	</div>
+
+	<script type="text/javascript">
+	
+		// 全局过滤器 进行时间格式化
+		Vue.filter('dataFormat',function(dataStr,pattern='') 
+		{
+			// 根据给定的时间字符串，得到特定的时间
+
+			var dt=new Date(dataStr);
+			//yyy-mm-dd\
+			var y=dt.getFullYear();
+			var m=dt.getMonth()+1;
+			var d=dt.getDay();
+
+			
+
+			if(pattern.toLowerCase()==='yyyy-mm-dd')
+			{
+				return y+'-'+m+'-'+d;
+			}
+			else
+			{
+				var hh=dt.getHours();
+				var mm=dt.getMinutes();
+				var ss=dt.getSeconds();
+
+				return  y+'-'+m+'-'+d+'   '+hh+':'+mm+':'+ss;
+			}
+		});
+
+		//自定义全局按键修饰符
+		Vue.config.keyCodes.f2=113;
+
+		// 使用 Vue.direcive()定义全局的指令
+
+		Vue.directive('focus',
+			{
+				// 每当指令绑定到元素上的时候，会立即执行且执行一次
+				bind:function(el)
+				{
+					//注意 在每个函数中 第一个参数永远是el 表示被绑定了指令的元素。这个el是原生的js对象
+					// 在元素 刚绑定了指令的时候，还没有插入到DOM树中去，这时候调用focus()没有作用，
+					// 因为，一个元素，只有插入到DOM中。才能获取焦点
+					
+				},
+				// inserted表示元素插入到DOM中的时候，会执行inserted函数 触发一次
+				inserted:function(el)
+				{
+					// 和js行为有关的操作，最好在inserted中去执行，防止js行为不生效
+					el.focus();
+				},
+				// 当组件或者vnode更新的时候会执行update，可能会触发多次
+				update:function()
+				{
+
+				},
+			});
+
+		//自定义一个设置字体的指令
+		Vue.directive('color',
+			{
+				// 样式 只要通过指令绑定了元素，不管这个元素有没有被插入到页面中去 这个元素肯定有了一个内联样式
+				// 将来元素肯定会显示到页面中，这时候，浏览器的渲染引擎必然会解析样式 应用给这个元素
+				// binding 是一个对象 可以拿到传递到的值
+				bind:function(el,binding)
+				{
+					//和样式有关的操作，一般都可以在bind中执行
+					el.style.color=binding.value;
+					// console.log(binding.name);
+					// console.log(binding.value);
+					// console.log(binding.expression);
+				},
+			});
+
+
+		var vm=new Vue(
+			{
+				el:'#app',
+				data:
+				{
+					id:"",
+					name:"",
+					keywords:'',//搜索关键字
+					list:[
+							{id:1, name:"奔驰", ctime:new Date(),},
+							{id:2, name:"宝马", ctime:new Date(),},
+						],
+				},
+				methods:
+				{
+					add:function()
+					{
+						// 1.获取id和name 直接从data上面获取
+						// 2.组织一个对象
+						// 3.把这个对象 调用数组的方法。添加到当前data上的list里面
+						var car={id:this.id,name:this.name,ctime:new Date()};
+						this.list.push(car);
+						this.id=this.name='';
+					},
+					del:function(id)
+					{
+						//根据id删除数据
+						// 1.如何根据id找到要删除的这一项的索引
+						// 2.找到索引 直接调用数组的splice方法
+						// this.list.some((item,i)=>
+						// {
+						// 	if(item.id==id)
+						// 	{
+						// 		this.list.splice(i,1);
+						// 		// 在数组的some方法中，如果return true 就会立即终止这个数组的后序循环
+						// 		return true;
+						// 	};
+						// });
+
+
+						//findindex方法用来查找索引
+						//es6 箭头函数
+						var index=this.list.findIndex(item=>
+						{
+							if(item.id==id)
+							{
+								return true;
+							};
+						});
+
+						this.list.splice(index,1);
+					},
+
+					search:function(keywords)//根据关键字 进行数据的搜索
+					{
+						// var  newlist=[];
+						// this.list.forEach(item =>
+						// {
+						// 	//空字符串也包含
+						// 	if(item.name.indexOf(keywords)!=-1)
+						// 	{
+						// 		newlist.push(item);
+						// 	}
+						// });
+
+						// return newlist;
+
+						// 注意 forEach some filter findIndex 都是数组的新方法 都会对数组中的每一项遍历执行相关的额操作
+						return this.list.filter(function(item) 
+						{
+							// if(item.name.indexOf(keywords)!=-1)
+
+							// es6中为字符串提供了 String.prototype.includes("要包含的字符串")，如果包含返回true
+							if(item.name.includes(keywords))
+							{
+								return item;
+							}
+						});
+					},
+				},
+			});	
+
+			// 自定义过滤器的语法
+			// Vue.filter('过滤器的名称',function(){});
+			// 过滤器中的function 第一个参数已经被规定死了 永远是过滤器管道符前面传过来的数据
+			Vue.filter('过滤器的名称',function(data)
+				{
+					return data+'123';
+				});
+
+
+
+
+
+		var vm2=new Vue(
+			{
+				el:'#app2',
+				data:
+				{
+					dt:new Date(),
+				},
+				methods:{},
+				//定义私有过滤器 有2个条件 【过滤器名称】【处理函数】
+				filters:
+				{
+					'dataFormat':function(dataStr,pattern='')
+					{
+						var dt=new Date(dataStr);
+						//yyy-mm-dd\
+						var y=dt.getFullYear();
+						var m=(dt.getMonth()+1).toString().padStart(2,'0');
+						var d=dt.getDay();
+
+						if(pattern.toLowerCase()==='yyyy-mm-dd')
+						{
+							return y+'-'+m+'-'+d;
+						}
+						else
+						{
+							var hh=dt.getHours().toString().padStart(2,'0');
+							var mm=dt.getMinutes().toString().padStart(2,'0');
+							var ss=dt.getSeconds().toString().padStart(2,'0');
+
+							return  y+'-'+m+'-'+d+'   '+hh+':'+mm+':'+ss+'----------';
+						}			
+					},
+
+				},
+				//自定义私有指令
+				directives:
+				{
+					'fontweight':
+					{
+						bind:function(el,binding)
+						{
+
+							el.style.fontWeight=binding.value;
+						}
+					},
+					// 简写
+					//这里的function等同于写到了bind和upadte里面
+					'fintsize':function(el,binding)
+					{
+
+						el.style.fontSize=parseInt(binding.value)+'px';
+					}
+				},
+			});
+
+
+			// document.getElementById("search").focus(function(event) 
+			// {
+				
+			// });
+	</script>
+
+</body>
+</html>

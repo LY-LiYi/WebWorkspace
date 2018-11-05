@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.js"></script>
+<body>
+	<div id="app">
+		<!-- 还是使用标签形式 引入自己的组件 -->
+		<mycom2></mycom2>
+	</div>
+	<script type="text/javascript">
+		
+		
+		Vue.component("mycom2",
+		{
+			template:'<h3>这是直接使用Vue.component创建出来的组件</h3>',
+		})
+
+
+
+		var vm=new Vue(
+			{
+				el:'#app',
+				data:
+				{
+					
+				},
+				methods:
+				{
+					
+				},
+			});
+	</script>
+</body>
+</html>

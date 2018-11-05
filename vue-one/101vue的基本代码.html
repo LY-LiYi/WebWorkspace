@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 将来new的vue实例 会控制这个元素中的所有内容 -->
+	<!-- vue所控制的这个元素区域，就是视图层View -->
+	<div id="app">
+		<p>{{msg}}</p>
+	</div>
+</body>
+<script src="../../vue-v2.5.17.js"></script>
+<script type="text/javascript">
+	//创建一个vue的实例  我们new出来的这个vm对象就是我们 mvvm中的 VM调度者
+		var vm=new Vue(
+			{
+				//表示：当前new的这个vue实例，要控制页面上的哪个区域
+				el: '#app',
+				//data属性中，存放的是el中要用到的数据 这里的data就是 mvvm中的 m  用来保存每个页面的数据
+				data: {
+					//通过vue提供的指令  很方便的就能把数据渲染到页面上 不需要手动操作DOM元素{前端的vue之类的框架，不需要我们去手动操作DOM元素}
+					msg: '欢迎学习vue',
+				},
+});
+
+</script>
+</html>

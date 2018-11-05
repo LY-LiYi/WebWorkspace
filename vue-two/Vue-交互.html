@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.min.js"></script>
+	<script src="../../vue-resource-v1.5.1.min.js"></script>
+</head>
+<body>
+	<button @click="get" class="btn">按钮</button>
+</body>
+<script type="text/javascript">
+	var vm=new Vue(
+	{
+		el:".btn",
+		data:{},
+		methods:
+		{
+			get:function()
+			{
+				this.$http.get("https://api.github.com/users").then(
+					//请求成功执行的方法
+						function(result)
+						{
+							console.log(result);
+							console.log(result.body);
+						},
+					//请求失败执行的方法
+						function(result)
+						{
+							console.log(result.status);
+						}
+					);
+			},
+		},
+	});
+	
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.js"></script>
+</head>
+<body>
+	<div class="app">
+		<p>{{msg | msgFormat('疯狂') | text}}</p>
+	</div>
+</body>
+<script type="text/javascript">
+	// Vue.filter('过滤器的名称',function(){});
+	// 过滤器中的function 第一个参数已经被规定死了 永远是过滤器管道符前面传过来的数据
+	//定义一个Vue全局过滤器
+
+	Vue.filter("msgFormat",function(msg,arg)
+	 {
+	 	//字符串的repalce 第一个参数可以写字符串 还可以定义正则
+		return msg.replace(/单纯/g,arg);	
+	});
+
+	 // 过滤器可以多次调用
+	Vue.filter("text",function(msg)
+	 {
+	 	
+		return msg+'=========';
+	});
+
+	var  vm=new Vue(
+		{
+			el:'.app',
+			data:
+			{
+				msg:'曾经,我也是一个单纯的少年,单纯的我,傻傻的问,谁是世界上最纯洁的男人',
+			},
+			methods:{},
+		});
+</script>
+</html>

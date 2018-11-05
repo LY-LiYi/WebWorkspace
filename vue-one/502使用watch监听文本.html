@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.js"></script>
+	<script src="../vue-router-3.0.1.js"></script>
+</head>
+<body>
+	<div id="app">
+		<!-- 我们要监听到文本框数据的改变 这样才能知道 什么时候去拼接出一个fullname -->   
+		<!-- 如何监听到文本框的数据改变 -->
+		<input type="text" name="" v-model="fristname">+
+		<input type="text" name="" v-model="lastname" >=
+		<input type="text" name="" v-model="fullname">
+	</div>
+	<script type="text/javascript">
+		
+		var vm=new Vue(
+			{
+				el:'#app',
+				data:
+				{
+					fristname:'',
+					lastname:'',
+					fullname:'',
+				},
+				methods:{},
+				// 使用这个属性可以监听data中指定的数据的变化，然后触发这个watch中对应的function处理函数
+				watch:
+				{
+					fristname: function(newVal,oldVal)
+					{
+						// this.fullname=this.fristname+'-'+this.lastname;
+						this.fullname=newVal+this.lastname;
+
+					},
+					lastname:function(newVal,oldVal)
+					{
+						// this.fullname=this.fristname+'-'+this.lastname;
+						this.fullname=this.fristname+newVal;
+					},
+				},
+			});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.js"></script>
+	<script src="../vue-router-3.0.1.js"></script>
+</head>
+<body>
+	<div id="app">
+		<!-- 如果在路由中使用查询字符串  给路由传递参数 是不需要修改路由的path属性 -->
+		<router-link to='/login/12/is'>登录</router-link>
+		<router-link to='/regsiter'>注册</router-link>
+		<router-view></router-view>
+	</div>
+	
+
+	<script type="text/javascript">
+		
+		var login=
+		{ 
+			template: '<h1>登录---{{$route.params.id}}---{{$route.params.name}}</h1>',
+			data:function()
+			{
+				return {msg:'123'};
+			},
+			created:function()//组件的生命周期钩子函数
+			{
+				console.log(this.$route.params.id);//输出12
+			},
+		};
+		
+		var regsiter={template:'<h1>注册</h1>'};
+
+		var routerObj=new VueRouter(
+			{
+				routes:
+				[
+					{path:'/login/:id/:name',component:login},
+					{path:'/regsiter',component:regsiter},
+				],
+			});
+
+		var vm=new Vue(
+			{
+				el:'#app',
+				data:{},
+				methods:{},
+				router:routerObj,
+			});
+	</script>
+</body>
+</html>

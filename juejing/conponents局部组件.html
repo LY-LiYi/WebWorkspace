@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h1>局部组件</h1>
+		<hr>
+		<xixi><xixi>
+	</div>
+	
+	<script type="text/javascript">
+	
+		var vm=new Vue(
+			{
+				el:"#app",
+				components:
+				{
+					"xixi":
+					{
+						template:"<div>我是局部的组件</div>"
+					}
+				}
+			});
+	</script>
+</body>
+</html>

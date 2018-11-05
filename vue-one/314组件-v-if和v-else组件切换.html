@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.js"></script>
+</head>
+<body>
+	<div id="app">
+		<a href="" @click.prevent="flag=true">登录</a>
+		<a href="" @click.prevent="flag=false">注册</a>
+
+		<loginin v-if="flag"></loginin>
+		<register v-else="flag"></register>
+	</div>
+	<script type="text/javascript">
+		//创建组件
+		Vue.component('loginin',
+			{
+				template:'<h3>登录组件</h3>',
+			});
+
+		Vue.component('register',
+			{
+				template:'<h3>注册组件</h3>',
+			});
+
+		var vm=new Vue(
+			{
+				el:'#app',
+				data:
+				{
+					flag:true,
+				},
+				methods:{},
+			});
+	</script>
+</body>
+</html>

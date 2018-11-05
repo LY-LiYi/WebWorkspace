@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.red
+		{
+			color: red;
+		}
+		.thin
+		{
+			font-weight: 200;
+		}
+		/*倾斜*/
+		.italic
+		{
+			font-style: italic;
+		}
+		/*激活*/
+		.active
+		{
+			/*字符间距*/
+			letter-spacing: 0.5em;
+		}
+	</style>
+<script src="../../vue-v2.5.17.js"></script>
+</head>
+<body>
+	<div class="app">
+		<h1 :class="classobj">这是一个很大的H1</h1>
+	</div>
+
+	<script type="text/javascript">
+		var vm=new Vue(
+			{
+				el:'.app',
+				data:
+				{
+					classobj:{red:true,thin:true,active:true},
+				},
+				methods:
+				{
+
+				},
+			});
+	</script>
+</body>
+</html>

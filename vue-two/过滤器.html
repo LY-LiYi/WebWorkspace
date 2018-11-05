@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<p>{{msg|text}}</p>
+	</div>
+</body>
+<script type="text/javascript">
+	var vm=new Vue(
+		{
+			el:".box",
+			data:
+			{
+				msg:'哈哈',
+			},
+			filters:
+			{
+				'text':function(msg)
+				{
+					return msg+"傻逼了吧";
+				},
+			},
+		});
+
+		
+</script>
+</html>

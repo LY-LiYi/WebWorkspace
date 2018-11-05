@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../../vue-v2.5.17.js"></script>
+</head>
+<body>
+	<div id="app">
+		<button @click='getElement'>获取元素</button>
+
+		<h3 id="myh3" ref="myh3">喂狗三分饱</h3>
+		<hr>
+		<login ref="login"></login>
+		<template>
+			<h3 id="son">登录组件</h3>
+		</template>
+	</div>
+	<script type="text/javascript">
+		var vm=new Vue(
+			{
+				el:'#app',
+				data:{},
+				methods:
+				{
+					getElement:function()
+					{
+						//可以拿到组件的数据和方法
+						console.log(this.$refs.login.msg);
+						this.$refs.login.show();
+					},
+				},
+				components:
+				{
+					login:
+					{
+						template: '#son',
+						data:function()
+						{
+							return {msg:'son msg'};
+						},
+						methods:
+						{
+							show:function()
+							{
+								console.log("调用了子组件的方法");
+							}
+						},
+					},
+				}
+			});
+	</script>
+</body>
+</html>
