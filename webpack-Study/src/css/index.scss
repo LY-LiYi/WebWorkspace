@@ -1,0 +1,20 @@
+html,body
+{
+	margin:0px;
+	padding:0px;
+
+	li
+	{
+		font-size:12px;
+		lint-height:30px;
+	}
+	.box
+	{
+		margin-top:20px;
+		width: 300px;
+		height: 120px;
+		//默认情况下 webpack无法处理 css文件中的 url地址，不管是图片还是字体库 只要是url地址 都处理不了
+		background:url('../images/07-bg.png');
+		background-size:cover；
+	}
+}
