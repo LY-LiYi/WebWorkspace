@@ -13,6 +13,14 @@ export default {
     return {
       msg: 'Error:404'
     }
+  },
+  mounted()
+  {
+    showname:
+    {
+     console.log('show');
+    
+    }
   }
 }
 </script>
