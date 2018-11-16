@@ -8,6 +8,7 @@ import Left from '@/components/Left'
 import Right from '@/components/Right'
 import Params from '@/components/params'
 import Error from '@/components/Error'
+import Father from '@/components/Father'
 
 
 Vue.use(Router)
@@ -43,6 +44,10 @@ export default new Router({
     {
       path:'*',
       component:Error,
+    },
+    {
+      path:'/father',
+      component:Father,
     }
   ]
 })
