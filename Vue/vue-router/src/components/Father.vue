@@ -1,7 +1,8 @@
 <template>
     <div class="father">
         <p>父组件的值{{name}}</p>
-        <Son :name='name'></Son><button @click="add">点击+1</button>
+        <button @click="add">点击+1</button>
+        <Son :name='name'></Son>
     </div>
 </template>
 

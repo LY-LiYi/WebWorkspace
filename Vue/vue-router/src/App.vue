@@ -21,6 +21,7 @@
     <router-link to="/xixi" :class="['bg']">xixi</router-link>|
     <router-link to="/6666" :class="['bg']">我是瞎写的</router-link>|
     <router-link to="/father" :class="['bg']">Father</router-link>|
+    <router-link to="/Recursive" :class="['bg']">递归组件</router-link>|
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>

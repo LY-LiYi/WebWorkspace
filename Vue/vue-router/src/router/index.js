@@ -9,6 +9,8 @@ import Right from '@/components/Right'
 import Params from '@/components/params'
 import Error from '@/components/Error'
 import Father from '@/components/Father'
+import Recursive from '@/components/Recursive'
+
 
 
 Vue.use(Router)
@@ -48,6 +50,10 @@ export default new Router({
     {
       path:'/father',
       component:Father,
+    },
+    {
+        path:'/Recursive',
+        component:Recursive,
     }
   ]
 })
