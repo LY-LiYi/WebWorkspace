@@ -1,8 +1,7 @@
 <template>
     <div class="app" :class="['son']">
         <p>这是子组件的值</p>
-        <p>这是父组件的{{name}}</p>
-        <h1>props{{dataname}}</h1>
+        <h1>父组件的props{{dataname}}</h1>
     </div>
 
 </template>
